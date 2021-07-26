@@ -1,10 +1,27 @@
 ---
+language: shell
+os:
+- linux
 dist: xenial
-language: ruby
-ruby:
-    - 2.6.8
-    - 2.7.4
-script: ruby --version
+script:
+- tox
+jobs:
+  include:
+  - name: macOS
+    os: osx
+    osx_image: xcode11.2
+    addons:
+      homebrew:
+        packages:
+        - python@2
+        - shellcheck
+        - tox
+  - name: Linux
+    os: linux
+    dist: bionic
+    sudo: true
+    install:
+    - sudo -H pip install tox
 
 
 #services:
