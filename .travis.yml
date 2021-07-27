@@ -1,25 +1,8 @@
 ---
-language: shell
-jobs:
-  include:
-  - name: macOS
-    os: osx
-    osx_image: xcode11.2
-    addons:
-      homebrew:
-        update: true
-        packages:
-        - python@2
-        - shellcheck
-        - tox
-    script: true
-  - name: Linux
-    os: linux
-    dist: bionic
-    sudo: true
-    install:
-    - sudo -H pip install tox
-
+language: ruby
+dist: xenial
+ruby: "3.0.2"
+script: ruby -v
 
 #services:
 #    - docker
