@@ -4,10 +4,10 @@ dist: xenial
 ruby: "3.0.2"
 script: ruby -v
 
-#services:
-#    - docker
-#before_install:
-#    - echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin
+services:
+    - docker
+before_install:
+    - echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin
 
 # ====> Slack notification..
 notifications:
