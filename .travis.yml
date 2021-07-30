@@ -1,8 +1,11 @@
 ---
 language: python
-dist: xenial
-os: linux
 arch: arm64
+os: linux
+env:
+   - MB_PYTHON_VERSION=3.7
+   - MB_ML_VER=2014
+   - PLAT=aarch64
 if: (branch = master) AND (type NOT IN (pull_request))
 script: true
 services:
