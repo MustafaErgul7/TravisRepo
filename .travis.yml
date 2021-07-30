@@ -1,10 +1,9 @@
 ---
-language: ruby
+language: python
 dist: xenial
-ruby: "3.0.2"
 arch: arm64
-script: ruby -v
 if: (branch = master) AND (type NOT IN (pull_request))
+script: true
 services:
     - docker
 before_install:
