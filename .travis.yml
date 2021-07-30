@@ -1,6 +1,7 @@
 ---
 language: python
 dist: xenial
+os: linux
 arch: arm64
 if: (branch = master) AND (type NOT IN (pull_request))
 script: true
