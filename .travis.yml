@@ -1,25 +1,21 @@
 ---
-language: python
-jobs:
-    include:
-        arch: arm64
-        os: linux
-        env:
-            - MB_PYTHON_VERSION=3.7
-            - MB_ML_VER=2014
-            - PLAT=aarch64
-script: true
-services:
-    - docker
+language: android
+os:
+    - linux
+dist: trusty
+jdk:
+    - openjdk8
+android:
+  components:
+  - tools
+  - platform-tools
+  - tools
+  - build-tools-30.0.3
+  - extra
 before_install:
-    - echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin
-
-deploy:
-    provider: releases
-    api_key:
-        secure: "Ck9yLfvGypqfxD4njaCSbmnbzW88DFg5wv2/IbSx4mPu+Eu18qvpd17vg+JAP5zlE/nYE1JunJRiKN2Q40B/KDV1au9pz9MF/xF1YkrlKbwGuO0tFArJXrARKB0on2muR52jmskB3WNsDmvnC8sBM7jwXxjP7nSVvPsGy7fZU05rUT6xDyYdi4/KdwVyISq3g4is0rAKtM+u+UeiaHglCMqWznb0XkOPuxD5uhKnOu2UOn+tIEBwQuGBZ+1Y/Qs4DCv0TwSF98svjHEwcHliYxKfPsa1RV6o/lQHbv97o2DcQwX0eCFP68iPWIxexavewrUcu3aIEaYJS2nsiD40/Y3tO+pL7B4i6ETAeqXzC+KnQTpAd5qqdPPe7xchwpFyMRtJv24hk06hgrTrYtB7+tHoihesW27ZBhtUOsDubslEJzc7+aeQUy7pvw3rQtIYFJ7haaUox11w+LNXnZx+C4lBMNaexidOtlltcnlPLf21/91tEUsiNWjlH0QDj12wR0ZkA624d70flRyBDq9ih6Juc0h/DG7L/AYlmfvVrYED/v8JGeJgC7oJODLn4dTARdqLnUIkbcLrJp3t7W4nj3CZ4kewWOqDb2V+m4rcIya2fFLvldUyZG5t7MevXm/XZEmLnjbJYehq3LeJnwrY4ByKjOqrrvalVkol2UmHfuI="
-    file: "./install.yml"
-    skip_cleanup: true
+    - yes | sdkmanager "platforms;android-30"
+script:
+    - gradle --version
 
 # ====> Slack notification..
 notifications:
