@@ -1,8 +1,6 @@
 ---
 language: python
-os:
-- linux
-dist: xenial
+os: linux
 python:
 - '3.5'
 services:
@@ -36,14 +34,15 @@ jobs:
   - env:
     - MB_PYTHON_VERSION: '3.7'
     - PLAT: i686
-  - arch: arm64
-    os: linux
+
+  - os: linux
+    arch: arm64
     services:
-    - docker
+        - docker
     env:
-    - MB_PYTHON_VERSION: '3.7'
-    - MB_ML_VER: '2014'
-    - PLAT: aarch64
+        - MB_PYTHON_VERSION: '3.7'
+        - MB_ML_VER: '2014'
+        - PLAT: aarch64
   - env:
     - MB_PYTHON_VERSION: '3.8'
   - env:
