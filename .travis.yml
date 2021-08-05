@@ -1,15 +1,50 @@
 ---
 language: python
-os: linux
+os:
+    - linux
+dist: xenial
+env:
+    global:
+        - REPO_DIR: python-driver
+        - BUILD_COMMIT: 15d715f4e686032b02ce785eca1d176d2b25e32b
+        - BUILD_DEPENDS: '"geomet>=0.1,<0.3 six>=1.9 futures<=2.2.0 Cython>=0.20,!=0.25,<0.30"'
+        - TEST_DEPENDS: '""'
+        - UNICODE_WIDTH: "32"
 python:
     - "3.5"
 services:
     - docker
 jobs:
     include:
-
-        - os: linux
-          arch: arm64
+        - env:
+              - MB_PYTHON_VERSION: "2.7"
+        - env:
+              - MB_PYTHON_VERSION: "2.7"
+              - UNICODE_WIDTH: "16"
+        - env:
+              - MB_PYTHON_VERSION: "2.7"
+              - PLAT: i686
+        - env:
+              - MB_PYTHON_VERSION: "2.7"
+              - PLAT: i686
+              - UNICODE_WIDTH: "16"
+        - env:
+              - MB_PYTHON_VERSION: "3.5"
+        - env:
+              - MB_PYTHON_VERSION: "3.5"
+              - PLAT: i686
+        - env:
+              - MB_PYTHON_VERSION: "3.6"
+        - env:
+              - MB_PYTHON_VERSION: "3.6"
+              - PLAT: i686
+        - env:
+              - MB_PYTHON_VERSION: "3.7"
+        - env:
+              - MB_PYTHON_VERSION: "3.7"
+              - PLAT: i686
+        - arch: arm64
+          os: linux
           services:
               - docker
           env:
