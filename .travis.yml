@@ -3,47 +3,6 @@ os: linux
 dist: precise
 language: php
 
-cache:
-    apt: true
-    directories:
-        - $HOME/dwl
-        - $HOME/.composer/cache
-        - .cache/bower
-        - vendor
-        - node_modules
-
-jobs:
-    include:
-        - php: 5.5
-          env: TESTGROUP="unit|acceptance_|origin_|functional_"
-
-        - php: 5.5
-          env: TESTGROUP="selenium"
-
-services:
-    - rabbitmq
-    - redis
-
-
-before_install:
-    # lock composer to version 1
-    - composer selfupdate --1
-    - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1600x1200x16"
-
-install: true
-
-before_script:
-    - "export DISPLAY=:99.0"
-    - ./bin/travis/init-travis.sh
-    - umask 0000
-    - sudo mkdir -p app/logs app/cache
-    - sudo chmod -R 777 app/logs app/cache
-    - ./bin/travis/services-travis.sh
-    - ./node_modules/bower/bin/bower install
-    # replace max_allowed_packet      = 16M by 128M
-    - sudo sed s/16M/128M/ /etc/mysql/my.cnf >> /dev/null
-    - sudo service mysql restart
-
 script: true
 
 # ====> Slack notification..
