@@ -5,7 +5,7 @@ language: python
 python: 3.6
 
 before_install:
-    - pip install --user awscli
+    - pip install awscli
 
 script: true
 
