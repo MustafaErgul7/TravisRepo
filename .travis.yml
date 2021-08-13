@@ -1,9 +1,15 @@
 ---
----
 language: python
 os:
     - linux
 dist: xenial
+env:
+    global:
+        - REPO_DIR: python-driver
+        - BUILD_COMMIT: asdasdasd
+        - BUILD_DEPENDS: '"geomet>=0.1,<0.3 six>=1.9 futures<=2.2.0 Cython>=0.20,!=0.25,<0.30"'
+        - TEST_DEPENDS: '""'
+        - UNICODE_WIDTH: "32"
 python:
     - "3.5"
 services:
@@ -85,7 +91,6 @@ jobs:
               - MB_PYTHON_VERSION: "3.8"
 
 script: true
-
 
 
 # ====> Slack notification..
