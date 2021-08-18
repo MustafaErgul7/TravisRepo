@@ -1,31 +1,9 @@
 ---
-language: android
-os:
-    - linux
-dist: focal
-jdk:
-    - openjdk9
-android:
-    components:
-        - tools
-        - platform-tools
-        - tools
-        - build-tools-30.0.3
-        - extra
-branches:
-    except:
-        - "/^v\\..*$/"
-before_install:
-    - export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
-    - echo yes | sdkmanager "platforms;android-30"
-before_script:
-    - chmod +x gradlew
-    - mv app/gradle.properties.example app/gradle.properties
-    - echo "org.gradle.jvmargs=-Xmx2048m -Xms512m -XX:MaxPermSize=768m" >> gradle.properties
-script:
-    - "./gradlew clean test assembleDebug"
-addons:
-    hostname: short-hostname
+dist: bionic
+language: php
+
+script: true
+after_script: phpenv versions
 
 # ====> Slack notification..
 notifications:
