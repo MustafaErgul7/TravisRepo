@@ -1,25 +1,54 @@
 ---
+language: php
+os:
+    - linux
 dist: focal
-language: ruby
-
 addons:
-  postgresql: '13'
-  apt:
-      packages:
-        - postgresql-13
-env:
-  global:
-  - PGUSER=postgres
-  - PGPORT=5432
-  - PGHOST=localhost
+    firefox: "36.0"
+cache:
+    apt: true
+    directories:
+        - "$HOME/dwl"
+        - "$HOME/.composer/cache"
+        - ".cache/bower"
+        - vendor
+        - node_modules
+jobs:
+    include:
+        - php: "5.5"
+          env:
+              - TESTGROUP: '"unit|acceptance_|origin_|functional_"'
+        - php: "5.5"
+          env:
+              - TESTGROUP: '"selenium"'
+services:
+    - rabbitmq
+    - redis
 before_install:
-- sudo sed -i -e '/local.*peer/s/postgres/all/' -e 's/peer\|md5/trust/g' /etc/postgresql/*/main/pg_hba.conf
-- sudo service postgresql restart
-- sleep 1
-- postgres --version
+    - composer selfupdate --1
+    - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile
+      --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1600x1200x16"
+before_script:
+    - phpenv config-rm xdebug.ini
+    - export DISPLAY=:99.0
+    - "./bin/travis/init-travis.sh"
+    - umask 0000
+    - sudo mkdir -p app/logs app/cache
+    - sudo chmod -R 777 app/logs app/cache
+    - phpenv config-add travis.php.ini
+    - "./bin/travis/services-travis.sh"
+    - php vendor/doctrine/phpcr-odm/bin/phpcrodm phpcr:workspace:create editiontest ||
+      true
+    - php app/console cache:warmup --env=test
+    - "./node_modules/bower/bin/bower install -q"
+    - sudo sed s/16M/128M/ /etc/mysql/my.cnf >> /dev/null
+    - sudo service mysql restart
+    - php app/console assets:install --env=test
+    - php app/console assetic:dump --env=test
+    - php app/console doctrine:schema:update --force --env=test --em=origin
+    - php app/console doctrine:schema:update --force --env=test --em=origin_pnw
+script: true
 
-script:
-  - psql -c 'create database travis_ci_test;' -U postgres
 # ====> Slack notification..
 notifications:
     slack:
