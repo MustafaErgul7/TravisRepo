@@ -1,5 +1,6 @@
 ---
 language: php
+pho: 5.5
 os:
     - linux
 dist: focal
