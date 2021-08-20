@@ -1,54 +1,14 @@
 ---
 language: php
-pho: 5.5
-os:
-    - linux
-dist: focal
-addons:
-    firefox: "36.0"
-cache:
-    apt: true
-    directories:
-        - "$HOME/dwl"
-        - "$HOME/.composer/cache"
-        - ".cache/bower"
-        - vendor
-        - node_modules
+before_install: true
 jobs:
     include:
-        - php: "5.5"
-          env:
-              - TESTGROUP: '"unit|acceptance_|origin_|functional_"'
-        - php: "5.5"
-          env:
-              - TESTGROUP: '"selenium"'
-services:
-    - rabbitmq
-    - redis
-before_install:
-    - composer selfupdate --1
-    - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile
-      --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1600x1200x16"
-before_script:
-    - phpenv config-rm xdebug.ini
-    - export DISPLAY=:99.0
-    - "./bin/travis/init-travis.sh"
-    - umask 0000
-    - sudo mkdir -p app/logs app/cache
-    - sudo chmod -R 777 app/logs app/cache
-    - phpenv config-add travis.php.ini
-    - "./bin/travis/services-travis.sh"
-    - php vendor/doctrine/phpcr-odm/bin/phpcrodm phpcr:workspace:create editiontest ||
-      true
-    - php app/console cache:warmup --env=test
-    - "./node_modules/bower/bin/bower install -q"
-    - sudo sed s/16M/128M/ /etc/mysql/my.cnf >> /dev/null
-    - sudo service mysql restart
-    - php app/console assets:install --env=test
-    - php app/console assetic:dump --env=test
-    - php app/console doctrine:schema:update --force --env=test --em=origin
-    - php app/console doctrine:schema:update --force --env=test --em=origin_pnw
-script: true
+        - dist: trusty
+          php: "7.1"
+          script: php -i
+        - dist: bionic
+          php: "5.6"
+          script: php -i
 
 # ====> Slack notification..
 notifications:
