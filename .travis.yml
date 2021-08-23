@@ -9,6 +9,15 @@ jobs:
         - dist: bionic
           php: "7.1"
           script: php -r "print_r(get_loaded_extensions());"
+        - dist: bionic
+          php: "7.2"
+          script: php -r "print_r(get_loaded_extensions());"
+        - dist: bionic
+          php: "7.3"
+          script: php -r "print_r(get_loaded_extensions());"
+        - dist: bionic
+          php: "7.4"
+          script: php -r "print_r(get_loaded_extensions());"
 
 # ====> Slack notification..
 notifications:
