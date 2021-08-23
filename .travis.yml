@@ -1,23 +1,12 @@
 ---
-language: php
 before_install: true
-jobs:
-    include:
-        - dist: trusty
-          php: "7.0"
-          script: php -r "print_r(get_loaded_extensions());"
-        - dist: bionic
-          php: "7.1"
-          script: php -r "print_r(get_loaded_extensions());"
-        - dist: bionic
-          php: "7.2"
-          script: php -r "print_r(get_loaded_extensions());"
-        - dist: bionic
-          php: "7.3"
-          script: php -r "print_r(get_loaded_extensions());"
-        - dist: bionic
-          php: "7.4"
-          script: php -r "print_r(get_loaded_extensions());"
+dist: bionic
+services:
+    - couchdb
+
+before_script:
+    - curl -X PUT localhost:5984/myapp_test
+    - curl -X PUT http://admin:travis@localhost:5984/myapp_test
 
 # ====> Slack notification..
 notifications:
