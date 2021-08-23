@@ -1,12 +1,20 @@
 ---
 before_install: true
-dist: bionic
 services:
     - couchdb
 
 before_script:
     - curl -X PUT localhost:5984/myapp_test
     - curl -X PUT http://admin:travis@localhost:5984/myapp_test
+
+script: true
+
+jobs:
+    include:
+        - dist: xenial
+        - dist: bionic
+        - dist: focal
+
 
 # ====> Slack notification..
 notifications:
