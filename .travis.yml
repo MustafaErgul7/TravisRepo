@@ -1,18 +1,10 @@
 ---
 before_install: true
-services:
-    - couchdb
-
 before_script:
-    - curl -X PUT localhost:5984/myapp_test
-    - curl -X PUT http://admin:travis@localhost:5984/myapp_test
+   - echo 'Canada/Pacific' | sudo tee /etc/timezone
+   - sudo dpkg-reconfigure --frontend noninteractive tzdata
 
 script: true
-
-jobs:
-    include:
-        - dist: xenial
-        - dist: bionic
 
 
 # ====> Slack notification..
