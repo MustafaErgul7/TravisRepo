@@ -1,14 +1,19 @@
 ---
 dist: bionic
 language: php
-php: 8.0.9
+php:
+    - '8.0.9'
+    - '8.0.2'
+    - nightly
 before_install: true
 before_script:
    - cat /etc/timezone
    - echo 'Canada/Pacific' | sudo tee /etc/timezone
    - sudo dpkg-reconfigure --frontend noninteractive tzdata
 
-script: php --version
+script:
+    - php --version
+
 
 
 # ====> Slack notification..
