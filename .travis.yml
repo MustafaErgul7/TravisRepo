@@ -1,13 +1,19 @@
 ---
 language: java
-jdk: openjdk11
+
+addons:
+    apt:
+        packages:
+            - openjdk-11-jdk
 before_install: true
+
 jobs:
     include:
         - dist: trusty
         - dist: xenial
         - dist: bionic
 
+install: true
 script: java --version
 
 
