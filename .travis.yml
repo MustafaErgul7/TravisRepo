@@ -1,13 +1,7 @@
 ---
 language: java
-
-before_install:
-    - sudo apt update
-    - sudo apt install openjdk-11-jdk
-    - sudo add-apt-repository ppa:linuxuprising/java
-    - sudo apt update
-    - sudo apt install oracle-java11-set-default
-
+jdk: openjdk11
+before_install: true
 jobs:
     include:
         - dist: trusty
