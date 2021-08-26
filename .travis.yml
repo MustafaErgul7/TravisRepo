@@ -1,14 +1,14 @@
 ---
-dist: bionic
-language: php
-php:
-    - '8.0.9'
-    - '8.0.2'
-    - nightly
+language: java
+jdk: openjdk11
 before_install: true
+jobs:
+    include:
+        - dist: trusty
+        - dist: xenial
+        - dist: bionic
 
-script:
-    - php --version
+script: java --version
 
 
 
