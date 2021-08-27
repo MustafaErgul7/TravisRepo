@@ -1,14 +1,16 @@
 ---
-dist: xenial
+dist: bionic
 language: php
 php: 7.3
-services:
-    - couchdb
+addons:
+    apt:
+        sources:
+            - https://apache.bintray.com/couchdb-deb
 
 before_install: true
 install: true
 before_script:
-  - curl -X PUT localhost:5984/myapp_test
+    - curl -X PUT http://admin:travis@localhost:5984/MY_COUCHDB
 script: true
 
 
