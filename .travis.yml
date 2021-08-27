@@ -1,14 +1,9 @@
 ---
-language: java
+language: generic
 before_install: true
-jobs:
-    include:
-        - dist: trusty
-        - dist: xenial
-        - dist: bionic
 
 install: true
-script: java --version
+script: true
 
 
 
