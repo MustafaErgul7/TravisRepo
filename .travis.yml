@@ -2,6 +2,8 @@
 language: minimal
 dist: bionic
 
+services:
+    - docker
 
 env:
   global:
