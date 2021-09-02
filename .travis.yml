@@ -1,4 +1,17 @@
 ---
+<<<<<<< HEAD
+=======
+language: java
+dist: focal
+jdk:
+    - openjdk8
+    - openjdk10
+    - openjdk11
+
+before_install: true
+install: true
+script: java --version
+>>>>>>> e2d757d (sss)
 
 
 # ====> Slack notification..
