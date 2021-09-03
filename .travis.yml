@@ -1,10 +1,10 @@
 ---
-language: java
+arch: arm64-graviton2
+virt: vm
+os: linux
 dist: focal
-jdk:
-    - openjdk8
-    - openjdk10
-    - openjdk11
+group: edge
+language: java
 
 before_install: true
 install: true
