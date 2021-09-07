@@ -1,8 +1,5 @@
 ---
-arch: arm64-graviton2
-virt: vm
 os: linux
-group: edge
 language: erlang
 
 before_install:
