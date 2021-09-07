@@ -1,5 +1,7 @@
 ---
 os: linux
+otp_release:
+  - "23.0.2"
 language: erlang
 
 before_install:
