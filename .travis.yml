@@ -6,7 +6,8 @@ dist: focal
 group: edge
 language: java
 
-before_install: true
+before_install:
+    - systemctl unmask epmd.socket
 install: true
 script: java --version
 
