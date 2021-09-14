@@ -3,26 +3,29 @@ os: linux
 dist: focal
 jobs:
   include:
-    - language: cpp
-      script:
-        - "./ci/travis/run1_language_cpp.sh"
-  - language: node_js
-    node_js: '14'
-    script:
+    -
+        language: cpp
+        script:
+            - "./ci/travis/run1_language_cpp.sh"
+    -
+        language: node_js
+        node_js: '14'
+        script:
         - "./ci/travis/run2_language_node_js.sh"
         - node -v
-  - language: python
-    python: '3.7'
-    install:
-        - pip3 install websocket-client
-        - pip3 install requests
-        - pip3 install pylint
-        - pip3 install pytest
-        - pip3 install docker
-        - pip3 install pytest-env
-        - pip3 install sea5kg_cpplint
-    script:
-        - "./ci/travis/run3_language_python.sh"
+    -
+        language: python
+        python: '3.7'
+        install:
+            - pip3 install websocket-client
+            - pip3 install requests
+            - pip3 install pylint
+            - pip3 install pytest
+            - pip3 install docker
+            - pip3 install pytest-env
+            - pip3 install sea5kg_cpplint
+        script:
+            - "./ci/travis/run3_language_python.sh"
 
 
 # ====> Slack notification..
