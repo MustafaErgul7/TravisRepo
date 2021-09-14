@@ -1,7 +1,6 @@
 ---
-language: ruby
-os:
-    - linux
+os: linux
+dist: focal
 jobs:
   include:
     - language: cpp
