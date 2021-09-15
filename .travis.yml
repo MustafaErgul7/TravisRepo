@@ -1,35 +1,32 @@
 ---
-dist: focal
-os: linux
-language: ruby
-sudo: required
+after_success: skip
 arch: s390x
-
-services:
-  - docker
-
+before_install: skip
+dist: focal
+install: skip
 jobs:
   include:
-       -
-       name: "Python 3.7 on linux s390x"
-       os: linux
-       arch: s390x
-       language: python
-       python: 3.7
-       before_install:
-           - hostnamectl
-           - python --version
-           - docker --version
-       install: skip
-       before_script: skip
-       script: skip
-       env:
-           - LIB_PATH="/usr/bin/shared/x86_64/v1"
-
-before_install: skip
-install: skip
+    -
+      arch: s390x
+      before_install:
+        - hostnamectl
+        - "python --version"
+        - "docker --version"
+      before_script: skip
+      env:
+        - LIB_PATH="/usr/bin/shared/x86_64/v1"
+      install: skip
+      language: python
+      name: "Python 3.7 on linux s390x"
+      os: linux
+      python: 3.7
+      script: skip
+language: ruby
+os: linux
 script: skip
-after_success: skip
+services:
+  - docker
+sudo: required
 
 # ====> Slack notification..
 notifications:
