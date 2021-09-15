@@ -14,7 +14,7 @@ script:
     - brew --prefix beanstalk
 
 install: true
-before_install: true
+before_install: brew update
 
 # ====> Slack notification..
 notifications:
