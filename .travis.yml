@@ -10,20 +10,21 @@ services:
 
 jobs:
   include:
-       - name: "Python 3.7 on linux s390x"
+       -
+       name: "Python 3.7 on linux s390x"
        os: linux
        arch: s390x
        language: python
        python: 3.7
        before_install:
-       - hostnamectl
-       - python --version
-       - docker --version
+           - hostnamectl
+           - python --version
+           - docker --version
        install: skip
        before_script: skip
        script: skip
        env:
-       - LIB_PATH="/usr/bin/shared/x86_64/v1"
+           - LIB_PATH="/usr/bin/shared/x86_64/v1"
 
 before_install: skip
 install: skip
