@@ -9,6 +9,7 @@ script:
     - brew help
     - brew config
     - brew --prefix
+    - sysctl -a | grep brand
 
 install: true
 before_install: true
