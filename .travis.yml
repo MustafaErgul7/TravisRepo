@@ -1,31 +1,19 @@
 ---
-after_success: skip
-arch: s390x
-before_install: skip
-dist: focal
-install: skip
-jobs:
-  include:
-    -
-      arch: s390x
-      before_install:
-        - hostnamectl
-        - "python --version"
-        - "docker --version"
-      before_script: skip
-      env:
-        - LIB_PATH="/usr/bin/shared/x86_64/v1"
-      install: skip
-      language: python
-      name: "Python 3.7 on linux s390x"
-      os: linux
-      python: 3.7
-      script: skip
-language: generic
-script: skip
-services:
-  - docker
-sudo: required
+os: osx
+osx_image: xcode12.5
+addons:
+    homebrew:
+        packages:
+            - beanstalk
+            - wget
+script:
+    - brew help
+    - brew config
+    - brew --prefix wget
+    - brew --prefix beanstalk
+
+install: true
+before_install: true
 
 # ====> Slack notification..
 notifications:
