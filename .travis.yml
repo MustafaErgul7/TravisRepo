@@ -5,18 +5,13 @@ language: ruby
 ruby: 2.5.9
 addons:
     homebrew:
-        packages:
-            - beanstalk
-            - wget
 script:
     - brew help
     - brew config
     - brew --prefix
-    - brew --prefix wget
-    - brew --prefix beanstalk
 
 install: true
-before_install: brew update
+before_install: true
 
 # ====> Slack notification..
 notifications:
