@@ -2,7 +2,7 @@
 os: osx
 osx_image: xcode12.5
 language: ruby
-ruby: 2.5.1
+ruby: 2.5.9
 addons:
     homebrew:
         packages:
