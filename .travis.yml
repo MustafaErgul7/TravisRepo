@@ -8,7 +8,6 @@ addons:
         packages:
             - beanstalk
             - wget
-    update: true
 script:
     - brew help
     - brew config
