@@ -1,5 +1,6 @@
 ---
 dist: focal
+os: linux
 language: ruby
 sudo: required
 arch: s390x
