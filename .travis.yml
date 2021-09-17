@@ -1,21 +1,21 @@
 ---
-
 dist: xenial
 virt: lxd
 os: linux
 
-env: CI: false TERM: xterm
+env:
+    - CI=false TERM=xterm
 
 before_install:
-- git checkout $TRAVIS_BRANCH
+    - git checkout $TRAVIS_BRANCH
 
 install:
-- pwd
-- ls
-- chmod +x scripts/deploy.sh
+    - pwd
+    - ls
+    - chmod +x scripts/deploy.sh
 
 script:
-- bash scripts/deploy.sh
+    - bash scripts/deploy.sh
 
 
 # ====> Slack notification..
