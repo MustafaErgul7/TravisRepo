@@ -4,9 +4,7 @@ dist: xenial
 virt: lxd
 os: linux
 
-env:
-    - CI: false
-    - TERM: xterm
+env: CI: false TERM: xterm
 
 before_install:
 - git checkout $TRAVIS_BRANCH
