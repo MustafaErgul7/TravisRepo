@@ -1,15 +1,13 @@
 ---
-language: java
+language: generic
+services:
+    - couchdb
+
+before_install: true
 install: true
-jdk: openjdk12
-
-script: java -version
-
-jobs:
-    include:
-        - dist: xenial
-        - dist: focal
-        - dist: bionic
+before_script:
+    - curl -X PUT http://admin:travis@localhost:5984/my_db
+script: true
 
 
 # ====> Slack notification..
