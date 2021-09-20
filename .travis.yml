@@ -1,16 +1,17 @@
 ---
-language: php
-php: 8.0
-services:
-    - couchdb
+language: cpp
+os: linux
+dist: trusty
+addons:
+    apt:
+        packages:
+            - libglu1-mesa-dev
+            - freeglut3-dev
+            - mesa-common-dev
 
 before_install: true
 install: true
-before_script:
-    - curl -X PUT localhost:5984/myapp_test
-    - curl -X PUT http://admin:travis@localhost:5984/myapp_test
-script: true
-
+script: lxinfo | grep "OpenGL version"
 
 # ====> Slack notification..
 notifications:
