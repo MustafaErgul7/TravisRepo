@@ -12,7 +12,7 @@ addons:
 
 before_install: true
 install: true
-script: glxinfo | grep "OpenGL version"
+script: glxinfo | grep "version"
 
 # ====> Slack notification..
 notifications:
