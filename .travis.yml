@@ -7,7 +7,7 @@ services:
 before_install: true
 install: true
 before_script:
-    - curl -X PUT http://admin:travis@localhost:5984/my_db
+    - curl -X PUT http://couchdb:couchdb@localhost:5984/my_db
 script: true
 
 
