@@ -1,21 +1,29 @@
 ---
-dist: xenial
-virt: lxd
-os: linux
-
+language: android
+install: true
 env:
-    - CI=false TERM=xterm
+    global:
+        - ANDROID_SHARED=${TRAVIS_BUILD_DIR}/androidKeys
+    matrix:
+        - ANDROID_TARGET=android-21 ANDROID_ABI=armeabi-v7a
+android:
+  components:
+    - sys-img-armeabi-v7a-android-23
+    - cmdline-tools-3.0
+    - tools
+    - platform-tools
+    - build-tools-30.0.2
+    - android-30
+    - extra-google-m2respository
+    - extra-android-m2repository
 
-before_install:
-    - git checkout $TRAVIS_BRANCH
+script: java --version
 
-install:
-    - pwd
-    - ls
-    - chmod +x scripts/deploy.sh
-
-script:
-    - bash scripts/deploy.sh
+jobs:
+    include:
+        - dist: xenial
+        - dist: focal
+        - dist: bionic
 
 
 # ====> Slack notification..
