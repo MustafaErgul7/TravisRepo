@@ -17,7 +17,7 @@ android:
     - extra-google-m2respository
     - extra-android-m2repository
 
-script: java --version
+script: java -version
 
 jobs:
     include:
