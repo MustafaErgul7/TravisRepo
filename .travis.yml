@@ -1,18 +1,11 @@
 ---
-language: cpp
+language: php
 os: linux
-dist: trusty
-addons:
-    apt:
-        packages:
-            - mesa-utils
-            - libglu1-mesa-dev
-            - freeglut3-dev
-            - mesa-common-dev
+php: 7.4.22
 
 before_install: true
 install: true
-script: glxinfo | grep "version"
+script: php --version
 
 # ====> Slack notification..
 notifications:
