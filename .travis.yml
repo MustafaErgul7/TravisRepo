@@ -1,7 +1,8 @@
 ---
 language: php
 os: linux
-php: 7.4.22
+dist: focal
+php: "7.4.22"
 
 before_install: true
 install: true
