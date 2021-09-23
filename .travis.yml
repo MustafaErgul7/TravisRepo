@@ -1,6 +1,5 @@
 ---
 os: linux
-dist: bionic
 language: php
 
 services:
@@ -12,8 +11,6 @@ php:
   - nightly
 jobs:
   fast_finish: true
-  allow_failures:
-    - php: nightly
 
 install: true
 script: true
