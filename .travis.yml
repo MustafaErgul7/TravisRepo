@@ -1,12 +1,28 @@
 ---
-language: php
 os: linux
-dist: focal
-php: "7.4.22"
+dist: bionic
+language: php
 
-before_install: true
+services:
+  - memcached
+  - redis
+  - mongodb
+  - docker
+  - couchdb
+
+php:
+  - 8.0
+  # - 8.1 # Uncomment this when 8.1 will be released
+  - nightly
+jobs:
+  fast_finish: true
+  allow_failures:
+    - php: nightly
+
 install: true
-script: php --version
+script: true
+
+
 
 # ====> Slack notification..
 notifications:
