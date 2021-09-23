@@ -4,11 +4,11 @@ dist: bionic
 language: php
 
 services:
+  - couchdb
   - memcached
   - redis
   - mongodb
   - docker
-  - couchdb
 
 php:
   - 8.0
