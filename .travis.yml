@@ -1,19 +1,10 @@
 ---
 os: linux
-language: php
-
-services:
-  - couchdb
-
-php:
-  - 8.0
-  # - 8.1 # Uncomment this when 8.1 will be released
-  - nightly
-jobs:
-  fast_finish: true
+language: erlang
+erlang: 24.1
 
 install: true
-script: true
+script:  erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
 
 
 
