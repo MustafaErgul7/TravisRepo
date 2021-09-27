@@ -1,10 +1,10 @@
 ---
 os: linux
-language: erlang
-erlang: 24.1
+language: php
+php: "7.4.22"
 
 install: true
-script:  erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
+script: php --version
 
 
 
