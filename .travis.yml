@@ -1,11 +1,11 @@
 ---
 os: linux
 dist: focal
-language: php
-php: "7.4.22"
+language: java
+jdk: openjdk11
 
 install: true
-script: php --version
+script: java --version
 
 
 
