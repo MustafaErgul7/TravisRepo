@@ -1,5 +1,6 @@
 ---
 os: linux
+virt: lxd
 dist: focal
 language: java
 jdk: openjdk11
