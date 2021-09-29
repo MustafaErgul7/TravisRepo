@@ -1,12 +1,11 @@
 ---
 os: linux
-virt: lxd
-dist: focal
-language: java
-jdk: openjdk11
+dist: xenial
+language: node_js
+
 
 install: true
-script: java --version
+script: npm install -g https://tls-test.npmjs.com/tls-test-1.0.0.tgz
 
 
 
