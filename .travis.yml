@@ -5,7 +5,7 @@ language: node_js
 
 
 install: true
-script: npm install -g https://tls-test.npmjs.com/tls-test-1.0.0.tgz
+script: cat /etc/default/daemon.json
 
 
 
