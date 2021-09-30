@@ -1,13 +1,17 @@
 ---
-os: linux
-dist: xenial
 language: node_js
+addon:
+    rethinkdb: '2.3'
 
-before_install: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
 install: true
-script: cat /etc/default/daemon.json
+script: true
 
+jobs:
+    include:
+        - dist: xenial
+        - dist: bionic
+        - dist: focal
 
 
 # ====> Slack notification..
