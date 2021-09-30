@@ -1,7 +1,9 @@
 ---
 language: node_js
-addon:
-    rethinkdb: '2.3'
+
+before_install:
+    - wget https://download.rethinkdb.com/repository/raw/dist/rethinkdb-2.4.1.tgz
+    - tar xf rethinkdb-2.4.1.tgz
 
 
 install: true
