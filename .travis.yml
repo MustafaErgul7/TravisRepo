@@ -3,6 +3,7 @@ os: linux
 dist: xenial
 language: node_js
 
+before_install: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
 install: true
 script: cat /etc/default/daemon.json
