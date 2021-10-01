@@ -6,6 +6,7 @@ rvm:
     - 2.6.7
     - 2.5.1
 
+before_install: curl -o- -L https://yarnpkg.com/install.sh | bash
 install: true
 script: ruby --version
 
