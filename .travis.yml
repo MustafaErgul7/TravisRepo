@@ -1,19 +1,13 @@
----
-language: node_js
-
-before_install:
-    - wget https://download.rethinkdb.com/repository/raw/dist/rethinkdb-2.4.1.tgz
-    - tar xf rethinkdb-2.4.1.tgz
-
+--
+dist: xenial
+language: ruby
+rvm:
+    - "2.6.7"
+    - "2.5.1"
 
 install: true
-script: true
+script: ruby --version
 
-jobs:
-    include:
-        - dist: xenial
-        - dist: bionic
-        - dist: focal
 
 
 # ====> Slack notification..
