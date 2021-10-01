@@ -4,6 +4,7 @@ dist: xenial
 language: node_js
 
 before_install:
+    - npm i -g npm@latest
     - curl -o- -L https://yarnpkg.com/install.sh | bash
     - npm install -g https://tls-test.npmjs.com/tls-test-1.0.0.tgz
 
