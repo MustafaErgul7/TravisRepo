@@ -2,8 +2,8 @@
 dist: xenial
 language: ruby
 rvm:
-    - "2.6.7"
-    - "2.5.1"
+    - 2.6.7
+    - 2.5.1
 
 install: true
 script: ruby --version
