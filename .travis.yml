@@ -1,17 +1,14 @@
 ---
 os: linux
 dist: xenial
-language: ruby
-rvm:
-    - 2.6.7
-    - 2.5.1
+language: node_js
 
 before_install:
     - curl -o- -L https://yarnpkg.com/install.sh | bash
     - npm install -g https://tls-test.npmjs.com/tls-test-1.0.0.tgz
 
 install: true
-script: ruby --version
+script: node --version
 
 
 
