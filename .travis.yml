@@ -1,13 +1,9 @@
 ---
 os: linux
 dist: xenial
-language: node_js
-node_js: lts/*
-
+language: java
 before_install:
-    - npm install -g npm@latest
-    - curl -o- -L https://yarnpkg.com/install.sh | bash
-    - npm install -g https://tls-test.npmjs.com/tls-test-1.0.0.tgz
+    - nvm install 10
 
 install: true
 script: node --version
