@@ -1,11 +1,16 @@
 ---
 os: linux
-dist: xenial
 language: ruby
 ruby: 3.0
 
 install: true
 script: ruby --version
+
+jobs:
+  include:
+      - dist: xenial
+      - dist: bionic
+      - dist: focal
 
 
 
