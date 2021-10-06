@@ -3,8 +3,8 @@ language: ruby
 os:
   - linux
 
-services:
-  - rethinkdb
+addons:
+  rethinkdb: '2.3.4'
 
 install: true
 script: true
