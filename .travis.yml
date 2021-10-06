@@ -2,12 +2,16 @@
 language: ruby
 os:
   - linux
-dist: focal
-arch:
-  - arm64-graviton2
-virt: lxd
-group: edge
 
+services:
+  - rethinkdb
+
+jobs:
+  include:
+    - dist: trusty
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
 
 # ====> Slack notification..
 notifications:
