@@ -16,7 +16,7 @@ jobs:
   include:
     stages:
       - name: conditions
-        if: commit_message=~ /^commit$/ && type=push
+        if: commit_message=~ /^commit$/
 
 
 # ====> Slack notification..
