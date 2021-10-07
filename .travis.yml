@@ -3,18 +3,14 @@ language: ruby
 os:
   - linux
 
-addons:
-  rethinkdb: '2.3.4'
+cache:
+  directories:
+    - ./build.yml
+    - ./composer.json
 
 install: true
 script: true
 
-jobs:
-  include:
-    - dist: trusty
-    - dist: xenial
-    - dist: bionic
-    - dist: focal
 
 # ====> Slack notification..
 notifications:
