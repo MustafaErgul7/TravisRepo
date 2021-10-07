@@ -8,16 +8,9 @@ cache:
     - ./build.yml
     - ./composer.json
 
+before_install: echo "before_install here!"
 install: true
-script:
-  - echo $TRAVIS_COMMIT_MESSAGE
-  - echo env(TRAVIS_COMMIT_MESSAGE)
-
-jobs:
-  include:
-    stages:
-      - name: conditions
-        if: $TRAVIS_COMMIT_MESSAGE)=~ /^commit$/
+script: true
 
 
 # ====> Slack notification..
