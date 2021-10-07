@@ -13,6 +13,11 @@ script: true
 after_script: echo "Read cache!"
 
 
+stages:
+  - name: conditions
+    if: commit_message=~ /^commit$/
+
+
 # ====> Slack notification..
 notifications:
     slack:
