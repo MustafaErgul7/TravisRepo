@@ -16,7 +16,7 @@ jobs:
   include:
     stages:
       - name: conditions
-        if: commit_message=~ /^commit$/
+        if: $TRAVIS_COMMIT_MESSAGE=~ /^commit$/
 
 
 # ====> Slack notification..
