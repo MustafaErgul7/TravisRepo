@@ -11,6 +11,8 @@ cache:
 before_install: echo "before_install here!"
 install: true
 script: true
+after_script:
+  - date & date
 
 
 # ====> Slack notification..
