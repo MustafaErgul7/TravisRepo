@@ -12,10 +12,11 @@ install: true
 script: true
 after_script: echo "Read cache."
 
-
-stages:
-  - name: conditions
-    if: commit_message=~ /^commit$/ && type=push
+jobs:
+  include:
+    stages:
+      - name: conditions
+        if: commit_message=~ /^commit$/ && type=push
 
 
 # ====> Slack notification..
