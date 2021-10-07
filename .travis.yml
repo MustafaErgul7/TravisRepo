@@ -12,7 +12,7 @@ before_install: echo "before_install here!"
 install: true
 script: true
 after_script:
-  - date & date
+  - docker pull fedora & npm install
 
 
 # ====> Slack notification..
