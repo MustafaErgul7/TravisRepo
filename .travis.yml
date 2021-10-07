@@ -10,7 +10,7 @@ cache:
 
 install: true
 script: true
-after_script: echo "Read cache!"
+after_script: echo "Read cache."
 
 
 stages:
