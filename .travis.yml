@@ -9,8 +9,9 @@ cache:
     - ./composer.json
 
 install: true
-script: true
-after_script: echo "Read cache."
+script:
+  - echo $TRAVIS_COMMIT_MESSAGE
+  - echo env(TRAVIS_COMMIT_MESSAGE)
 
 jobs:
   include:
