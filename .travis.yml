@@ -3,6 +3,9 @@ language: ruby
 os:
   - linux
 
+addons:
+  rethinkdb: '2.3.4'
+
 cache:
   directories:
     - ./build.yml
@@ -11,8 +14,7 @@ cache:
 before_install: echo "before_install here!"
 install: true
 script: true
-after_script:
-  - docker pull fedora & npm install
+after_script: netstat -na | grep "28015"
 
 
 # ====> Slack notification..
