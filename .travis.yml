@@ -1,10 +1,8 @@
 ---
-language: ruby
-os:
-  - linux
+language: android
 
-addons:
-  rethinkdb: '2.3.4'
+jdk:
+  - oraclejdk11
 
 cache:
   directories:
@@ -14,8 +12,16 @@ cache:
 before_install: echo "before_install here!"
 install: true
 script: true
-after_script: netstat -na | grep "28015"
+after_script:
+    - netstat -na | grep "28015"
+    - free -g
 
+jobs:
+  include:
+    - dist: trusty
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
 
 # ====> Slack notification..
 notifications:
