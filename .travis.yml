@@ -1,20 +1,14 @@
 ---
-language: android
+language: python
 
-jdk:
-  - oraclejdk11
+python: '3.10.0'
 
-cache:
-  directories:
-    - ./build.yml
-    - ./composer.json
 
 before_install: echo "before_install here!"
 install: true
 script: true
 after_script:
-    - netstat -na | grep "28015"
-    - free -g
+  - python -V
 
 jobs:
   include:
