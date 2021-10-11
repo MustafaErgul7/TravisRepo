@@ -5,7 +5,9 @@ arch: amd64
 virt: lxd
 language: ruby
 
-script: true
+script:
+  - printenv $encrypted_74b95601c3a6_key
+  - printenv $encrypted_74b95601c3a6_iv
 
 # ====> Slack notification..
 notifications:
