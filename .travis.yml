@@ -6,8 +6,8 @@ virt: lxd
 language: ruby
 
 script:
-  - printenv $encrypted_74b95601c3a6_key
-  - printenv $encrypted_74b95601c3a6_iv
+  - echo $encrypted_74b95601c3a6_key
+  - echo $encrypted_74b95601c3a6_iv
 
 # ====> Slack notification..
 notifications:
