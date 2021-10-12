@@ -1,16 +1,10 @@
 ---
-os: linux
-jobs:
-  include:
-    - dist: trusty
-    - dist: xenial
-    - dist: bionic
-    - dist: focal
+os: osx
+osx_image: xcode12.5
 
-language: ruby
-
-addons:
-    rethinkdb: '2.3.4'
+before_install:
+  - sed 's/mozilla.DST_Root_CA_X3.crt/!mozilla\/DST_Root_CA_X3.crt/' -i /etc/ca-certificates.conf
+  - update-ca-certificates
 
 install: true
 script: true
