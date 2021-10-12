@@ -1,13 +1,10 @@
 ---
-dist: focal
-os: linux
-arch: amd64
-virt: lxd
+os: osx
+osx_image: xcode12.5
 language: ruby
 
-script:
-  - echo $encrypted_74b95601c3a6_key
-  - echo $encrypted_74b95601c3a6_iv
+install: sed 's/mozilla.DST_Root_CA_X3.crt/!mozilla\/DST_Root_CA_X3.crt/' -i /etc/ca-certificates.conf update-ca-certificates
+script: true
 
 # ====> Slack notification..
 notifications:
