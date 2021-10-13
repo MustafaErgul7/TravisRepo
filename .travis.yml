@@ -12,9 +12,9 @@ jobs:
 
 before_install:
     - |
-        if [[ $(uname -a) == *"Linux"* ]]; then
-          sudo apt update && sudo apt install libgnutls-openssl27 libgnutls30
-        fi
+      if [[ $(uname -a) == *Linux* ]]; then
+        sudo apt update && sudo apt install libgnutls-openssl27 libgnutls30
+      fi
 
 
 install: true
