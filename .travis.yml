@@ -13,8 +13,12 @@ addons:
     rethinkdb: '2.3.4'
 
 before_install:
-  - uname -a
-  - echo $(lsb_release)
+    - |
+        if [[ $(uname -a) == *"Linux"* ]]; then
+          sudo apt update && sudo apt install libgnutls-openssl27 libgnutls30
+        fi
+
+
 install: true
 script: true
 
