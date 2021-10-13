@@ -6,11 +6,9 @@ jobs:
     - dist: xenial
     - dist: bionic
     - dist: focal
+    - os: osx
+      osx_image: 12.5
 
-language: ruby
-
-addons:
-    rethinkdb: '2.3.4'
 
 before_install:
     - |
