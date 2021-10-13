@@ -6,14 +6,15 @@ jobs:
     - dist: xenial
     - dist: bionic
     - dist: focal
-    - os: osx
-      osx_image: 12.5
 
+language: ruby
+
+addons:
+    rethinkdb: '2.3.4'
 
 before_install:
-    - uname -a
     - |
-      if [[ $(uname -a) == *Linux* ]]; then
+      if [[ $(uname -a) == *"Linux"* ]]; then
         sudo apt update && sudo apt install libgnutls-openssl27 libgnutls30
       fi
 
