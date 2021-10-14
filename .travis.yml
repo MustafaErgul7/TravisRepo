@@ -9,8 +9,6 @@ jobs:
 
 language: ruby
 
-addons:
-    rethinkdb: '2.3.4'
 
 before_install:
     - uname -a
