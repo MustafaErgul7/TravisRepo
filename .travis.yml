@@ -14,8 +14,9 @@ addons:
 
 before_install:
     - uname -a
+    - exit 1
     - |
-      if [[ $(uname -a) == *"Linux"* ]]; then
+      if [[ $(uname -a) == *Linux* ]]; then
         sudo apt update && sudo apt install libgnutls-openssl27 libgnutls30
       fi
 
