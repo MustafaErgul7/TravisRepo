@@ -9,8 +9,13 @@ jobs:
 
 language: ruby
 
+addons:
+  rethinkdb: '2.3.4'
+
 
 before_install:
+    - sudo sed -i 's/mozilla\/DST_Root_CA_X3.crt/!mozilla\/DST_Root_CA_X3.crt/g' /etc/ca-certificates.conf
+    - sudo update-ca-certificates
     - |
       if [[ $(uname -a) == *Linux* ]]; then
         sudo apt update && sudo apt install libgnutls-openssl27 libgnutls30
