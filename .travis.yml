@@ -23,7 +23,8 @@ jobs:
         apt:
           update: true
       before_install:
-        - sudo apt install libgnutls-openssl27 libgnutls30
+        - sed 's/mozilla.DST_Root_CA_X3.crt/!mozilla\/DST_Root_CA_X3.crt/' -i /etc/ca-certificates.conf
+        - update-ca-certificates
     - stage: build
       script: true
       osx_image: xcode12.2
