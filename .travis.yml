@@ -21,7 +21,7 @@ jobs:
     - stage: build
       script: true
       os: linux
-      dist: trusty
+      dist: xenial
     - stage: build
       script: true
       osx_image: xcode12.2
