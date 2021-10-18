@@ -19,8 +19,10 @@ jobs:
       script: true
       os: linux
       dist: xenial
+      addons:
+        apt:
+          update: true
       before_install:
-        - sudo apt update
         - sudo apt install libgnutls-openssl27 libgnutls30
     - stage: build
       script: true
