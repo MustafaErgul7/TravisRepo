@@ -11,9 +11,6 @@ branches:
   only:
     - master
 
-before_install:
-  - sudo apt update
-  - sudo apt install libgnutls-openssl27 libgnutls30
 jobs:
   allow_failures:
     - os: osx
@@ -22,6 +19,9 @@ jobs:
       script: true
       os: linux
       dist: xenial
+      before_install:
+        - sudo apt update
+        - sudo apt install libgnutls-openssl27 libgnutls30
     - stage: build
       script: true
       osx_image: xcode12.2
