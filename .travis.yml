@@ -26,10 +26,10 @@ jobs:
       script: true
       osx_image: xcode12.2
       os: osx
-  after_success:
-    - echo "Build and tests successful."
-  after_failure:
-    - echo "Build and tests failed."
+after_success:
+  - echo "Build and tests successful."
+after_failure:
+  - echo "Build and tests failed."
 
 # ====> Slack notification..
 notifications:
