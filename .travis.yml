@@ -13,7 +13,7 @@ branches:
 
 import:
   source: ./deploy.yml
-if: env(fowo) is present
+if: env(fowoa) is present
 jobs:
   allow_failures:
     - os: osx
