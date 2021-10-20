@@ -11,9 +11,6 @@ branches:
   only:
     - master
 
-import:
-  source: ./deploy.yml
-if: env(fowoa) is present
 jobs:
   allow_failures:
     - os: osx
@@ -33,7 +30,9 @@ jobs:
       osx_image: xcode12.2
       os: osx
     - stage: import_test
-      script: echo "hey"
+      import:
+        source: ./deploy.yml
+      if: env(fowoa) is present
 after_success:
   - echo "Build and tests successful."
 after_failure:
