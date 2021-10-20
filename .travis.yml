@@ -29,9 +29,10 @@ jobs:
       script: true
       osx_image: xcode12.2
       os: osx
-    - stage: import_test
+    -
+      stage: import_test
       import:
-        - deploy.yml
+        source: deploy.yml
       if: env(fowo) is present
 after_success:
   - echo "Build and tests successful."
