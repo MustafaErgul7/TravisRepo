@@ -32,7 +32,7 @@ jobs:
     - stage: import_test
       import:
         - deploy.yml
-      if: env(fowoa) is present
+      if: env(fowo) is present
 after_success:
   - echo "Build and tests successful."
 after_failure:
