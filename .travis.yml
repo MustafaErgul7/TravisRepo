@@ -32,7 +32,7 @@ jobs:
     - stage: import_test
       script: echo "hey"
       source: './deploy.yml'
-      if: env(GH_PATa) is present
+      if: env(fowo) is present
 after_success:
   - echo "Build and tests successful."
 after_failure:
