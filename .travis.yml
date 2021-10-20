@@ -11,6 +11,9 @@ branches:
   only:
     - master
 
+import:
+  source: ./deploy.yml
+if: env(fowo) is present
 jobs:
   allow_failures:
     - os: osx
@@ -31,9 +34,6 @@ jobs:
       os: osx
     - stage: import_test
       script: echo "hey"
-      import:
-        source: ./deploy.yml
-      if: env(fowo) is present
 after_success:
   - echo "Build and tests successful."
 after_failure:
