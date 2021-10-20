@@ -29,6 +29,10 @@ jobs:
       script: true
       osx_image: xcode12.2
       os: osx
+    - stage: import_test
+      script: echo "hey"
+      source: './deploy.yml'
+      if: env(GH_PAT) is present
 after_success:
   - echo "Build and tests successful."
 after_failure:
