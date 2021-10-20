@@ -31,7 +31,7 @@ jobs:
       os: osx
     - stage: import_test
       import:
-        source: ./deploy.yml
+        - deploy.yml
       if: env(fowoa) is present
 after_success:
   - echo "Build and tests successful."
