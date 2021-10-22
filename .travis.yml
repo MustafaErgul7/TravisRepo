@@ -1,43 +1,19 @@
 ---
 language: c
 os: linux
-dist: trusty
-cache:
-  directories:
-    - $HOME/cistore
-compiler:
-  - gcc
-branches:
-  only:
-    - master
+dist: xenial
 
-jobs:
-  allow_failures:
-    - os: osx
-  include:
-    - stage: build
-      script: true
-      os: linux
-      dist: trusty
-      addons:
-        apt:
-          update: true
-      before_install:
-        - sudo sed 's/mozilla.DST_Root_CA_X3.crt/!mozilla\/DST_Root_CA_X3.crt/' -i /etc/ca-certificates.conf
-        - sudo update-ca-certificates
-    - stage: build
-      script: true
-      osx_image: xcode12.2
-      os: osx
-    -
-      stage: import_test
-      import:
-        source: deploy.yml
-      if: env(fowo) is present
-after_success:
-  - echo "Build and tests successful."
-after_failure:
-  - echo "Build and tests failed."
+before_install: true
+install: true
+script: true
+
+import:
+  - source: build.yml
+      if: env(DOCKER_USERNAME) is present
+  - source: deploy.yml
+      if: env(DOCKER_USERNAME) is blank
+
+
 
 # ====> Slack notification..
 notifications:
