@@ -12,7 +12,7 @@ jobs:
   include:
     - if: env(DP) is present
     - source: deploy.yml
-      if: env(DP) is blank
+      if: env(DP) is present
 
 # ====> Slack notification..
 notifications:
