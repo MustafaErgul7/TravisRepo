@@ -9,9 +9,9 @@ script: true
 
 import:
   - source: build.yml
-      if: env(DOCKER_USERNAME) is present
+    if: env(DOCKER_USERNAME) is present
   - source: deploy.yml
-      if: env(DOCKER_USERNAME) is blank
+    if: env(DOCKER_USERNAME) is blank
 
 
 
