@@ -8,11 +8,16 @@ env:
 before_install: true
 install: true
 
-import:
-  - source: build.yml
+
+stages:
+  - name: import_build
     if: env(DOCKER_PLATFORM) is present
-  - source: deploy.yml
+    import:
+      - source: build.yml
+  - name: import_deploy
     if: env(DOCKER_PLATFORM) is blank
+    import:
+      - source: deploy.yml
 
 # ====> Slack notification..
 notifications:
