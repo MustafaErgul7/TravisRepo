@@ -6,6 +6,8 @@ dist: xenial
 before_install: true
 install: true
 
+if: env(DOCKER_PLATFORM) is present
+
 import:
   - source: build.yml
     if: env(DOCKER_PLATFORM) is present
