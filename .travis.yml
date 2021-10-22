@@ -11,7 +11,7 @@ install: true
 
 import:
   - source: build.yml
-    if: env(GH_TOKEN) is present
+    if: env(GH_TOKEN) is present OR env(DP) is present
 
 # ====> Slack notification..
 notifications:
