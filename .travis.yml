@@ -9,13 +9,17 @@ env:
 
 before_install: true
 install: true
-script: true
 
 import:
   - source: build.yml
     if: env(DOCKER_PLATFORM) is present
   - source: deploy.yml
     if: env(DOCKER_PLATFORM) is blank
+
+jobs:
+  include:
+    - script: echo "first job"
+    - script: echo "second job"
 
 # ====> Slack notification..
 notifications:
