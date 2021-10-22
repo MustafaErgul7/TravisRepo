@@ -16,9 +16,7 @@ env:
   global:
     - DOCKER_PLATFORM='linux/amd64,linux/arm64'
   jobs:
-    include:
-      - script: echo "first job"
-      - script: echo "second job"
+    - DOCKER_PLATFORM='linux/amd64,linux/arm64'
 
 # ====> Slack notification..
 notifications:
