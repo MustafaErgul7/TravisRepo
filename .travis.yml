@@ -3,27 +3,17 @@ language: c
 os: linux
 dist: xenial
 env:
-  - DOCKER_PLATFORM=linux/amd64,linux/arm64
+  global:
+    - DOCKER_PLATFORM=linux/amd64,linux/arm64
 
 before_install: true
 install: true
 
-stages:
-  - name: import_build
-    if: env(DOCKER_PLATFORM) is present
-    import:
-      - source: build.yml
-  - name: import_deploy
-    if: env(DOCKER_PLATFORM) is blank
-    import:
-      - source: deploy.yml
-
-jobs:
-  include:
-    - name: one
-    - stage: import_build
-      import:
-        - source: build.yml
+import:
+  - source: build.yml
+    if: env(DOCKER_USERNAME) is present
+  - source: deploy.yml
+    if: env(DOCKER_USERNAME) is blank
 
 # ====> Slack notification..
 notifications:
