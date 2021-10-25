@@ -9,7 +9,9 @@ before_install: true
 install: true
 
 if: env(GH_PAT) IS present
-source: build.yml
+
+import:
+  - source: build.yml
 
 # ====> Slack notification..
 notifications:
