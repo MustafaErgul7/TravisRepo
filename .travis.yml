@@ -3,7 +3,7 @@ language: c
 os: linux
 dist: xenial
 env:
-  - DP=linux/amd64
+  - DP=linux
 
 before_install: true
 install: true
