@@ -3,21 +3,15 @@ language: c
 os: linux
 dist: xenial
 env:
-  global:
-    - DP=linux/amd64
+  - DP=linux/amd64
 
 before_install: true
 install: true
 
-stage:
-  - name: present
-    if: env(DP) is present
-    import:
-      - source: build.yml
-
 jobs:
   include:
-    - if: env(DP) is present
+    - source: build.yml
+      if: env(DP) is present
     - source: deploy.yml
       if: env(DP) is present
 
