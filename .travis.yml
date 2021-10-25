@@ -8,7 +8,7 @@ env:
 before_install: true
 install: true
 
-if: env(GH_PAT) IS present
+if: env(DP) IS present
 
 import:
   - source: build.yml
