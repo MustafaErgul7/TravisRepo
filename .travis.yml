@@ -10,10 +10,10 @@ install: true
 
 jobs:
   include:
-    - source: build.yml
-      if: env(DP) is present
-    - source: deploy.yml
-      if: env(DP) is present
+    - if: env(DP) is present
+      source: build.yml
+    - if: env(DP) is present
+      source: deploy.yml
 
 # ====> Slack notification..
 notifications:
