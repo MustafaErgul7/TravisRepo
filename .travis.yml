@@ -8,7 +8,7 @@ env:
 before_install: true
 install: true
 
-if: env(DP) is present
+if: env(GH_TOKEN) IS present
 source: build.yml
 
 # ====> Slack notification..
