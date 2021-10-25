@@ -8,12 +8,8 @@ env:
 before_install: true
 install: true
 
-jobs:
-  include:
-    - if: env(DP) is present
-      source: build.yml
-    - if: env(DP) is present
-      source: deploy.yml
+if: env(DP) is present
+source: build.yml
 
 # ====> Slack notification..
 notifications:
