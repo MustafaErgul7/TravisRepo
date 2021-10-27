@@ -3,15 +3,13 @@ language: c
 os: linux
 dist: xenial
 env:
-  - DP=linux
+    - DP=linux
 
 before_install: true
 install: true
 
-if: env(DP) IS present
-
-import:
-  - source: build.yml
+if: env(GH_PAT) IS present
+source: build.yml
 
 # ====> Slack notification..
 notifications:
