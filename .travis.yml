@@ -4,10 +4,14 @@ os:
   - linux
 dist: xenial
 node_js:
-  - '12'
+  - "12"
 
 install: true
 script: gcloud --version
+
+deploy:
+  provider: script
+  script: echo "hey"
 
 # ====> Slack notification..
 notifications:
