@@ -2,7 +2,6 @@
 os: linux
 dist: focal
 arch: arm64
-virt: vm
 language: rust
 
 services:
