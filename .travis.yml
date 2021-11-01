@@ -11,10 +11,10 @@ addons:
     packages:
       - postgresql-12
 env:
-global:
-  - PGUSER=postgres
-  - PGPORT=5432
-  - PGHOST=localhost
+  global:
+    - PGUSER=postgres
+    - PGPORT=5432
+    - PGHOST=localhost
 before_install:
   - sudo sed -i -e '/local.*peer/s/postgres/all/' -e 's/peer\|md5/trust/g' /etc/postgresql/*/main/pg_hba.conf
   - sudo service postgresql restart
