@@ -4,7 +4,10 @@ os: linux
 dist: focal
 node_js: lts/*
 
-before_install: true
+before_install:
+  - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
+  - yarn --version
+
 install: true
 
 # ====> Slack notification..
