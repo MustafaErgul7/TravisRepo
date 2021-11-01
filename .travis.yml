@@ -5,11 +5,8 @@ arch: arm64
 virt: vm
 language: rust
 
-addons:
-  postgresql: "12"
-  apt:
-    packages:
-      - postgresql-12
+services:
+  - postgresql
 env:
   global:
     - PGUSER=postgres
