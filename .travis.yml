@@ -1,15 +1,10 @@
 ---
-language: c
+language: node_js
 os: linux
-dist: xenial
-env:
-    - DP=linux
+dist: focal
 
 before_install: true
 install: true
-
-if: env(GH_PAT) IS present
-source: build.yml
 
 # ====> Slack notification..
 notifications:
