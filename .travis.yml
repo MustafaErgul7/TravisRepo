@@ -1,17 +1,24 @@
 ---
-language: node_js
-os:
-  - linux
-dist: xenial
-node_js:
-  - "12"
+language: objective-c
+osx_image: xcode12.2
 
-install: true
-script: gcloud --version
+before_cache:
+  - brew cleanup
 
-deploy:
-  provider: script
-  script: echo "hey"
+cache:
+  bundler: true
+  cocoapods: true
+  directories:
+    - $HOME/Library/Caches/Homebrew
+    - $HOME/Library/Caches/CocoaPods
+
+before_install:
+  - set -o pipefail
+  - xcodebuild -version
+install:
+  - travis_wait make install
+  - travis_wait make bootstrap
+script: true
 
 # ====> Slack notification..
 notifications:
