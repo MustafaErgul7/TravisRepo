@@ -15,9 +15,6 @@ cache:
 before_install:
   - set -o pipefail
   - xcodebuild -version
-install:
-  - travis_wait make install
-  - travis_wait make bootstrap
 script: true
 
 # ====> Slack notification..
