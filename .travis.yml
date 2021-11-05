@@ -1,26 +1,10 @@
 ---
-language: objective-c
-os: osx
-osx_image: xcode12.2
-
-before_cache:
-  - brew cleanup
-
 addons:
-  homebrew:
-    update: true
-
-cache:
-  bundler: true
-  cocoapods: true
-  directories:
-    - $HOME/Library/Caches/Homebrew
-    - $HOME/Library/Caches/CocoaPods
-
-before_install:
-  - set -o pipefail
-  - xcodebuild -version
+snaps:
+  - name: docker
+    channel: latest/stable
 script: true
+install: true
 
 # ====> Slack notification..
 notifications:
