@@ -5,6 +5,9 @@ addons:
       channel: latest/stable
 script: true
 install: true
+before_install:
+  - sudo rm -rf /etc/docker
+  - sudo snap refresh
 
 # ====> Slack notification..
 notifications:
