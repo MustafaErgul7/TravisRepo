@@ -9,6 +9,9 @@ services:
 before_script:
   - curl -X PUT localhost:5984/myapp_test
 
+script:
+  - curl -X PUT http://admin:travis@localhost:5984/myapp_test
+
 # ====> Slack notification..
 notifications:
   slack:
