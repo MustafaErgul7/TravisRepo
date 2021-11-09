@@ -1,15 +1,13 @@
 ---
 os: linux
 dist: focal
-arch: arm64
-virt: vm
 language: rust
 
 addons:
-  postgresql: "12"
+  postgresql: "13"
   apt:
     packages:
-      - postgresql-12
+      - postgresql-13
 env:
   global:
     - PGUSER=postgres
