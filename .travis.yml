@@ -1,14 +1,8 @@
 ---
 dist: bionic
-addons:
-  snaps:
-    - name: docker
-      channel: latest/stable
+language: scala
 script: true
 install: true
-before_install:
-  - sudo rm -rf /etc/docker
-  - sudo snap refresh
 
 # ====> Slack notification..
 notifications:
