@@ -9,6 +9,7 @@ install: true
 before_script:
   - sudo chown -R couchdb.couchdb /opt/couchdb/
   - sudo systemctl restart couchdb.service
+  - sleep 100
   - curl -X PUT http://admin:travis@localhost:5984/test
 
 # ====> Slack notification..
