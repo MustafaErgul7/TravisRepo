@@ -1,5 +1,5 @@
 ---
-language: php
+language: ruby
 os:
   - linux
 dist: bionic
