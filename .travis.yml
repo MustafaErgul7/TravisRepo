@@ -1,17 +1,34 @@
 ---
 os: linux
-language: rust
+language: scala
+
+jdk:
+  - openjdk11
+
+services:
+  - docker
+  - redis
+
+cache:
+  directories:
+    - "$HOME/.ivy2/cache"
+    - "$HOME/.sbt"
 
 addons:
   postgresql: "13"
   apt:
     packages:
       - postgresql-13
+      - libssl-dev
+      - python3-setuptools
+      - python3-pip
+
 env:
   global:
     - PGUSER=postgres
     - PGPORT=5432
     - PGHOST=localhost
+
 before_install:
   - sudo sed -i -e '/local.*peer/s/postgres/all/' -e 's/peer\|md5/trust/g' /etc/postgresql/*/main/pg_hba.conf
   - sudo service postgresql restart
