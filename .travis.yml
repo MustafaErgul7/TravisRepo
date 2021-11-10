@@ -1,11 +1,7 @@
 ---
 os: linux
-language: c
+language: scala
 dist: bionic
-
-services:
-  - docker
-  - redis
 
 cache:
   directories:
