@@ -7,8 +7,16 @@ services:
   - redis
   - mongodb
   - docker
+cache:
+  directories:
+    - "$HOME/pecl_cache"
+php:
+  - "8.0"
+jobs:
+  fast_finish: true
+  allow_failures:
+    - php: nightly
 
-php: "8.0"
 script: true
 install: true
 before_script:
