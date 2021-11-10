@@ -3,6 +3,10 @@ dist: focal
 language: php
 services:
   - couchdb
+  - memcached
+  - redis
+  - mongodb
+  - docker
 
 php: "8.0"
 script: true
