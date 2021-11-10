@@ -1,9 +1,7 @@
 ---
 os: linux
 language: scala
-
-jdk:
-  - openjdk11
+dist: bionic
 
 services:
   - docker
@@ -37,18 +35,6 @@ before_install:
 
 script:
   - psql -c 'create database travis_ci_test;' -U postgres
-
-jobs:
-  include:
-    - dist: focal
-    - dist: xenial
-      before_install:
-        - sudo sed -i -e "/local.*peer/s/postgres/all/" -e "s/peer\|md5/trust/g" /etc/postgresql/*/main/pg_hba.conf
-        - postgres --version
-      before_script:
-        - psql -c 'create database travis_ci_test;' -Upostgres -p5433
-        - psql -c "SELECT version();" -p5433
-    - dist: bionic
 
 # ====> Slack notification..
 notifications:
