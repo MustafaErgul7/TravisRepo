@@ -1,8 +1,13 @@
 ---
 dist: bionic
-language: scala
+language: ruby
+services:
+  - couchdb
+
 script: true
 install: true
+before_script:
+  - curl -X PUT http://admin:travis@localhost:5984/test
 
 # ====> Slack notification..
 notifications:
