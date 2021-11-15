@@ -3,7 +3,6 @@ language: java
 os:
   - linux
 dist: bionic
-virt: lxd
 jdk:
   - openjdk8
 script: true
