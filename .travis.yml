@@ -1,16 +1,14 @@
 ---
+language: java
+os:
+  - linux
 dist: bionic
-language: c
-services:
-  - couchdb
-
+virt: lxd
+jdk:
+  - openjdk8
 script: true
-install: true
-before_script:
-  #- sudo chown -R couchdb.couchdb /opt/couchdb/
-  - sudo systemctl restart couchdb.service
-  - sleep 10
-  - curl -X PUT http://admin:travis@localhost:5984/test
+
+after_success: true
 
 # ====> Slack notification..
 notifications:
