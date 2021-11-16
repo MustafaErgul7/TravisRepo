@@ -9,8 +9,6 @@ jdk:
   - openjdk8
 script: true
 
-after_success: true
-
 # ====> Slack notification..
 notifications:
   slack:
