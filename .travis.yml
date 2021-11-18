@@ -7,9 +7,6 @@ jdk: openjdk8
 
 script: "mvn clean test -Djacoco.skip=false"
 
-after_success:
-  - curl -Os https://uploader.codecov.io/latest/linux/codecov
-  - chmod +x codecov
 
 # ====> Slack notification..
 notifications:
