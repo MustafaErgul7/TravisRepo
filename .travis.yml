@@ -1,10 +1,28 @@
 ---
-os: osx
-osx_image: xcode13.1
-language: node_js
-
-install: true
-script: true
+language: ruby
+os:
+  - linux
+dist: focal
+rvm:
+  - 3.0.2
+env:
+  global:
+    - PGPORT: "5433"
+services:
+  - postgresql
+addons:
+  postgresql: "13"
+  apt:
+    packages:
+      - postgresql-13
+cache:
+  bundler: true
+before_install:
+  - gem install bundler
+before_script:
+  - RAILS_ENV=test bundle exec rake db:drop db:create db:migrate
+script:
+  - bundle exec rspec
 
 # ====> Slack notification..
 notifications:
