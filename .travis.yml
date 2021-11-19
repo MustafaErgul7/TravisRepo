@@ -1,9 +1,9 @@
 ---
-os: linux
-virt: lxd
-dist: xenial
-language: generic
+os: osx
+osx_image: xcode13.1
+language: node_js
 
+install: true
 script: true
 
 # ====> Slack notification..
