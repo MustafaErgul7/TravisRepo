@@ -1,20 +1,91 @@
 ---
-language: ruby
-group: edge
-rvm:
-  - 3.0.2
+version: ~> 1.0
+dist: focal
+arch: ppc64le
+language: java
 
-services:
-  - postgresql
+addons:
+  apt:
+    packages:
+      - xsltproc
+      - xmlstarlet
 
-cache:
-  - bundler
+install: true
 
-before_install:
-  - gem install bundler
+jobs:
+  fast_finish: true
+  include:
+    - jdk: openjdk8
+      env:
+        - DESC="tests and deploy"
+        - CMD="mvn -e --no-transfer-progress clean integration-test failsafe:verify
+          -DargLine='-Xms1024m -Xmx2048m'"
+        - DEPLOY="true"
+        - USE_MAVEN_REPO="true"
 
-before_script:
-  - RAILS_ENV=test bundle exec rake db:drop db:create db:migrate
+    - jdk: openjdk8
+      env:
+        - DESC="NoErrorTest - Postgresql JDBC Driver"
+        - CMD1="mvn -e --no-transfer-progress clean install -Pno-validations"
+        - CMD2="./.ci/wercker.sh no-error-pgjdbc"
+        - CMD="$CMD1 && $CMD2"
+        - USE_MAVEN_REPO="true"
+
+    - jdk: openjdk8
+      env:
+        - DESC="NoErrorTest - Orekit"
+        - CMD1="mvn -e --no-transfer-progress clean install -Pno-validations"
+        - CMD2="./.ci/wercker.sh no-error-orekit"
+        - CMD="$CMD1 && $CMD2"
+        - USE_MAVEN_REPO="true"
+
+    - jdk: openjdk8
+      env:
+        - DESC="NoErrorTest - Hibernate Search"
+        - CMD1="mvn -e --no-transfer-progress clean install -Pno-validations"
+        - CMD2="./.ci/wercker.sh no-error-hibernate-search"
+        - CMD="$CMD1 && $CMD2"
+        - USE_MAVEN_REPO="true"
+
+    - jdk: openjdk8
+      env:
+        - DESC="NoErrorTest - sevntu-checks"
+        - CMD1="mvn -e --no-transfer-progress clean install -Pno-validations"
+        - CMD2="./.ci/wercker.sh no-error-sevntu-checks"
+        - CMD="$CMD1 && $CMD2"
+        - USE_MAVEN_REPO="true"
+
+    - jdk: openjdk8
+      env:
+        - DESC="NoErrorTest - contribution"
+        - CMD1="mvn -e --no-transfer-progress clean install -Pno-validations"
+        - CMD2="./.ci/wercker.sh no-error-contribution"
+        - CMD="$CMD1 && $CMD2"
+        - USE_MAVEN_REPO="true"
+
+    - jdk: openjdk8
+      env:
+        - DESC="NoErrorTest - methods distance"
+        - CMD1="mvn -e --no-transfer-progress clean install -Pno-validations"
+        - CMD2="./.ci/wercker.sh no-error-methods-distance"
+        - CMD="$CMD1 && $CMD2"
+        - USE_MAVEN_REPO="true"
+
+    - jdk: openjdk8
+      env:
+        - DESC="NoErrorTest - Spring Cloud GCP"
+        - CMD1="mvn -e --no-transfer-progress clean install -Pno-validations"
+        - CMD2="./.ci/wercker.sh no-error-spring-cloud-gcp"
+        - CMD="$CMD1 && $CMD2"
+        - USE_MAVEN_REPO="true"
+
+    - jdk: openjdk8
+      env:
+        - DESC="NoErrorTest - EqualsVerifier"
+        - CMD1="mvn -e --no-transfer-progress clean install -Pno-validations"
+        - CMD2="./.ci/wercker.sh no-error-equalsverifier"
+        - CMD="$CMD1 && $CMD2"
+        - USE_MAVEN_REPO="true"
 
 script: true
 
