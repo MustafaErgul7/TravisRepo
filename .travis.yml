@@ -2,6 +2,7 @@
 version: ~> 1.0
 dist: focal
 arch: ppc64le
+virt: lxd
 language: java
 
 addons:
