@@ -1,19 +1,10 @@
 ---
-language: perl
-perl:
-  - "5.30"
-  - "5.34"
-  - "5.34.0"
-
-jobs:
-  include:
-    - dist: focal
-    - dist: bionic
-    - dist: xenial
-
+language: shell
 install: true
 
-script: perl -v
+script:
+  - ls
+  - find . travis_wait.bash
 
 # ====> Slack notification..
 notifications:
