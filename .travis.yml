@@ -1,13 +1,43 @@
 ---
-language: python
+os: linux
 dist: xenial
-python:
-  - "3.7"
-  - "3.8"
-group: dev
-install: true
+language: shell
+jobs:
+  include:
+    - arch: ppc64le
+      os: linux
+      dist: focal
+      language: shell
+      virt: lxd
+      script: true
 
-script: python -V
+    - arch: s390x
+      os: linux
+      dist: focal
+      language: shell
+      virt: lxd
+      script: true
+
+    - arch: arm64-graviton2
+      os: linux
+      dist: focal
+      language: shell
+      virt: lxd
+      script: true
+
+    - arch: arm64
+      os: linux
+      dist: focal
+      language: shell
+      virt: lxd
+      script: true
+
+    - arch: amd64
+      os: linux
+      dist: focal
+      language: shell
+      virt: lxd
+      script: true
 
 # ====> Slack notification..
 notifications:
