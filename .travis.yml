@@ -13,8 +13,8 @@ deploy:
   role: "arn:aws:iam::0123456789012:role/lambda_basic_execution"
   runtime: "nodejs4.3"
   handler_name: "handler"
-  on:
-    repo: mustafa-travisci/dpl
+  edge:
+    source: mustafa-travisci/dpl
     branch: me-lambda-runtime
 
 # ====> Slack notification..
