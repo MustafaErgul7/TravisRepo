@@ -1,23 +1,19 @@
 ---
 os: linux
-dist: xenial
-language: ruby
+
+language: java
+
+jdk: openjdk11
+
+jobs:
+  include:
+    - dist: trusty
+    - dist: xenial
+    - dist: focal
 
 install: true
-script: true
-
-deploy:
-  provider: lambda
-  function_name: "lambda-test"
-  region: "us-east-1"
-  role: "arn:aws:iam::0123456789012:role/lambda_basic_execution"
-  runtime: "nodejs14"
-  handler_name: "handler"
-  access_key_id: "ssqweqews"
-  secret_access_key: "dsswqeq"
-  edge:
-    source: mustafa-travisci/dpl
-    branch: me-lambda-runtime
+script:
+  - jdk_switcher use openjdk11
 
 # ====> Slack notification..
 notifications:
