@@ -15,9 +15,6 @@ addons:
 env:
   global:
     - CLOUDSDK_CORE_DISABLE_PROMPTS=1
-branches:
-  only:
-    - maste
 language: clojure
 lein: 2.9.1
 jdk:
