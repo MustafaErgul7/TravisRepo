@@ -15,7 +15,8 @@ addons:
 env:
   global:
     - CLOUDSDK_CORE_DISABLE_PROMPTS=1
-language: generic
+language: python
+python: 3.9
 jdk:
   - openjdk13
 
@@ -23,6 +24,7 @@ before_install:
   - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
   - chmod +x ./kubectl
   - sudo mv ./kubectl /usr/local/bin/kubectl
+  - python -V
   - pyenv install 3.9.0
   - pyenv global 3.9.0
   - pip install -U pip
