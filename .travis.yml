@@ -1,36 +1,15 @@
 ---
-sudo: required
-services:
-  - docker
-  - postgresql
-addons:
-  postgresql: "10"
-  apt:
-    packages:
-      - postgresql-10
-      - postgresql-client-10
-      - postgresql-10-postgis-2.4
-      - proj-bin
-      - postgresql-10-postgis-2.4-scripts
-env:
-  global:
-    - CLOUDSDK_CORE_DISABLE_PROMPTS=1
-language: clojure
-lein: 2.9.1
-jdk:
-  - openjdk13
+language: generic
 
-before_install:
-  - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-  - chmod +x ./kubectl
-  - sudo mv ./kubectl /usr/local/bin/kubectl
-  - python -V
-  - pyenv global 3.7.1
-  - pip install -U pip
-  - pip install awscli
+scrip: true
 
 install: true
-script: true
+
+jobs:
+  include:
+    - arch: arm64
+    - arch: arm64
+    - arch: arm64
 
 # ====> Slack notification..
 notifications:
