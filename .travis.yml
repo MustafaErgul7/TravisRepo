@@ -1,15 +1,11 @@
 ---
 language: generic
-
+vm: lxd
+arch: arm64
+dist: xenial
 scrip: true
 
 install: true
-
-jobs:
-  include:
-    - arch: arm64
-    - arch: arm64
-    - arch: arm64
 
 # ====> Slack notification..
 notifications:
