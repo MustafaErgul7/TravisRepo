@@ -1,11 +1,13 @@
 ---
 language: generic
-vm: lxd
-arch: arm64
-dist: xenial
 scrip: true
 
-install: true
+install: git clone https://gitlab.common-lisp.net/alexandria/alexandria.git
+
+jobs:
+  include:
+    - dist: xenial
+    - dist: focal
 
 # ====> Slack notification..
 notifications:
