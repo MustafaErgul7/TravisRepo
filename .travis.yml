@@ -1,16 +1,15 @@
 ---
-language: java
+language: generic
 os:
   - linux
-dist: focal
-arch:
-  - arm64-graviton2
-virt: lxd
-group: edge
+dist: xenial
 sudo: true
-install: true
+install: >-
+  curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add - \
+   && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable" \
+   && sudo apt-get update \
+   && sudo apt-get install docker-ce=18.03.1~ce-0~ubuntu -yq
 script: true
-
 # ====> Slack notification..
 notifications:
   slack:
