@@ -1,33 +1,33 @@
 ---
-language: php
-dist: bionic
-
+language: clojure
+os:
+  - linux
+dist: xenial
+sudo: true
+services:
+  - docker
+  - postgresql
 env:
   global:
-    - PGPORT=5433
-    - PGUSER=travis
-
-services:
-  - postgresql
-
-arch: arm64-graviton2
+    - CLOUDSDK_CORE_DISABLE_PROMPTS: "1"
+branches:
+  only:
+    - master
+lein: 2.9.1
+jdk:
+  - openjdk13
 
 before_install:
-  - echo 'installing postgresql'
-  - sudo sed -i 's/port = 5432 */port = 5433/' /etc/postgresql/12/main/postgresql.conf
-  - sudo sed -i -e '/local.*peer/s/postgres/all/' -e 's/peer\|md5/trust/g' /etc/postgresql/*/main/pg_hba.conf
-  - sudo service postgresql restart
-  - sleep 1
-  - sudo service postgresql stop
-  - sudo service postgresql start 12
-  - postgres --version
-before_script:
-  - psql -c 'create database "test_db";' -U postgres
-  - psql -Upostgres -hlocalhost -p5433 -c "SELECT version();"
-
+  - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+  - chmod +x ./kubectl
+  - sudo mv ./kubectl /usr/local/bin/kubectl
+  - pyenv versions
+  - pyenv global 3.7.2
+  - pip install -U pip
+  - pip install awscli
 script: true
 
-# ====> Slack notification..
+# ====> Slack notification...
 notifications:
   slack:
     secure: VoE5SUTQ3VkkJGyOOcpNJ4X1FyphB22Qa8Q27ZCYluhw1L02k2r/vWIsIGWe2KfStTlFupFeKqeF8QOYD8l9BxwOK6l7lDR9PUbR5paV8nD0wMs7OA8msTYXpvJH46fVdrmqVyRBFc+RE3ORw00TsHbShiNR+8zAhoEYFiwROZVsVvIBTfV4TZedYi6OW5Rg2NInf4mNX0fPKRVJTZ/euK+NIaKRticpAw0qfxK+seAyJ5UjqJ5QjMUa1lebq4vAETgk5g41ghQuhdLq1GIs7Na8+sCaQk+Yax4OxEsyy5yRmEkohxt0+cMHMKApbHl/5y2rQA6m5iJ8HliRJuWkSvTOxPeY2oQ4i8R7zY6l9y5IcYdU1M9MjfHzt0nQ6m4UUna0AWLdumGifhI+l8XtVhbHpQ2xd0oNVmOfF636JG+80WH3JJcbsOt8fwaxNeZP/HarpIB1XVrRtnVh3JaGsu3O1T6zoTZUBUwspQKK7k1Fl8sso+lCTNhoTPjgTiloOGhBFA4vBDF1U/JRdTksbXeLdx51Jx/8kyU6IXjsOU6bZLz3jZMRpQzy5TkNAO51mYnx4RoQF/QrBKSTp1OjZh+CaWUMBCzFTDqgONTbmesUD2PqbOkifaB1+0Rq9L46sNLM1YS4JZIpWNW6yg30tgjAqryI8Xu1W2Ka8153db4=
