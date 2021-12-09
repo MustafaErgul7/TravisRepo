@@ -3,6 +3,7 @@ language: clojure
 os:
   - linux
 dist: xenial
+group: dev
 sudo: true
 services:
   - docker
@@ -16,13 +17,14 @@ branches:
 lein: 2.9.1
 jdk:
   - openjdk13
+install: true
 
 before_install:
   - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
   - chmod +x ./kubectl
   - sudo mv ./kubectl /usr/local/bin/kubectl
   - pyenv versions
-  - pyenv global 3.7.2
+  - pyenv global 3.9
   - pip install -U pip
   - pip install awscli
 script: true
