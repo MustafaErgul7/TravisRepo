@@ -2,8 +2,12 @@
 language: clojure
 os:
   - linux
-dist: xenial
-group: dev
+jobs:
+  include:
+    - dist: trusty
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
 sudo: true
 services:
   - docker
