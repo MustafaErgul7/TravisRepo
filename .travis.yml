@@ -1,15 +1,16 @@
 ---
-language: generic
-os:
-  - linux
-dist: xenial
-sudo: true
-install: >-
-  curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add - \
-   && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable" \
-   && sudo apt-get update \
-   && sudo apt-get install docker-ce=18.03.1~ce-0~ubuntu -yq
-script: true
+language: objective-c
+osx_image: xcode13.1
+sudo: false
+cache:
+  cocoapods: true
+  bundler: true
+
+before_install:
+  - rvm install 2.7.5
+
+script: ruby -v
+
 # ====> Slack notification..
 notifications:
   slack:
