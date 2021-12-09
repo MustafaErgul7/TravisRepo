@@ -1,15 +1,18 @@
 ---
-language: objective-c
-osx_image: xcode13.1
-sudo: false
-cache:
-  cocoapods: true
-  bundler: true
+language: php
+php: "8.1"
 
-before_install:
-  - rvm install 2.7.5
+before_install: true
+install: true
 
-script: ruby -v
+script: true
+
+jobs:
+  include:
+    - dist: trusty
+    - dist: bionic
+    - dist: xenial
+    - dist: focal
 
 # ====> Slack notification..
 notifications:
