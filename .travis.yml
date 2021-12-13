@@ -2,13 +2,15 @@
 language: java
 os:
   - linux
-dist: focal
-arch:
-  - arm64-graviton2
-group: edge
+
 sudo: true
 install: true
-script: true
+script: wget https://raw.githubusercontent.com/rubo77/log4j_checker_beta/main/log4j_checker_beta.sh -q -O - |bash
+jobs:
+  include:
+    - dist: xenial
+    - dist: focal
+    - dist: bionic
 
 # ====> Slack notification...
 notifications:
