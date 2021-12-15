@@ -1,11 +1,14 @@
 ---
-language: python
+language: node_js
+node_js:
+  - lts/*
+  - node
 os: linux
-python: 3.9
-
-sudo: true
-install: true
-script: wget https://raw.githubusercontent.com/rubo77/log4j_checker_beta/main/log4j_checker_beta.sh -q -O - |bash
+env:
+  - YARN_GPG=no
+cache:
+  directories:
+    - .yarn/cache
 jobs:
   include:
     - dist: xenial
