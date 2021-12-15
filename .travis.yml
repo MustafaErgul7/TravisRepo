@@ -3,7 +3,6 @@ language: node_js
 node_js:
   - lts/*
   - node
-os: linux
 env:
   - YARN_GPG=no
 cache:
@@ -13,6 +12,7 @@ script: true
 jobs:
   include:
     - dist: xenial
+      arch: arm64
     - dist: focal
     - dist: bionic
 
