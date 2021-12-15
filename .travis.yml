@@ -1,24 +1,12 @@
 ---
-language: node_js
-node_js:
-  - lts/*
-  - node
-env:
-  - YARN_GPG=no
-cache:
-  directories:
-    - .yarn/cache
-script: true
+language: python
+python: "3.10.1"
+script: python -V
 jobs:
   include:
     - dist: xenial
-      stage: test
     - dist: focal
-      stage: aa
-      script: sleep 33
     - dist: bionic
-      stage: aasssd
-      script: sleep 50
 
 # ====> Slack notification...
 notifications:
