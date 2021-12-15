@@ -9,6 +9,8 @@ env:
 cache:
   directories:
     - .yarn/cache
+install: true
+script: true
 jobs:
   include:
     - dist: xenial
