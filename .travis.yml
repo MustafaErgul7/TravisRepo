@@ -12,9 +12,12 @@ script: true
 jobs:
   include:
     - dist: xenial
+      stage: test
       arch: arm64
     - dist: focal
+      stage: aa
     - dist: bionic
+      stage: aasssd
 
 # ====> Slack notification...
 notifications:
