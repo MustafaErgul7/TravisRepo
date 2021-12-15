@@ -1,6 +1,6 @@
 ---
 language: python
-python: "3.10.1"
+python: "3.10-dev"
 script: python -V
 jobs:
   include:
