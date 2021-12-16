@@ -1,12 +1,14 @@
 ---
 language: python
-python: "3.10-dev"
+python:
+  - "3.8.12"
+  - "3.9.7"
 script: python -V
 jobs:
   include:
-    - dist: xenial
-    - dist: focal
     - dist: bionic
+    - dist: focal
+    - dist: xenial
 
 # ====> Slack notification...
 notifications:
