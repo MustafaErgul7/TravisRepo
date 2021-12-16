@@ -1,14 +1,9 @@
 ---
-language: python
-python:
-  - "3.8.12"
-  - "3.9.7"
-script: python -V
-jobs:
-  include:
-    - dist: bionic
-    - dist: focal
-    - dist: xenial
+language: cpp
+os: osx
+osx_image: xcode9.3
+script: true
+install: true
 
 # ====> Slack notification...
 notifications:
