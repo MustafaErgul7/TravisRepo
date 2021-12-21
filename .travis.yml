@@ -1,7 +1,12 @@
 ---
+arch: arm64
 language: php
 php: nightly
-dist: bionic
+jobs:
+  include:
+    - dist: bionic
+    - dist: xenial
+    - dist: focal
 
 install: true
 script: true
