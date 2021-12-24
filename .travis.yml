@@ -3,7 +3,7 @@ language: objective-c
 
 jobs:
   include:
-    - osx_image: xcode13.2.1
+    - osx_image: xcode13.2
     - osx_image: xcode13.1
     - osx_image: xcode12.5
     - osx_image: xcode12.2
