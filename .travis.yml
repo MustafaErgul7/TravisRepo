@@ -4,10 +4,6 @@ os: osx
 osx_image: xcode9.4.1
 script: true
 install: true
-before_install:
-  - wget https://www.apple.com/certificateauthority/AppleWWDRCAG3.cer
-  - sudo security import AppleWWDRCAG3.cer -k ~/Library/Keychains/login.keychain
-  - sudo security import AppleWWDRCAG3.cer -k /Library/Keychains/System.keychain
 
 # ====> Slack notification...
 notifications:
