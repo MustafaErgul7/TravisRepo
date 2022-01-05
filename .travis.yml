@@ -8,8 +8,7 @@ jobs:
 
 language: ruby
 
-rvm:
-  - "3.0.0"
+ruby: "3.0.0"
 
 before_install:
   - gem --version
