@@ -1,20 +1,16 @@
 ---
-os: osx
-jobs:
-  include:
-    - osx_image: xcode10.2
-    - osx_image: xcode12.5
-    - osx_image: xcode13.1
-
-language: ruby
-
-ruby: "3.0.0"
-
+os: linux
+jdk: openjdk11
+language: java
+dist: xenial
+services:
+  - docker
 before_install:
-  - gem --version
-
-script:
-  - ruby --version
+  - sudo apt-get install -y python3-pip
+  - pip install --user --upgrade pip setuptools six
+  - pip3 install --user --upgrade pip setuptools six
+install: true
+script: true
 
 # ====> Slack notification...
 notifications:
