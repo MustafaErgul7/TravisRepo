@@ -1,32 +1,21 @@
 ---
-language: objective-c
-osx_image: xcode13.2
-cache:
-  - bundler
-  - cocoapods
-  - directories:
-      - $HOME/Library/Caches/Homebrew
-      - $HOME/.pyenv
-
-xcode_workspace: aaa.xcworkspace
-
+language: node_js
+os: linux
+dist: focal
+node_js:
+  - "12"
+addons:
+  apt:
+    sources:
+      - sourceline: deb https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse
+        key_url: https://www.mongodb.org/static/pgp/server-4.4.asc
 before_install:
-  - gem install bundler:2.0.2
-  - bundle install --path vendor/bundle
-  # - brew update
-
-install:
-  - brew install librsvg imagemagick graphicsmagick
-
-before_script:
-  - ./script/pull-request-builder/check-pull-request.sh
-
-script:
-  - ./script/pull-request-builder/test.sh
-
-after_success:
-  - travis_wait 60 ./script/release-to-deploygate/deploy.sh
-  - if [ $TRAVIS_BRANCH == "develop" ] && [ $TRAVIS_PULL_REQUEST == false ]; then ./script/checkmarx/upload.sh; else true; fi
+  - sudo apt-get -y purge mongodb-server-core
+  - sudo rm -rf /var/lib/mongodb /var/log/mongodb
+  - sudo apt-get -y install mongodb-org
+  - sudo systemctl start mongod
+  - sudo systemctl status mongod
+script: mongod --version
 
 # ====> Slack notification...
 notifications:
