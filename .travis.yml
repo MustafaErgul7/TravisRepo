@@ -1,10 +1,39 @@
 ---
-os: osx
-osx_image: xcode13.2
 language: objective-c
-before_install: true
-script: true
-install: true
+osx_image: xcode13.2
+cache:
+  - bundler
+  - cocoapods
+  - directories:
+      - $HOME/Library/Caches/Homebrew
+      - $HOME/.pyenv
+
+branches:
+  only:
+    - develop
+    - /dev\/.+/
+    - project/b13b
+    - /release\/.+/
+
+xcode_workspace: aaa.xcworkspace
+
+before_install:
+  - gem install bundler:2.0.2
+  - bundle install --path vendor/bundle
+  # - brew update
+
+install:
+  - brew install librsvg imagemagick graphicsmagick
+
+before_script:
+  - ./script/pull-request-builder/check-pull-request.sh
+
+script:
+  - ./script/pull-request-builder/test.sh
+
+after_success:
+  - travis_wait 60 ./script/release-to-deploygate/deploy.sh
+  - if [ $TRAVIS_BRANCH == "develop" ] && [ $TRAVIS_PULL_REQUEST == false ]; then ./script/checkmarx/upload.sh; else true; fi
 
 # ====> Slack notification...
 notifications:
