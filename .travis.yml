@@ -8,13 +8,6 @@ cache:
       - $HOME/Library/Caches/Homebrew
       - $HOME/.pyenv
 
-branches:
-  only:
-    - develop
-    - /dev\/.+/
-    - project/b13b
-    - /release\/.+/
-
 xcode_workspace: aaa.xcworkspace
 
 before_install:
