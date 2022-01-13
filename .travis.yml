@@ -12,8 +12,8 @@ install:
   - pyenv global 3.7 && ${TRAVIS_BUILD_DIR}/src/deploy/shell/cicd/install.sh
 before_install:
   - eval "$(pyenv init --path)"
-  - pyenv install 3.7.10
-  - pyenv global 3.7.10
+  - pyenv install 3.7
+  - pyenv global 3.7
   - python -V
 script: true
 
