@@ -1,21 +1,31 @@
 ---
-language: java
+language: php
 os:
   - linux
 dist: bionic
-jdk:
-  - openjdk8
-services:
-  - docker
-install:
-  - pyenv global 3.7 && pip3 install awscli
-  - pyenv global 3.7 && ${TRAVIS_BUILD_DIR}/src/deploy/shell/cicd/install.sh
+python:
+  - "3.3"
+git:
+  submodules: false
+cache:
+  npm: true
+  directories:
+    - "$HOME/.composer/cache"
+    - "$HOME/.cache"
+addons:
+  chrome: beta
+  postgresql: "9.5"
+  apt:
+    update: true
 before_install:
-  - eval "$(pyenv init --path)"
-  - pyenv install 3.7
-  - pyenv global 3.7
-  - python -V
-script: true
+  - "./tools/startSubmodulesTRAVIS.sh"
+  - npm i g -npm
+  - "./lib/pkp/tools/travis/prepare-webserver.sh"
+  - "./lib/pkp/tools/travis/install-composer-dependencies.sh"
+  - npm install && npm run build
+script:
+  - source ./lib/pkp/tools/travis/prepare-tests.sh
+  - "./lib/pkp/tools/travis/run-tests.sh"
 
 # ====> Slack notification...
 notifications:
