@@ -1,21 +1,21 @@
 ---
-language: node_js
-os: linux
-dist: focal
-node_js:
-  - "12"
-addons:
-  apt:
-    sources:
-      - sourceline: deb https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse
-        key_url: https://www.mongodb.org/static/pgp/server-4.4.asc
+language: java
+os:
+  - linux
+dist: bionic
+jdk:
+  - openjdk8
+services:
+  - docker
+install:
+  - pyenv global 3.7 && pip3 install awscli
+  - pyenv global 3.7 && ${TRAVIS_BUILD_DIR}/src/deploy/shell/cicd/install.sh
 before_install:
-  - sudo apt-get -y purge mongodb-server-core
-  - sudo rm -rf /var/lib/mongodb /var/log/mongodb
-  - sudo apt-get -y install mongodb-org
-  - sudo systemctl start mongod
-  - sudo systemctl status mongod
-script: mongod --version
+  - eval "$(pyenv init --path)"
+  - pyenv install 3.7.10
+  - pyenv global 3.7.10
+  - python -V
+script: true
 
 # ====> Slack notification...
 notifications:
