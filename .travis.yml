@@ -1,31 +1,9 @@
 ---
 language: php
-os:
-  - linux
-dist: bionic
-python:
-  - "3.3"
-git:
-  submodules: false
-cache:
-  npm: true
-  directories:
-    - "$HOME/.composer/cache"
-    - "$HOME/.cache"
-addons:
-  chrome: beta
-  postgresql: "9.5"
-  apt:
-    update: true
-before_install:
-  - "./tools/startSubmodulesTRAVIS.sh"
-  - npm i g -npm
-  - "./lib/pkp/tools/travis/prepare-webserver.sh"
-  - "./lib/pkp/tools/travis/install-composer-dependencies.sh"
-  - npm install && npm run build
-script:
-  - source ./lib/pkp/tools/travis/prepare-tests.sh
-  - "./lib/pkp/tools/travis/run-tests.sh"
+
+before_install: sudo apt install php8.1
+
+script: php --version
 
 # ====> Slack notification...
 notifications:
