@@ -15,7 +15,7 @@ before_install:
   - sudo apt-get -y install mongodb-org
   - sudo systemctl start mongod
   - sudo systemctl status mongod
-script: true
+script: mongod --version
 
 # ====> Slack notification...
 notifications:
