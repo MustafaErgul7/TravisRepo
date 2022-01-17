@@ -10,6 +10,7 @@ env:
 node_js:
   - "12"
 addons:
+  postgresql: "12"
   apt:
     packages:
       - postgresql-12
