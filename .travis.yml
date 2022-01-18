@@ -1,15 +1,18 @@
 ---
 language: php
-php: 5.3
 os: linux
-dist: precise
+dist: bionic
 before_install:
-  - sudo apt-get -f install
-  - sudo dpkg --purge --force-depends ca-certificates
-  - sudo apt-get -f install
-  - sudo apt-get install --reinstall ca-certificates
-  - composer self-update
-script: php --version
+  - sudo apt-get update
+php:
+  - "8.1.0"
+before_script:
+  - travis_retry composer self-update
+  - travis_retry composer install --no-interaction --prefer-source
+script:
+  - composer fulltest
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 
 # ====> Slack notification...
 notifications:
