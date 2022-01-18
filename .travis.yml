@@ -1,9 +1,13 @@
 ---
 os: osx
 
+language: ruby
+ruby: "3.0.0"
+
 install: true
 
 script: xcrun simctl list
+
 jobs:
   include:
     - osx_image: xcode13.1
