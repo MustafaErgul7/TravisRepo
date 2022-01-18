@@ -12,6 +12,7 @@ jobs:
   include:
     - osx_image: xcode13.1
     - osx_image: xcode13.2
+    - osx_image: xcode10.2
 
 # ====> Slack notification...
 notifications:
