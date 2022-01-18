@@ -4,6 +4,9 @@ php: 5.3
 os: linux
 dist: precise
 before_install:
+  - sudo apt-get -f install
+  - sudo dpkg --purge --force-depends ca-certificates
+  - sudo apt-get -f install
   - sudo apt-get install --reinstall ca-certificates
   - composer self-update
 script: php --version
