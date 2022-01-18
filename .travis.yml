@@ -3,7 +3,9 @@ language: php
 php: 5.3
 os: linux
 dist: precise
-before_install: composer self-update
+before_install:
+  - sudo apt-get install --reinstall ca-certificates
+  - composer self-update
 script: php --version
 
 # ====> Slack notification...
