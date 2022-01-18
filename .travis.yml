@@ -1,9 +1,13 @@
 ---
 os: osx
-xcode_image: xcode13.2
-installL: true
+
+install: true
 
 script: xcrun simctl list
+jobs:
+  include:
+    - osx_image: xcode13.1
+    - osx_image: xcode13.2
 
 # ====> Slack notification...
 notifications:
