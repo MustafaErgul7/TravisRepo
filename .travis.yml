@@ -2,7 +2,9 @@
 os: osx
 
 language: ruby
-ruby: "3.0.0"
+ruby:
+  - "3.0.0"
+  - "2.7.5"
 
 install: true
 
