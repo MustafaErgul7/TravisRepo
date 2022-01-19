@@ -1,7 +1,9 @@
 ---
 os: linux
 language: python
-python: "3.10"
+python:
+  - "3.10"
+  - "2.7"
 jobs:
   include:
     - dist: focal
