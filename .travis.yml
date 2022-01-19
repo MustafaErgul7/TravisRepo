@@ -1,20 +1,13 @@
 ---
-os: osx
-
-language: ruby
-ruby:
-  - "3.0.0"
-  - "2.7.5"
-
-install: true
-
-script: xcrun simctl list
-
+os: linux
+language: python
+python: "3.10.2"
 jobs:
   include:
-    - osx_image: xcode13.1
-    - osx_image: xcode13.2
-    - osx_image: xcode10.2
+    - dist: focal
+    - dist: bionic
+install: true
+script: true
 
 # ====> Slack notification...
 notifications:
