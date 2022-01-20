@@ -8,7 +8,9 @@ jobs:
   include:
     - dist: focal
     - dist: bionic
-install: true
+install:
+  - eval "$(pyenv init -)"
+  - pyenv versions
 script: true
 
 # ====> Slack notification...
