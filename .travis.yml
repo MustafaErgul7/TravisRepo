@@ -1,17 +1,9 @@
 ---
-os: linux
-language: python
-python:
-  - "3.10"
-  - "2.7"
-jobs:
-  include:
-    - dist: focal
-    - dist: bionic
-install:
-  - eval "$(pyenv init -)"
-  - pyenv versions
-script: true
+os: freebsd
+language: java
+jdk: openjdk8
+install: java --version
+script: ./gradlew assemble
 
 # ====> Slack notification...
 notifications:
