@@ -3,6 +3,9 @@ os: freebsd
 language: java
 install: java -version
 script: true
+jdk:
+  - openjdk8
+  - openjdk9
 
 # ====> Slack notification...
 notifications:
