@@ -1,8 +1,8 @@
 ---
 os: freebsd
 language: java
-install: java --version
-script: ./gradlew assemble
+install: java -version
+script: true
 
 # ====> Slack notification...
 notifications:
