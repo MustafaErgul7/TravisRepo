@@ -1,125 +1,24 @@
 ---
-_AMD64:
-  arch: amd64
-  os: linux
-  virt: vm
-_AARCH64:
-  arch: arm64-graviton2
-  group: edge
-  os: linux
-  virt: lxd
-_RUBY27:
-  rvm: ruby-2.7
-_RUBY30:
-  rvm: ruby-3.0
-_RAILS61:
-  gemfile: Gemfile
-_TEST:
-  stage: test
-language: ruby
-os:
-  - linux
-dist: focal
-services:
-  - redis
-  - docker
-addons:
-  apt:
-    sources:
-      - sourceline: deb http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main
-        key_url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
-    packages:
-      - postgresql-client-13
-      - postgresql-server-dev-13
-      - awscli
-      - python3
-      - python3-pip
-    update: true
+language: python
+python:
+  - "3.8"
+
+install:
+  - pip install -r requirements-dev.txt
+
 env:
-  global:
-    - APP_NAME: "asdfasdf"
-    - CC_AWS_BUCKET: "asdfasdfasdf"
-    - CC_PARTS: "4"
-    - PARALLEL_TEST_PROCESSORS: "4"
-    - RAILS_ENV: "test"
-jobs:
-  include:
-    - stage: test
-      gemfile: Gemfile
-      rvm: ruby-2.7
-      arch: amd64
-      os: linux
-      virt: vm
-      env:
-        - COVERAGE: "true"
-        - TEST_GROUP: "1"
-    - stage: test
-      gemfile: Gemfile
-      rvm: ruby-2.7
-      arch: amd64
-      os: linux
-      virt: vm
-      env:
-        - COVERAGE: "true"
-        - TEST_GROUP: "2"
-    - stage: test
-      gemfile: Gemfile
-      rvm: ruby-2.7
-      arch: amd64
-      os: linux
-      virt: vm
-      env:
-        - COVERAGE: "true"
-        - TEST_GROUP: "3"
-    - stage: test
-      gemfile: Gemfile
-      rvm: ruby-2.7
-      arch: amd64
-      os: linux
-      virt: vm
-      env:
-        - COVERAGE: "true"
-        - TEST_GROUP: "4"
-    - stage: test
-      gemfile: Gemfile
-      rvm: ruby-3.0
-      arch: amd64
-      os: linux
-      virt: vm
-      env:
-        - TEST_GROUP: "1"
-    - stage: test
-      gemfile: Gemfile
-      rvm: ruby-3.0
-      arch: amd64
-      os: linux
-      virt: vm
-      env:
-        - TEST_GROUP: "2"
-    - stage: test
-      gemfile: Gemfile
-      rvm: ruby-3.0
-      arch: amd64
-      os: linux
-      virt: vm
-      env:
-        - TEST_GROUP: "3"
-    - stage: test
-      gemfile: Gemfile
-      rvm: ruby-3.0
-      arch: amd64
-      os: linux
-      virt: vm
-      env:
-        - TEST_GROUP: "4"
-    - gemfile: Gemfile
-      rvm: ruby-2.7
-      arch: amd64
-      os: linux
-      virt: vm
-      stage: report
-      script: true
-script: true
+  - PYTHONPATH=/home/travis/build/gcallah/demo-repo2
+
+script:
+  - make all_tests
+
+# deploy to heroku on push to master
+deploy:
+  - provider: heroku
+    api_key: $HEROKU_API_KEY
+    app: demo-repo23
+    on:
+      branch: master
 
 # ====> Slack notification...
 notifications:
