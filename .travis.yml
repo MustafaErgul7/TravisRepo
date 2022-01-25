@@ -7,10 +7,8 @@ install:
   - pip install -r requirements.txt
 
 env:
-  - PYTHONPATH=/home/travis/build/gcallah/demo-repo2
-
-script:
-  - make all_tests
+  - PYTHONPATH=/home/travis/build/
+script: true
 
 # deploy to heroku on push to master
 deploy:
