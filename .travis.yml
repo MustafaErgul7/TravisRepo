@@ -7,6 +7,10 @@ env:
     - HEROKU_API_KEY="123123123"
 
 before_install:
+  - apt-get update -qy
+  - apt-get install -y ruby-dev
+  - gem install dpl
+  - gem install faraday -v 1.8.0
   - gem install faraday -v 1.9.3
 
 install:
