@@ -6,6 +6,9 @@ env:
   global:
     - HEROKU_API_KEY="123123123"
 
+before_install:
+  - gem install faraday -v 1.9.3
+
 install:
   - pip install -r requirements.txt
 
