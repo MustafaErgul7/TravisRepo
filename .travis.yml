@@ -2,12 +2,13 @@
 language: python
 python:
   - "3.8"
+env:
+  global:
+    - HEROKU_API_KEY="123123123"
 
 install:
   - pip install -r requirements.txt
 
-env:
-  - PYTHONPATH=/home/travis/build/
 script: true
 
 # deploy to heroku on push to master
