@@ -1,27 +1,16 @@
 ---
-language: python
-python:
-  - "3.8"
-env:
-  global:
-    - HEROKU_API_KEY="123123123"
+language: elixir
+dist: focal
+elixir:
+  - "1.2.2"
+otp_release:
+  - "18.2.1"
 
-before_install:
-  - gem install faraday -v 1.9.3
+before_install: true
 
-install:
-  - pip install -r requirements.txt
+install: true
 
 script: true
-
-# deploy to heroku on push to master
-deploy:
-  - provider: heroku:git
-    api_key: $HEROKU_API_KEY
-    app: demo-repo23
-    on:
-      branch: master
-    edge: true
 
 # ====> Slack notification...
 notifications:
