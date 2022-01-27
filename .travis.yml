@@ -1,13 +1,8 @@
 ---
-language: python
-dist: xenial
-python: "3.7.1"
+language: objective-c
+os: osx
 
-before_install: pip --version
-
-install:
-  - python -m pip install pip==20.1
-  - pip --version
+install: true
 
 script: true
 
