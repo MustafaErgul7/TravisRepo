@@ -1,14 +1,13 @@
 ---
-language: elixir
-dist: focal
-elixir:
-  - "1.2.2"
-otp_release:
-  - "18.2.1"
+language: python
+dist: xenial
+python: "3.7.1"
 
-before_install: true
+before_install: pip --version
 
-install: true
+install:
+  - python -m pip install pip==20.1
+  - pip --version
 
 script: true
 
