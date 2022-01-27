@@ -1,6 +1,7 @@
 ---
 language: objective-c
 os: osx
+xcode_image: xcode13.2
 
 install: true
 
