@@ -29,7 +29,7 @@ jobs:
         - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.9.3
       deploy:
         - provider: heroku
-          app: testvbuilds-travisci
+          app: testbuilds-travisci
           api_key:
             secure: VFd5Ih8QG21vjlo44Eio9/Go443zG+0/5ENV/HDQHt8PTgl2V9iqyiXZCJEPh/8OSV1TPxZcJ0uC2OvUGOyt7IRg1Xdc8SWwNCQULCynKhgHGB+18TlgwotQVHqvxAq73MM/3IyZo71YAP1+4BultaCmG/16n61bj2BhoJ3LEy9v1DWbwtetWWtOiP6In4KPwmuyl6XPflzVH/yYoVrbxqF9koCjeaHpe8II08joyrHLFBjJ7R7DmxCJ7c+rpNOGNZnCKJaTm3+dmibIgadX/dzdm7Qc6gqbZoPos5n0ZTCeau0mJkqCI9zZyF1RS9e/UASjOf/pGPsOHL/oURGZ2+fmb0qRCJeAsjYc+3QqE4x9YGqBFDYMDJ/Tj8eEu4V+U3zTEjcm/+G63tx8UXTC8pmXzul36Is+9l06/1vCpyoqKj8eXRYbfZOqFYjfUGcz1x/orAIlOWxvZMD/PYkjw4RP7z3EJDWQFKzIEBaX5uPovN8idXe1tbKnNoqR6w74vW+i+N0tCWvQ3ZHxGq1ziwe0TlU7AGZrpofTTpFLw/BitaqToBQUMQrkOUxBwVAxYvSo8HG6JSMUj7zgNogTEZFUtsOD2k0ZmKMvO1yG9fErud3e8J/tCFAQTjIAhNoaolHvf7U7vEWbFSxqgSKMNWQtXow43lDznlAGuoYaeNA=
 
