@@ -1,11 +1,44 @@
 ---
-language: objective-c
-os: osx
-osx_image: xcode12.5
+jobs:
+  include:
+    - # Rails Api tests
+      stage: test
+      language: ruby
+      rvm:
+        - 2.7.5
+      services:
+        - postgresql
+      addons:
+        postgresql: 9.6
+        apt:
+          update: true
+          packages:
+            - postgresql-client
+      script: true
+      cache: bundler
 
-install: true
+    - # React App tests
+      language: node_js
+      node_js: 12.22.7
+      env: JEST_SILENT_REPORTER_DOTS=true
+      script: true
+      cache: yarn
 
-script: true
+    - # Heroku and sentry deploy
+      stage: deploy
+      language: node_js
+      node_js: 12.22.7
+      install:
+        - curl -sL https://sentry.io/get-cli/ | bash
+      script: skip
+      before_deploy:
+        - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.9.3 # https://travis-ci.community/t/heroku-deploy-fails-installing-dpl-heroku-encounters-faraday-error/12563/5
+      deploy:
+        - provider: heroku
+          api_key:
+            secure: 5nt/mshzVC8l3HnqtcXq/bfmJChVALZGQUAzf8PjSa6+9DuFmLHe+PAdnzE6ZIv0srU5st6VYDi8xlmQ1NykYadu9uB9SvZyxiHg+gDXxaVhYRqpKBOdgo4Ic2RsTTRqafpbcxL1/ALUFyiw891mxmNorUTqjK79k5k4/+sx9iE4fE0GRq15PCHn84hEg7H+isRhhgCZ7qnuwELWKGXFlI7f7DYYt5xfS4kmxQLkCZDs8cmPQ8Im3YHDLFUDIJRC2G7OpioHF2uXEUlA7QlI7OCY54+PLZQF4lrXt4IhIFnDfjbsxOQPrhhrx+kLiPcRfRB1/7fOez6tF/DSvgygANbMCi4NK/fDE9ZGRfB+LfAK02sP/PtthlnXGO5NxFjywnbLdBKOyqerNrq1X8BzLqRZjbDvqYekx4iG03e46ng9NcIg1EF6K3M+3NQxcLhBQ3yOt473icYXxZ/sTcMnwtiAdZ1vnaXe9lCbnMZ3Jr/KE/02kqhx3WZJ6lIaKzAXsVmTPuax3tDiY7EzL6PzW50/n+BcQ+zGEfEyyuOsvVG07APlctFbWjRjzSmwLfWKG37pcQrMo2M6Byixvo9HF7ReUXr2drF6GO0P5OsvFGNbjQGslsgPIm/ZrGkV4slgbtY44jZaSN6pXU=
+          run:
+            - rake db:migrate
 
 # ====> Slack notification...
 notifications:
