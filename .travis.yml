@@ -2,6 +2,7 @@
 arch: arm64-graviton2
 group: edge
 os: linux
+dist: focal
 virt: lxd
 install: true
 script: true
