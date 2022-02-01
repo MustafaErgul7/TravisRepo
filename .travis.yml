@@ -1,7 +1,7 @@
 ---
 os: freebsd
 dist: focal
-language: minimal
+language: java
 addons:
   pkg:
     - go
