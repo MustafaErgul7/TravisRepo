@@ -1,15 +1,17 @@
 ---
-os: freebsd
-dist: focal
-language: java
-addons:
-  pkg:
-    - go
-    - curl
-    - openjdk8
-install: true
+os: osx
+osx_image: xcode10.2
+
+language: ruby
+
+rvm:
+  - "3.0.0"
+
+before_install:
+  - brew upgrade
+
 script:
-  - java -version
+  - ruby --version
 
 #====> Slack notifications:
 notifications:
