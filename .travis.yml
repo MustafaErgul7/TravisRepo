@@ -5,8 +5,7 @@ language: ruby
 
 before_install: true
 
-script:
-  - ruby --version
+script: true
 
 #====> Slack notifications:
 notifications:
