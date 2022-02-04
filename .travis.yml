@@ -4,6 +4,7 @@ dist: focal
 language: ruby
 
 before_install: true
+install: true
 
 script: true
 
