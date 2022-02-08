@@ -7,10 +7,12 @@ addons:
   homebrew:
     update: true
 rvm:
-  - "3.0.0"
+  - "2.5.1"
 
 before_install:
-  - gem --version
+  - brew update
+  - brew install openssl
+  - rvm use 3.0.0
 
 script:
   - ruby --version
