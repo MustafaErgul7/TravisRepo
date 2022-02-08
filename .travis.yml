@@ -1,12 +1,17 @@
 ---
-arch: s390x
-dist: focal
+os: osx
+osx_image: xcode10.2
 language: ruby
 
-before_install: true
-install: true
+rvm:
+  - "3.0.0"
 
-script: true
+before_install:
+  - brew update
+  - gem --version
+
+script:
+  - ruby --version
 
 #====> Slack notifications:
 notifications:
