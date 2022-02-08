@@ -2,10 +2,6 @@
 os: osx
 osx_image: xcode10.2
 language: ruby
-
-addons:
-  homebrew:
-    update: true
 rvm:
   - "2.5.1"
 
