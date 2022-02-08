@@ -3,11 +3,13 @@ os: osx
 osx_image: xcode10.2
 language: ruby
 
+addons:
+  homebrew:
+    update: true
 rvm:
   - "3.0.0"
 
 before_install:
-  - brew update
   - gem --version
 
 script:
