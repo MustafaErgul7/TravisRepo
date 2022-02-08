@@ -6,8 +6,6 @@ rvm:
   - "2.5.1"
 
 before_install:
-  - brew update
-  - brew install openssl
   - rvm use 3.0.0
 
 script:
