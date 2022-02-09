@@ -1,14 +1,12 @@
 ---
-language: java
-jobs:
-  include:
-    - dist: xenial
-    - dist: focal
-jdk: openjdk11
+os: linux
+dist: xenial
+vm:
+  size:
+    - 2x-large
 
 install: true
-
-script: gradle --version
+script: nproc
 
 #====> Slack notifications:
 notifications:
