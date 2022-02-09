@@ -1,15 +1,13 @@
 ---
-os: osx
-osx_image: xcode10.2
-language: ruby
-rvm:
-  - "2.5.1"
+language: java
+jobs:
+  include:
+    - dist: xenial
+    - dist: focal
 
-before_install:
-  - rvm use 3.0.0
+install: true
 
-script:
-  - ruby --version
+script: gradle --version
 
 #====> Slack notifications:
 notifications:
