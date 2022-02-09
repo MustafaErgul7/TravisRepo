@@ -1,12 +1,47 @@
 ---
-os: linux
-dist: xenial
-vm:
-  size:
-    - 2x-large
-
+jobs:
+  fast_finish: true
+  include:
+    - env: SCRIPT_NAME=aphp
+      name: "PHP "
+    - env: SCRIPT_NAME=dadsphp
+      name: "PHP "
+    - env: SCRIPT_NAME=asdasd.php
+      name: "PHP "
+    - env: SCRIPT_NAME=integrationTestsImage.php
+      name: "PHP Tests - I"
+      vm:
+        size: 2x-large
+    - env: SCRIPT_NAME=integrationTestsEmail.php
+      name: "PHP Integration Tests - Email"
+      vm:
+        size: 2x-large
+    - env: SCRIPT_NAME=integrationTestsPDFsAtoE.php
+      name: "PHP Integration Tests - A to E"
+      vm:
+        size: 2x-large
+    - env: SCRIPT_NAME=integrationTestsPDFsFtoR.php
+      name: "PHP Integration Tests - F to R"
+      vm:
+        size: 2x-large
+    - env: SCRIPT_NAME=integrationTestsPDFsStoZ.php
+      name: "PHP Integration Tests - S to Z"
+      vm:
+        size: 2x-large
+language: php
+php:
+  - 7.4.22
+cache:
+  apt: true
+  directories:
+    - cache
+    - ".cache"
+    - "$HOME/.composer/cache/files"
 install: true
+before_install: true
 script: nproc
+sudo: false
+dist: focal
 
 #====> Slack notifications:
 notifications:
