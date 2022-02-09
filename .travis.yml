@@ -4,6 +4,7 @@ jobs:
   include:
     - dist: xenial
     - dist: focal
+jdk: openjdk8
 
 install: true
 
