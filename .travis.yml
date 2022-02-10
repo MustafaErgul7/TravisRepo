@@ -1,7 +1,7 @@
 ---
 dist: focal
 os: linux
-language: php
+language: cpp
 
 script:
   - ldd --version
