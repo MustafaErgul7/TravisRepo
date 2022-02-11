@@ -4,7 +4,7 @@ os:
   - linux
 
 addons:
-  rethinkdb: "2.3.4"
+  rethinkdb: "2.4.1"
 
 install: true
 script: true
