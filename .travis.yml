@@ -1,4 +1,5 @@
 ---
+os: linux
 language: ruby
 addons:
   rethinkdb: 2.4.1
