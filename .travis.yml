@@ -1,7 +1,6 @@
 ---
 language: ruby
-os:
-  - linux
+os: linux
 addons:
   rethinkdb: 2.4.1
 install: true
