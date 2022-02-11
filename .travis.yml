@@ -6,6 +6,7 @@ addons:
   rethinkdb: 2.4.1
 install: true
 script: true
+
 jobs:
   include:
     - dist: trusty
