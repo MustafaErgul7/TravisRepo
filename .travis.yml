@@ -4,7 +4,7 @@ language: ruby
 addons:
   rethinkdb: 2.4.1
 install: true
-script: true
+script: rethinkdb --version
 
 jobs:
   include:
