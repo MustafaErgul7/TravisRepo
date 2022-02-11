@@ -1,11 +1,17 @@
 ---
-dist: focal
-os: linux
-language: cpp
+dist: xenial
+sudo: required
+language: csharp
+solution: CCS.UITests.sln
+mono:
+  - latest
 
-script:
-  - ldd --version
-install: true
+addons:
+  chrome: stable
+
+install: google-chrome --version
+
+script: true
 
 #====> Slack notifications:
 notifications:
