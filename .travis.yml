@@ -2,11 +2,11 @@
 os: linux
 language: ruby
 addons:
-  postgresql: "12"
+  postgresql: "10"
   apt:
     packages:
-      - postgresql-12
-      - postgresql-cLient-12
+      - postgresql-10
+      - postgresql-cLient-10
 
 install: true
 
