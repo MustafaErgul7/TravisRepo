@@ -3,12 +3,12 @@ os: linux
 language: ruby
 addons:
   rethinkdb: 2.4.1
+
 install: true
 script: rethinkdb --version
 
 jobs:
   include:
-    - dist: trusty
     - dist: xenial
     - dist: bionic
     - dist: focal
