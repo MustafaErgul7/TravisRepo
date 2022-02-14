@@ -1,9 +1,10 @@
 ---
 os: linux
-language: ruby
+language: scala
 addons:
   postgresql: "10"
   apt:
+    update: true
     packages:
       - postgresql-10
       - postgresql-cLient-10
