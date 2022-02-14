@@ -1,5 +1,4 @@
 ---
----
 language: node_js
 
 node_js:
@@ -19,6 +18,8 @@ env:
 before_install:
   - sudo sed -i -e "/local.*peer/s/postgres/all/" -e "s/peer\|md5/trust/g" /etc/postgresql/*/main/pg_hba.conf
   - postgres --version
+
+install: true
 
 before_script:
   - psql -Utravis -p5433 -c 'create database travis_ci_test;'
