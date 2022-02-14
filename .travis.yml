@@ -2,11 +2,11 @@
 os: linux
 language: scala
 addons:
-  postgresql: "13"
+  postgresql: "11"
   apt:
     packages:
-      - postgresql-13
-      - postgresql-cLient-13
+      - postgresql-11
+      - postgresql-cLient-11
 
 install: true
 
