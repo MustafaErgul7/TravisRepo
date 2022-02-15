@@ -1,6 +1,6 @@
 ---
-dist: focal
-
+dist: xenial
+os: linux
 vm:
   size:
     - 2x-large
