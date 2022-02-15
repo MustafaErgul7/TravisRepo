@@ -1,6 +1,6 @@
 ---
 dist: focal
-language: php
+
 vm:
   size:
     - 2x-large
