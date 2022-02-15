@@ -1,17 +1,11 @@
 ---
 dist: bionic
 language: php
-php: "8.0"
-services:
-  - memcached
-  - redis
-  - mongodb
-  - docker
-  - couchdb
-before_script:
-  - curl -X PUT http://admin:travis@localhost:5984/support_debug
-script:
-  - curl http://admin:travis@localhost:5984/support_debug
+vm:
+  size:
+    - 2x-large
+script: true
+install: true
 
 ###############################################################################
 notifications:
