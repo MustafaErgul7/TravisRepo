@@ -4,6 +4,10 @@ language: php
 php: "8.0"
 services:
   - couchdb
+  - memcached
+  - redis
+  - mongodb
+  - docker
 before_script:
   - curl -X PUT http://admin:travis@localhost:5984/support_debug
 script:
