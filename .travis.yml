@@ -1,11 +1,11 @@
 ---
-dist: bionic
+dist: focal
 language: php
 vm:
   size:
     - 2x-large
 script: true
-install: true
+install: nproc
 
 ###############################################################################
 notifications:
