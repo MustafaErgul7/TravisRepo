@@ -1,11 +1,15 @@
 ---
-dist: xenial
 os: linux
-vm:
-  size:
-    - 2x-large
-script: true
-install: nproc
+dist: xenial
+language: node_js
+node_js: lts/*
+
+install: true
+
+script:
+  - pyenv global 3.6.7
+  - python --version
+  - python3 --version
 
 ###############################################################################
 notifications:
