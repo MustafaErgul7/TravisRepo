@@ -1,11 +1,13 @@
 ---
 dist: xenial
 os: linux
-vm:
-  size:
-    - 2x-large
-script: true
-install: nproc
+services:
+  - redis
+  - redis-server
+script:
+  - redis --version
+  - redis-server --version
+install: true
 
 ###############################################################################
 notifications:
