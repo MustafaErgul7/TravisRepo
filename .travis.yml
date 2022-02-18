@@ -22,7 +22,6 @@ matrix:
       before_script:
         - sleep 5 ## for server to start
         - curl -v http://localhost:9200/
-
       script: true
       install: true
 
