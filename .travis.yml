@@ -2,7 +2,6 @@
 matrix:
   include:
     - name: js-tests
-      dist: focal
       language: node_js
       node_js:
         - 14
