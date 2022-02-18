@@ -1,6 +1,6 @@
 ---
-services: elasticsearch
-
+language: python
+python: 3.6.14
 jobs:
   include:
     - dist: bionic
@@ -8,7 +8,8 @@ jobs:
 
 install: true
 script:
-  - sudo find / -name '*log4j*'
+  - python --version
+  - python3 --version
 
 ###############################################################################
 notifications:
