@@ -3,9 +3,8 @@ language: python
 python: 3.9.5
 jobs:
   include:
-    - dist: xenial
-    - dist: bionic
-    - dist: focal
+    - arch: arm64
+    - arch: ppc64le
 
 install: true
 script: python -V
