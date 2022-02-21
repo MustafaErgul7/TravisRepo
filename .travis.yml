@@ -1,14 +1,14 @@
 ---
-services: elasticsearch
-
+language: python
+python: 3.9.5
 jobs:
   include:
+    - dist: xenial
     - dist: bionic
     - dist: focal
 
 install: true
-script:
-  - sudo find / -name '*log4j*'
+script: python -V
 
 ###############################################################################
 notifications:
