@@ -35,6 +35,8 @@ jobs:
       services: docker
       arch: s390x
       env: PLAT=manylinux2014_s390x
+      install: true
+      script: true
     # and a windows build
     - sudo: required
       os: windows
