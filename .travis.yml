@@ -2,12 +2,13 @@
 os: linux
 dist: focal
 language: python
-python:
-  - 3.7
 
 install: true
-
 script: true
+
+after_success:
+  - export CUR_BUILD_DIR=$(pwd)
+  - echo $CUR_BUILD_DIR
 
 ###############################################################################
 notifications:
