@@ -13,7 +13,7 @@ script: true
 notifications:
   email:
     recipients:
-      - "mustafa@travis-ci.org"
+      - mustafa@travis-ci.org
     on_success: always # default: change
     on_failure: always # default: always
   slack:
