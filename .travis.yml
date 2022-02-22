@@ -12,6 +12,4 @@ after_success:
 ###############################################################################
 notifications:
   email:
-    recipients:
-      - mustafa@travis-ci.org
-      - mustafa@travis-ci.com
+    recipient: mustafa@travis-ci.org
