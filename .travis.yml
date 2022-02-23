@@ -48,13 +48,12 @@ jobs:
         # make sure it's on PATH as 'python3'
         - ln -s /c/Python38/python.exe /c/Python38/python3.exe
 
-install:
-  - python3 -m pip install cibuildwheel==2.3.1
+install: pwd
 
-script:
-  - python3 -m cibuildwheel --output-dir wheelhouse
+script: pwd
 
-after_failure: echo "this job is failed"
+after_failure: pwd
+after_success: pwd
 
 ###############################################################################
 notifications:
