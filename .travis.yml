@@ -1,6 +1,6 @@
 ---
 os: linux
-dist: focal
+dist: bionic
 language: perl
 perl:
   - "5.34"
