@@ -1,13 +1,15 @@
 ---
 os: linux
 dist: bionic
-language: perl
-perl:
-  - "5.34"
+language: ruby
 
 install: true
-script:
-  - perl -v
+script: true
+
+branches:
+  only:
+    - master
+    - ^testaa|^CIV
 
 ###############################################################################
 notifications:
