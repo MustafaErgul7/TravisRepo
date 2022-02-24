@@ -9,7 +9,7 @@ script: true
 branches:
   only:
     - master
-    - ^testaa|^CIV
+    - /^(testaa|CIV)/
 
 ###############################################################################
 notifications:
