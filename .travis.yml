@@ -2,13 +2,10 @@
 ---
 os: linux
 dist: bionic
-language: perl
-perl:
-  - "5.34"
+language: generic
 
 install: true
-script:
-  - perl -v
+script: echo $fowo
 
 ###############################################################################
 notifications:
