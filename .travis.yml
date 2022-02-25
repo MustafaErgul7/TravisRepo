@@ -4,9 +4,9 @@ dist: focal
 language: generic
 
 install: true
-script: true
 
 if: (type = push && branch = master) OR (type = pull_request)
+script: true
 
 ###############################################################################
 notifications:
