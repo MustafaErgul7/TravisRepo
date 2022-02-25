@@ -1,11 +1,13 @@
 ---
 os: linux
-dist: bionic
+dist: focal
 language: generic
 
 install: true
-script: echo $fowo
+
 if: (type = push && branch = master) OR (type = pull_request)
+script: true
+
 ###############################################################################
 notifications:
   slack:
