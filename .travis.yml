@@ -1,12 +1,19 @@
 ---
-os: linux
 dist: focal
 language: generic
 
+env:
+  - BUILD_STEAMLIB=1
+  - BUILD_STEAMLIB=0
+
+jobs:
+  include:
+    - QF_ARCH=OSX
+    - QF_ARCH=x86
+    - QF_ARCH=x86_64
+
 install: true
 script: true
-
-if: (type = push && branch = master) OR (type = pull_request)
 
 ###############################################################################
 notifications:
