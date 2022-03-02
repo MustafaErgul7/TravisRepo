@@ -1,6 +1,5 @@
 ---
 os: linux
-dist: focal
 language: generic
 install: true
 script: true
