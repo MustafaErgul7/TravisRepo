@@ -1,10 +1,3 @@
----
-os: linux
-language: generic
+language: c
 install: true
 script: true
-
-###############################################################################
-notifications:
-  slack:
-    secure: VoE5SUTQ3VkkJGyOOcpNJ4X1FyphB22Qa8Q27ZCYluhw1L02k2r/vWIsIGWe2KfStTlFupFeKqeF8QOYD8l9BxwOK6l7lDR9PUbR5paV8nD0wMs7OA8msTYXpvJH46fVdrmqVyRBFc+RE3ORw00TsHbShiNR+8zAhoEYFiwROZVsVvIBTfV4TZedYi6OW5Rg2NInf4mNX0fPKRVJTZ/euK+NIaKRticpAw0qfxK+seAyJ5UjqJ5QjMUa1lebq4vAETgk5g41ghQuhdLq1GIs7Na8+sCaQk+Yax4OxEsyy5yRmEkohxt0+cMHMKApbHl/5y2rQA6m5iJ8HliRJuWkSvTOxPeY2oQ4i8R7zY6l9y5IcYdU1M9MjfHzt0nQ6m4UUna0AWLdumGifhI+l8XtVhbHpQ2xd0oNVmOfF636JG+80WH3JJcbsOt8fwaxNeZP/HarpIB1XVrRtnVh3JaGsu3O1T6zoTZUBUwspQKK7k1Fl8sso+lCTNhoTPjgTiloOGhBFA4vBDF1U/JRdTksbXeLdx51Jx/8kyU6IXjsOU6bZLz3jZMRpQzy5TkNAO51mYnx4RoQF/QrBKSTp1OjZh+CaWUMBCzFTDqgONTbmesUD2PqbOkifaB1+0Rq9L46sNLM1YS4JZIpWNW6yg30tgjAqryI8Xu1W2Ka8153db4=
