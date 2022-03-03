@@ -1,3 +1,9 @@
+# DEFAULTS
+os: linux
+dist: xenial
+arch: amd64
+############
+
 language: c
 install: true
 script:
