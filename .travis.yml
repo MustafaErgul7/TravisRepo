@@ -1,8 +1,11 @@
 language: ruby
+dist: bionic
 install: true
 script:
   - cd /etc/elasticsearch/
-  - echo "xpack.security.enabled: false" >> elasticsearch.yml
+  - ls -all
+  #- echo "xpack.security.enabled: false" >> elasticsearch.yml
+  #- sed -i 's/xpack.security.enable/xpack.security.enabled: false/g' elasticsearch.yml
 
 services:
   - elasticsearch
