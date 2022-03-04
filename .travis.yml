@@ -1,11 +1,11 @@
 language: ruby
 install: true
-script:
-  - cat /etc/elasticsearch/elasticsearch.yml
-  - sudo echo 'xpack.security.enabled: false' >> /etc/elasticsearch/elasticsearch.yml
+
+script: true
 
 services:
   - elasticsearch
+  - postgresql
 
 before_install:
   - sudo chown -R $USER:elasticsearch /etc/default/elasticsearch
