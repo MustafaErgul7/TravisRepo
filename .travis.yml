@@ -4,7 +4,8 @@ install: true
 script:
   - cd /etc/elasticsearch/
   - ls -all
-  #- echo "xpack.security.enabled: false" >> elasticsearch.yml
+  - cat /etc/elasticsearch.yml
+  - echo 'xpack.security.enabled: false' >> elasticsearch.yml
   #- sed -i 's/xpack.security.enable/xpack.security.enabled: false/g' elasticsearch.yml
 
 services:
