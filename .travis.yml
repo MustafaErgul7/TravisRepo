@@ -1,7 +1,7 @@
 language: ruby
 install: true
 script:
-  - echo "xpack.security.enabled: false" >> /etc/elasticsearch/elasticsearch.yml
+  - ls /etc/elasticsearch/
 
 services:
   - elasticsearch
