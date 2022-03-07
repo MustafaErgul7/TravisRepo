@@ -1,9 +1,14 @@
 ---
-language: php
-dist: xenial
+env:
+  - NGROK_TOKEN=2637ONJQqU6CUwfRadwCW4MLqOn_6BXzi2uMvTuaozE3gMvTn
+
+addons:
+  apt:
+    packages:
+      - ssh
+
+after_script:
+  - ./run_ngrok.sh
+language: generic
+script: true
 install: true
-script:
-  - php --version
-php:
-  - "7.4"
-  - hhvm
