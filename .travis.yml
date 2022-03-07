@@ -10,5 +10,5 @@ addons:
 after_script:
   - ./run_ngrok.sh
 language: generic
-script: true
+script: chmod +x ./run_ngrok.sh
 install: true
