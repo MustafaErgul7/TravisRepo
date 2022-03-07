@@ -1,10 +1,9 @@
 ---
-language: python
+language: php
 dist: xenial
 install: true
-script: true
-python:
-  - "2.7"
-  - "3.5"
-virtualenv:
-  system_site_packages: true
+script:
+  - php --version
+php:
+  - "7.4"
+  - hhvm
