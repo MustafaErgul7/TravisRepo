@@ -1,14 +1,6 @@
 ---
-env:
-  - NGROK_TOKEN=2637ONJQqU6CUwfRadwCW4MLqOn_6BXzi2uMvTuaozE3gMvTn
+language: python
+python: "3.9.5"
 
-addons:
-  apt:
-    packages:
-      - ssh
-
-after_script:
-  - ./run_ngrok.sh
-language: generic
-script: chmod +x ./run_ngrok.sh
+script: pip --version
 install: true
