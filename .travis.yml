@@ -1,6 +1,9 @@
 ---
-language: python
-python: "3.9.5"
+language: java
+jdk:
+  - openjdk11
+  - openjdk17
 dist: xenial
-script: pip --version
+script:
+  - java --version
 install: true
