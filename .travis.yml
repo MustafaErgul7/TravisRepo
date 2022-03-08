@@ -1,16 +1,9 @@
 ---
-dist: xenial
 language: java
-
+jdk:
+  - openjdk11
+  - openjdk17
+dist: bionic
 script:
   - java --version
-
-before_install:
-  - sudo apt-get -y remove default-jdk
-  - sudo apt -y autoremove
-  - curl -s "https://get.sdkman.io" | bash
-  - source "$HOME/.sdkman/bin/sdkman-init.sh"
-  - sdk install java 16.0.1-open
-  - java -version
-
 install: true
