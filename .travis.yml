@@ -4,7 +4,7 @@ dist: focal
 language: ruby
 
 before_install:
-  - yes | sudo git clone git@github.com:owenthereal/upterm.git
+  - sudo git clone git@github.com:owenthereal/upterm.git | yes
   - cd upterm
   - go install ($pwd)/upterm/
 script:
