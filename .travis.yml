@@ -1,12 +1,8 @@
 ---
 os: linux
+arch: arm64
 dist: focal
 language: ruby
-
-before_install:
-  - sudo git clone git@github.com:owenthereal/upterm.git | yes
-  - cd upterm
-  - go install ($pwd)/upterm/
-script:
-  - upterm host -- bash
-  - upterm session current
+ruby: 3.1.0
+install: true
+script: ruby -v
