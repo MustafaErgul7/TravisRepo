@@ -1,8 +1,12 @@
 ---
 os: linux
-arch: arm64
 dist: focal
 language: ruby
 ruby: 3.1.0
 install: true
 script: ruby -v
+
+jobs:
+  include:
+    - arch: arm64
+    - arch: amd64
