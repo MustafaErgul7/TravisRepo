@@ -1,7 +1,8 @@
 ---
 os: linux
-dist: focal
-language: php
-php: "7.4.28"
+dist: xenial
+language: python
+python:
+  - 3.9.5
 
-script: php --version
+script: python3 --version
