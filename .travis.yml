@@ -1,10 +1,6 @@
 ---
 language: python
 
-python:
-  - 3.9.7
-  - 3.8
-
 install:
   - pip3 install .
 
@@ -21,6 +17,9 @@ stages:
 jobs:
   include:
     - name: test
+      python:
+        - 3.9.7
       script:
         - source ~/virtualenv/python3.9/bin/activate
-    - script: echo "eeeee"
+    - python: 3.8
+      script: echo "eeeee"
