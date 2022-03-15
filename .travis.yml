@@ -3,7 +3,7 @@ os: linux
 dist: xenial
 language: php
 php:
-  - "7.4"
+  - "7.4.0"
 
 install:
   - apt list --installed | grep libargon2
