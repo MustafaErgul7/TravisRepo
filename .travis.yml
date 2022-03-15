@@ -17,9 +17,9 @@ stages:
 jobs:
   include:
     - name: test
-      python:
-        - 3.9.7
-      script:
-        - source ~/virtualenv/python3.9/bin/activate
-    - python: 3.8
+      python: 3.9.7
+      script: source ~/virtualenv/python3.9/bin/activate
+
+    - name: test
+      python: 3.8
       script: echo "eeeee"
