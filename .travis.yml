@@ -13,6 +13,7 @@ script:
 stages:
   - name: test
     if: tag IS blank
+  - name: deploy
 
 jobs:
   include:
@@ -21,3 +22,5 @@ jobs:
 
     - python: 3.8
       script: echo "eeeee"
+
+    - script: echo "this is deploy"
