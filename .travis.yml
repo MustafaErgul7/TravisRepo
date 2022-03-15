@@ -23,4 +23,5 @@ jobs:
     - python: 3.8
       script: echo "eeeee"
 
-    - script: echo "this is deploy"
+    - name: deploy
+      script: echo "this is deploy"
