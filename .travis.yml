@@ -1,11 +1,26 @@
 ---
-os: linux
-dist: xenial
 language: python
 
 python:
-  - 3.9.5
+  - 3.9.7
+  - 3.8
 
 install:
-  - source ~/virtualenv/python3.9.5/bin/activate
-script: python -V
+  - pip3 install .
+
+before_script:
+  - pip3 install pytest
+
+script:
+  - pytest
+
+stages:
+  - name: test
+    if: tag IS blank
+
+jobs:
+  include:
+    - name: test
+      script:
+        - source ~/virtualenv/python3.9/bin/activate
+    - script: echo "eeeee"
