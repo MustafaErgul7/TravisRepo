@@ -1,8 +1,11 @@
 ---
 os: linux
 dist: xenial
-language: python
-python:
-  - 3.9.5
+language: php
+php:
+  - 7.4
 
-script: python3 --version
+install:
+  - apt list --installed | grep libargon2
+
+script: php --version
