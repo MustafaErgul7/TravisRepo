@@ -1,10 +1,11 @@
 ---
 os: linux
 dist: xenial
-language: php
-php:
-  - 7.3
-  - 8.1
-  - 7.4
+language: python
 
-script: php --version
+python:
+  - 3.9.5
+
+install:
+  - source ~/virtualenv/python3.9.5/bin/activate
+script: python -V
