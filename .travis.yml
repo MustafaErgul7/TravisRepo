@@ -17,11 +17,13 @@ stages:
 
 jobs:
   include:
-    - python: 3.9.7
+    - stage: test
+      python: 3.9.7
       script: source ~/virtualenv/python3.9/bin/activate
 
-    - python: 3.8
+    - stage: test
+      python: 3.8
       script: echo "eeeee"
 
-    - name: deploy
+    - stage: deploy
       script: echo "this is deploy"
