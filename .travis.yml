@@ -1,14 +1,11 @@
 ---
 os: linux
 dist: trusty
-language: php
-php:
-  - 7.4
+language: android
 
 before_install:
   - git --version
   - sudo apt-get install git
   - git --version
 
-script:
-  - php --version
+script: true
