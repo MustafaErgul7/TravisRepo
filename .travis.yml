@@ -3,9 +3,12 @@ os: linux
 dist: trusty
 language: android
 
+addons:
+  apt:
+    packages:
+      - git
+
 before_install:
-  - git --version
-  - sudo apt-get install git
   - git --version
 
 script: true
