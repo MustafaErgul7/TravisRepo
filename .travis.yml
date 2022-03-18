@@ -1,6 +1,6 @@
 ---
 os: linux
-language: c
+language: cpp
 vm:
   size:
     - 2x-large
