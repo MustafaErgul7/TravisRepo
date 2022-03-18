@@ -1,11 +1,12 @@
 ---
 os: linux
-language: php
-php:
-  - "7.4.27"
+language: c
+addons:
+  firefox: esr-next-latest-ssl
 jobs:
   include:
     - dist: xenial
     - dist: bionic
     - dist: focal
-script: php --version
+install: true
+script: true
