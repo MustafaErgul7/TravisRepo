@@ -1,9 +1,11 @@
 ---
 os: linux
-dist: xenial
 language: php
 php:
-  - 7.3
-  - 8.1
-  - 7.4
+  - 7.4.28
+jobs:
+  include:
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
 script: php --version
