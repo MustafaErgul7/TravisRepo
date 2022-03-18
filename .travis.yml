@@ -1,12 +1,13 @@
 ---
 os: linux
 language: c
-addons:
-  firefox: esr-next-latest-ssl
+vm:
+  size:
+    - 2x-large
 jobs:
   include:
     - dist: xenial
     - dist: bionic
     - dist: focal
 install: true
-script: true
+script: nproc
