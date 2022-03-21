@@ -1,10 +1,13 @@
 ---
 os: linux
 language: java
-jdk: openjdk9
+
+php:
+  - "7.4.27"
 jobs:
   include:
     - dist: xenial
     - dist: bionic
     - dist: focal
-script: java --version
+
+script: php --version
