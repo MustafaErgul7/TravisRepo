@@ -1,20 +1,11 @@
 ---
-dist: focal
-language: python
-
-python:
-  - "3.7.6"
-
-install:
-  - ls -lt /home/travis/virtualenv/python3.7.6/lib/python3.7/site-packages/
-  - ls -lt /home/travis/virtualenv/python3.7.6/lib/python3.7/site-packages/setuptools*
-  - pip list
-  - python -c "import setuptools; print(setuptools.__version__)"
-
-script:
-  - echo $PATH
-  - python --version
-  - which python
-  - which pip
-  - python -c "from setuptools._importlib import metadata as md; print([(dist.name, dist._path) for dist in md.distributions() if 'setuptools' in dist.name.lower()])"
-  - ls -lt /home/travis/virtualenv/python3.7.6/lib/python3.7/site-packages/setuptools*
+os: linux
+language: php
+php:
+  - 7.4
+jobs:
+  include:
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
+script: php --version
