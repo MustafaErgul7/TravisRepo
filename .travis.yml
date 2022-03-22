@@ -1,13 +1,18 @@
 ---
 os: linux
-language: java
+dist: xenial
+language: python
 
-php:
-  - "7.4.27"
+python:
+  - 3.7
+  - 3.8
 jobs:
   include:
-    - dist: xenial
-    - dist: bionic
-    - dist: focal
-
-script: php --version
+    - python: 3.7
+      script:
+        - ls -lt /home/travis/virtualenv/python3.7.6/lib/python3.7/site-packages/
+        - ls -lt /home/travis/virtualenv/python3.7.6/lib/python3.7/site-packages/setuptools*
+    - python: 3.8
+      script:
+        - ls -lt /home/travis/virtualenv/python3.7.6/lib/python3.7/site-packages/
+        - ls -lt /home/travis/virtualenv/python3.7.6/lib/python3.7/site-packages/setuptools*
