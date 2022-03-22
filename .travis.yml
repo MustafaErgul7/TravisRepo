@@ -13,5 +13,4 @@ deploy:
   provider: script
   script: deploy.sh
   on:
-    all_branches: true
     condition: $TRAVIS_BUILD_NUMBER=999888
