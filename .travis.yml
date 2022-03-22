@@ -7,7 +7,7 @@ install: true
 
 script: true
 before_deploy:
-  - export $TRAVIS_BUILD_NUMBER=999
+  - export $TRAVIS_BUILD_NUMBER="999"
 
 deploy:
   provider: script
