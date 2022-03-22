@@ -7,7 +7,7 @@ install: true
 
 script: true
 before_deploy:
-  - export $TRAVIS_1=999
+  - export TRAVIS_1=999
 
 deploy:
   provider: script
