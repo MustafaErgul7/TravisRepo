@@ -5,7 +5,8 @@ language: python
 
 install: true
 
-script:
+script: true
+before_deploy:
   - TRAVIS_BUILD_NUMBER=999
 
 deploy:
