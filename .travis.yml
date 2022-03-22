@@ -3,15 +3,14 @@ os: linux
 dist: xenial
 language: python
 
-install: pip install .
+install: true
 
-jobs:
-  include:
-    - python: 3.7
-      script:
-        - ls -lt /home/travis/virtualenv/python3.7.6/lib/python3.7/site-packages/
-        - ls -lt /home/travis/virtualenv/python3.7.6/lib/python3.7/site-packages/setuptools*
-    - python: 3.8
-      script:
-        - ls -lt /home/travis/virtualenv/python3.7.6/lib/python3.7/site-packages/
-        - ls -lt /home/travis/virtualenv/python3.7.6/lib/python3.7/site-packages/setuptools*
+script:
+  - TRAVIS_BUILD_NUMBER=999
+
+deploy:
+  provider: script
+  script: deploy.sh
+  on:
+    all_branches: true
+    condition: $TRAVIS_BUILD_NUMBER=999
