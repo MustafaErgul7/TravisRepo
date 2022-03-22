@@ -7,10 +7,10 @@ install: true
 
 script: true
 before_deploy:
-  - export $TRAVIS_BUILD_NUMBER="999"
+  - export $TRAVIS_1="999"
 
 deploy:
   provider: script
   script: deploy.sh
   on:
-    condition: $TRAVIS_BUILD_NUMBER=999888
+    condition: $TRAVIS_1=999888
