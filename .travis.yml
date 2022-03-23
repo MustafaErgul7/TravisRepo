@@ -5,13 +5,15 @@ language: python
 
 install: true
 
-script: true
+script:
+  - ./test.sh
+
 before_deploy:
-  - export TRAVIS_1=999
+  - export VERSION="123"
 
 deploy:
   provider: script
   script: deploy.sh
   skip_cleanup: true
   on:
-    condition: $TRAVIS_1=999888
+    condition: $VERSION=123
