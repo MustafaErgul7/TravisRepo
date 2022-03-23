@@ -8,7 +8,7 @@ install: true
 script:
   - ./test.sh
 
-before_deploy:
+after_script:
   - export VERSION="123"
   - echo $VERSION
 
@@ -17,4 +17,4 @@ deploy:
   script: deploy.sh
   skip_cleanup: true
   on:
-    condition: $VERSION = 12354
+    condition: $VERSION = 123
