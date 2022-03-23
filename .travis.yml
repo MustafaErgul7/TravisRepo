@@ -10,6 +10,7 @@ script:
 
 before_deploy:
   - export VERSION="123"
+  - echo $VERSION
 
 deploy:
   provider: script
