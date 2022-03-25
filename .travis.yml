@@ -2,19 +2,11 @@
 os: linux
 dist: xenial
 language: python
+python: 3.7
 
-install: true
+install:
+  - pip --version
 
 script:
-  - ./test.sh
-
-after_script:
-  - export VERSION="123"
-  - echo $VERSION
-
-deploy:
-  provider: script
-  script: deploy.sh
-  skip_cleanup: true
-  on:
-    condition: $VERSION = 123
+  - pip install 22.0.4
+  - pip --version
