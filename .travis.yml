@@ -8,5 +8,5 @@ install:
   - pip --version
 
 script:
-  - pip install 22.0.4
+  - python -m pip install pip=22.0.4
   - pip --version
