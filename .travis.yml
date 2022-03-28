@@ -1,14 +1,11 @@
 ---
 os: linux
 dist: xenial
-language: python
-python: 3.7
-install:
-  - pip --version
-script:
-  - python -m pip install pip==22.0.4
-  - pip --version
-  - echo $foo
-env:
-  global:
-    secure: cgjXy4TP+ni6G6leOPuh7za37hxvNqL7DABI48jeyIdhSF+9nr88nKXtrsYs2RBZOgRFPHCT9YzDDabTjkfBiWWGwSKjZxlLPLOLBhciaCbfR+jFOZaa9thRxVSoXTPmXhx7YzH4VrJ9LqpJZ/NR1D37xrqwxM1kBmUjL/wTlhCaedBYBMLWQKSBZZUBMcmMoiVHV6gbs7LUL2wK2dYzdeje73AmunCieHXXNjO218RddGddsd7bYdZqdJEhtPbCOSQ0DinZcQnA6lvdhr2meS5BSt0fMdo1drvpdoNE1pSNVhSAvAEJAmS1dN5bJWq152ItPXS0drorDzkuuPT6vgDSweMUvz7WjBWYIJZOYphBup6crkpEbI50Qlz1pfGA2z4gjk6Ap+ZgLs8h05CMx5C6JJnFiXfrBGtB0Ch/+EeuAfmlFjyLY4GKeY9QIcaVIYzSlJdCx/tLWyhA8EBxcnpcIn25S6BYdaEECtln27xpmv3x4wjvZz7slfrwP8GAkp+bld0+YH6R4LLD1NUb4U2CKgka4vxVzGXsr+ZuvSB0Gc4qs3d1jElT7HRyHMV2b2vi9EqvlCVkL+/hPxz2/7LYCcET6drp3y976F+5nWGglKxKzrNylaFZQh+hkwnZqbCd0orEMsPMim7+8G8pzCBBIRXKOCbd+jBE1DLO2dM=
+language: php
+php:
+  - 7.4
+  - 8.0
+  - 8.1
+  - 8.1.0
+install: true
+script: true
