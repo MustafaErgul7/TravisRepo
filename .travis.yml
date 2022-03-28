@@ -4,11 +4,11 @@ dist: xenial
 language: php
 python: 3.7
 install:
-  - pip --version
+  - pip3 --version
 script:
-  - pip --version
+  - pip3 --version
   - python -m pip install pip==22.0.4
-  - pip --version
+  - pip3 --version
   - echo $foo
 env:
   global:
