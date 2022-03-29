@@ -9,9 +9,7 @@ jobs:
       language: node_js
       node_js: stable
       install: true
-      script:
-        - npm run lint
-        - npm run typecheck
+      script: true
     - stage: Compile Native Apps
       name: Package QA Android App
       language: android
@@ -24,5 +22,4 @@ jobs:
           - extra-google-google_play_services
       install: true
       before_install: true
-      script:
-        - npm run configure
+      script: true
