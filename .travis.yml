@@ -14,7 +14,6 @@ jobs:
         - npm run typecheck
     - stage: Compile Native Apps
       name: Package QA Android App
-      if: type IN (pull_request, cron) OR branch =~ /^(release)\/.*$/
       language: android
       jdk: oraclejdk8
       android:
