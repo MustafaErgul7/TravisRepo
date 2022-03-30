@@ -2,8 +2,6 @@
 dist: xenial
 language: python
 python: 3.7
-virtualenv:
-  system_site_packages: true
 
 before_install: python -m pip uninstall -y pip
 
@@ -12,5 +10,5 @@ install:
   - sudo apt install python3-pip
   - sudo pip3 install --upgrade pip==21.3.1
 script:
-  - pip3 --version
+  - pip --version
   - pip list
