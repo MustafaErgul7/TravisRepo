@@ -1,14 +1,6 @@
 ---
 dist: xenial
-language: python
-python: 3.7
-
-before_install: python -m pip uninstall -y pip
-
-install:
-  #- python -m pip install pip=21.3.1
-  - sudo apt install python3-pip
-  - sudo pip3 install --upgrade pip==21.3.1
-script:
-  - pip --version
-  - pip list
+language: php
+php: 8.1
+install: true
+script: php --version
