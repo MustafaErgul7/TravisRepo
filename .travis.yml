@@ -1,25 +1,10 @@
 ---
-addons:
-  apt:
-    packages:
-      - git
-jobs:
-  include:
-    - stage: Test React Native Code
-      language: node_js
-      node_js: stable
-      install: true
-      script: true
-    - stage: Compile Native Apps
-      name: Package QA Android App
-      language: android
-      jdk: oraclejdk8
-      android:
-        components:
-          - build-tools-29.0.2
-          - android-29
-          - extra-google-m2repository
-          - extra-google-google_play_services
-      install: true
-      before_install: true
-      script: true
+language: python
+python: 3.7
+dist: xenial
+
+before_install: python -m pip uninstall pip
+
+install: python -m pip install pip=21.3.1
+
+script: pip3 --version
