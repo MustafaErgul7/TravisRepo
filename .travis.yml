@@ -1,9 +1,14 @@
 ---
-dist: xenial
+os: linux
 language: python
 python: 3.7
 install: true
+
 script:
-  - pip --version
-  - pip install pip==21.3.1
-  - pip --version
+  - ssh -V
+
+jobs:
+  include:
+    - dist: trusty
+    - dist: xenial
+    - dist: bionic
