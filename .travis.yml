@@ -1,6 +1,8 @@
 ---
 dist: xenial
-language: php
-php: 8.1
+language: python
+python: 3.7
 install: true
-script: php --version
+script:
+  - sudo python -m pip install pip==21.3.1 --upgrade
+  - pip version
