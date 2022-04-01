@@ -8,9 +8,6 @@ addons:
     packages:
       - openssh-client
 
-before_install:
-  - sudo apt-get -y upgrade
-
 script:
   - ssh -V
 
