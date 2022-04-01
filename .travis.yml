@@ -2,6 +2,10 @@
 os: linux
 language: generic
 install: true
+addons:
+  apt:
+    packages:
+      - openssh-client
 
 script:
   - ssh -V
