@@ -4,11 +4,12 @@ language: generic
 install: true
 addons:
   apt:
+    update: true
     packages:
       - openssh-client
 
 before_install:
-  - sudo apt-get uprade
+  - sudo apt-get upgrade
 
 script:
   - ssh -V
