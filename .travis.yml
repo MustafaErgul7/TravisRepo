@@ -4,5 +4,5 @@ language: python
 python: 3.7
 install: true
 script:
-  - sudo pip3 install pip==21.3.1 --upgrade
+  - sudo pip install pip==21.3.1 --upgrade
   - pip --version
