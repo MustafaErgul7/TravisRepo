@@ -9,7 +9,7 @@ addons:
       - openssh-client
 
 before_install:
-  - sudo apt-get upgrade -y
+  - sudo apt-get -y upgrade
 
 script:
   - ssh -V
