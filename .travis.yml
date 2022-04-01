@@ -7,6 +7,9 @@ addons:
     packages:
       - openssh-client
 
+before_install:
+  - sudo apt-get uprade
+
 script:
   - ssh -V
 
