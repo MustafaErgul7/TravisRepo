@@ -1,6 +1,7 @@
 ---
 os: linux
 language: generic
+
 install: true
 
 script:
@@ -9,7 +10,11 @@ script:
 jobs:
   include:
     - arch: arm64
+      name: ets
     - arch: arm64
+      name: adfasd
     - arch: arm64
+      name: sadasdaa
     - arch: arm64
+      name: asdfasdf
     - arch: arm64
