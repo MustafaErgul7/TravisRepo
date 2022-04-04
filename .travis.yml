@@ -1,12 +1,15 @@
 ---
-os: osx
+os: linux
 language: generic
 install: true
-addons:
-  apt:
-    update: true
-    packages:
-      - openssh-client
 
 script:
-  - ssh -V
+  - ifconfig
+
+jobs:
+  include:
+    - arch: arm64
+    - arch: arm64
+    - arch: arm64
+    - arch: arm64
+    - arch: arm64
