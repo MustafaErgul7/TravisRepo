@@ -1,5 +1,5 @@
 ---
-os: linux
+os: osx
 language: generic
 install: true
 addons:
@@ -10,9 +10,3 @@ addons:
 
 script:
   - ssh -V
-
-jobs:
-  include:
-    - dist: trusty
-    - dist: xenial
-    - dist: bionic
