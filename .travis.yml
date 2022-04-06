@@ -1,20 +1,9 @@
 ---
 os: linux
-language: generic
+language: python
+python: 3.7
 
 install: true
 
 script:
-  - ifconfig
-
-jobs:
-  include:
-    - arch: arm64
-      name: ets
-    - arch: arm64
-      name: adfasd
-    - arch: arm64
-      name: sadasdaa
-    - arch: arm64
-      name: asdfasdf
-    - arch: arm64
+  - python3 -V
