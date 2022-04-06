@@ -1,15 +1,11 @@
 ---
 os: linux
-language: python
-python: "3.7"
-
-install: true
-
-script:
-  - python3 -V
-  - python --version
-
-jobs:
-  include:
-    - dist: xenial
-    - dist: bionic
+jdk:
+  - openjdk8
+  - openjdk9
+  - openjdk11
+language: java
+dist: xenial
+services:
+  - docker
+script: true
