@@ -1,11 +1,13 @@
 ---
 os: linux
-jdk:
-  - openjdk8
-  - openjdk9
-  - openjdk11
-language: java
+language: python
 dist: xenial
-services:
-  - docker
-script: true
+
+script:
+  - pip list
+  - pip config debug
+
+jobs:
+  include:
+    - python: 3.7
+    - python: 3.7.13
