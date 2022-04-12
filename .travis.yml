@@ -10,3 +10,4 @@ jobs:
   include:
     - dist: trusty
     - dist: xenial
+    - dist: focal
