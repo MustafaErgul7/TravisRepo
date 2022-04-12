@@ -1,13 +1,28 @@
 ---
 os: linux
-language: php
-php: nightly
+dist: trusty
+language: android
 
-script: php --version
+jdk:
+  - openjdk8
+android:
+  components:
+    - platform-tools
+    - tools
+    - build-tools-31.0.0
+    - android-31
+  licenses:
+    - android-sdk-preview-.+
+    - android-sdk-license-.+
+    - google-gdk-license-.+
+
+before_install:
+  - touch $HOME/.android/repositories.cfg
+  - yes | sdkmanager "platforms;android-31"
+  - yes | sdkmanager "build-tools;31.0.0"
+  - mv $ANDROID_HOME/build-tools/31.0.0/d8 $ANDROID_HOME/build-tools/31.0.0/dx
+  - mv $ANDROID_HOME/build-tools/31.0.0/lib/d8.jar $ANDROID_HOME/build-tools/31.0.0/lib/dx.jar
+  - bash ./scripts/ci-setup.sh
+
 install: true
-
-jobs:
-  include:
-    - dist: trusty
-    - dist: xenial
-    - dist: focal
+script: ${ANDROID_HOME}/tools/bin/sdkmanager --list
