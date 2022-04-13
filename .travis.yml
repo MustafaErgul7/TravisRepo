@@ -1,13 +1,8 @@
 ---
 os: linux
-language: python
-python: nightly
-
-jobs:
-  include:
-    - dist: xenial
-    - dist: bionic
-    - dist: focal
-
+rvm: ruby-head
+dist: trusty
+group: stable
+language: ruby
+script: true
 install: true
-script: python -V
