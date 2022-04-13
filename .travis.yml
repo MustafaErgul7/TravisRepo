@@ -1,8 +1,7 @@
 ---
-os: linux
-rvm: ruby-head
-dist: trusty
-group: stable
 language: ruby
+os: osx
+rvm: 3.1.1
+
 script: true
 install: true
