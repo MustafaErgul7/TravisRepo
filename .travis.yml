@@ -1,8 +1,7 @@
-dist: bionic
+---
+os: osx
+osx: osx_image10.2
 language: ruby
 rvm: 3.1.1
 script: true
 install: true
-env:
-  global:
-    secure: Bnb1hH7pEDN3ilfoZamAXBd7MSpEgha092PmFEa3T3DmHCjKKG4bE/oUzE1bNBV5kSGO4k9fojlcCR6PhpvXOo2hdIpq4dAsRnGNyRDoE93Z4TU0i36W/A1wxx4b2+B5AWOHwBQb/Qiz+sn4uhKidqMJ+Pu+i7bEGifEWF07i7q7y1rPz3QT9sDKbrq6rvgrM0OuK2yTcsSOiffuVhDvYCcODAYYETAIkyW8JlnNFsWNQ8yKnZvCsFOqI3utiOOu9vzSWOT6C9WQqpx14dgNP2GfrEiiWbalPDHzTWLeqCmmdyfmePzFIqsmwUwj9wNcRU811I6qQqhYjn6viqzVGHklvVloOCVTYydEpbTJEFUFOovnWwVVp7hWBq1nJh0r8u5uKR6eSBF+qp+hZj6rR/tlA5fM7Q8DIyGLRMb+mhd6mgb6M8STpStFphoaILw1+0/JAoVHuPSbIz9wKhVijM1C5jbBWguiIH4+YtxikGsBvNf+1RCOsKj26GAn0fwgSbZYbe6JdLPB/eii83QBC2JfEyjpmAzIHlJcT5seLt4onE1L8UyvUC0ARQoE2cLUz3IcZitxxtsy5law8eHWZaLkA8EZ+WII6dVv3bPT+xL810zxZVRyyV/iW3DY/cecIUEuwUWMHZILm55zdAEHRyeMWctDe8GT4yuqymc3Ggo=
