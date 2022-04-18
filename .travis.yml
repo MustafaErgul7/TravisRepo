@@ -1,7 +1,5 @@
 ---
-os: osx
-osx: osx_image10.2
-language: ruby
-rvm: 3.1.1
+language: python
+python: 3.10.4
 script: true
-install: true
+install: python --version
