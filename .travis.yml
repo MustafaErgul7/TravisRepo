@@ -2,6 +2,14 @@
 os: osx
 osx_image: xcode13.3
 language: generic
+
+cache:
+  directories:
+    - $HOME/Library/Caches/Homebrew
+
+before_cache:
+  - brew cleanup
+
 before_install:
   - brew install python3
   - pip3 install virtualenv
