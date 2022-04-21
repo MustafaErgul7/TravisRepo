@@ -64,4 +64,7 @@ matrix:
     - name: "Python 3.10: Run tests"
       <<: *py310-steps
 install: true
-script: python --version
+script:
+  - python --version
+  - python -m pip install --upgrade pip
+  - pip install -e .[dev]
