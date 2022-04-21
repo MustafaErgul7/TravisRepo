@@ -26,25 +26,25 @@ py36-steps: &py36-steps
 py37-steps: &py37-steps
   env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
   before_install:
-    - choco install python --version 3.7.9
+    - choco install python --version 3.7
     - python -m pip install --upgrade pip
 
 py38-steps: &py38-steps
   env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
   before_install:
-    - choco install python --version 3.8.0
+    - choco install python --version 3.8
     - python -m pip install --upgrade pip
 
 py39-steps: &py39-steps
   env: PATH=/c/Python39:/c/Python39/Scripts:$PATH
   before_install:
-    - choco install python --version 3.9.0
+    - choco install python --version 3.9
     - python -m pip install --upgrade pip
 
 py310-steps: &py310-steps
-  env: PATH=/c/Python39:/c/Python39/Scripts:$PATH
+  env: PATH=/c/Python310:/c/Python310/Scripts:$PATH
   before_install:
-    - choco install python --version 3.9.0
+    - choco install python --version 3.10
     - python -m pip install --upgrade pip
 
 matrix:
@@ -79,5 +79,3 @@ script:
   - echo exit-zero treats all errors as warnings.  The GitHub editor is 127 chars wide
   - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
   #- true  # pytest --capture=sys
-notifications:
-  email: false
