@@ -1,9 +1,9 @@
 ---
-env:
-  - AWS_DEFAULT_REGION="eu-west-1"
-os: osx
-osx_image: xcode13.3
+os: windows
 language: shell
-before_install: python3 --version; pip3 --version; sw_vers
+env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
+before_install:
+  - choco install python
+  - python -m pip install --upgrade pip
 install: true
-script: python3 -V
+script: python --version
