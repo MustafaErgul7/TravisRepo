@@ -12,6 +12,7 @@ before_cache:
 
 before_install:
   - brew install python3
+  - pyenv install 3.6.5
   - pip3 install virtualenv
   - virtualenv -p python3 .
 
