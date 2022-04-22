@@ -7,5 +7,5 @@
 #    echo $VERSION
 #fi
 
-if [ -n "$test"]; then echo "test env is here"; fi
-if [ -n "$test2"]; then echo "test2 env is here"; fi
+if [ -n "$test" ]; then echo "test env is here"; fi
+if [ -n "$test2" ]; then echo "test2 env is here"; fi
