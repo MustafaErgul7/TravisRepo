@@ -2,4 +2,4 @@
 install: true
 
 script:
-  - if [ -n "$test3" ]; then echo "here"
+  - if [ -n "$test2" ]; then echo "here"
