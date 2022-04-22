@@ -1,6 +1,6 @@
 ---
+os: linux
 install: true
-
 script:
   - if [ -n "$test2" ]; then echo "here"; fi
   - if [ -n "$test" ]; then echo "here222"; fi
