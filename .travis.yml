@@ -1,21 +1,5 @@
 ---
-os: osx
-osx_image: xcode13.3
-language: generic
-
-cache:
-  directories:
-    - $HOME/Library/Caches/Homebrew
-
-before_cache:
-  - brew cleanup
-
-before_install:
-  - brew install python3
-  - pyenv install 3.6.5
-  - pip3 install virtualenv
-  - virtualenv -p python3 .
-
 install: true
+
 script:
-  - python3 --version
+  - if [ -n "$test3" ]; then echo "here"
