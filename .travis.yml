@@ -8,6 +8,7 @@ script:
 
 jobs:
   include:
+    - dist: xenial
     - dist: bionic
     - dist: focal
       script:
