@@ -10,4 +10,6 @@ jobs:
   include:
     - dist: bionic
     - dist: focal
-      script: pyenv install 2.7.14
+      script:
+        - pyenv install 2.7.14
+        - python -V
