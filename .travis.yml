@@ -1,7 +1,13 @@
 ---
-dist: bionic
 language: node_js
 node_js: lts/
 install: true
 
-script: true
+script:
+  - python -V
+  - ldd --version
+
+jobs:
+  include:
+    - dist: bionic
+    - dist: focal
