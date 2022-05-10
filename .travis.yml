@@ -4,7 +4,6 @@ install: true
 
 script:
   - python -V
-  - sleep 99999
 
 jobs:
   include:
