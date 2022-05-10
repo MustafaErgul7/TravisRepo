@@ -4,7 +4,6 @@ install: true
 
 script:
   - python -V
-  - ldd --version
 
 jobs:
   include:
