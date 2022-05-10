@@ -1,10 +1,9 @@
 ---
-language: generic
+arch: arm64-graviton2
+virt: vm
+group: edge
+dist: focal
 install: true
 
 script:
-  - python -V
-
-jobs:
-  include:
-    - dist: bionic
+  - sleep 99999
