@@ -1,8 +1,11 @@
 ---
-arch: arm64-graviton2
-virt: vm
-group: edge
 dist: focal
 install: true
 
 script: true
+
+jobs:
+  include:
+    - if: branch = master
+      script: echo "edeeee"
+    - if: branch = asda
