@@ -1,11 +1,12 @@
 ---
-dist: focal
 install: true
 
-script: true
+script:
+  - clang --version
 
 jobs:
   include:
-    - if: branch = master
-      script: echo "edeeee"
-    - if: branch = asda
+    - dist: xenial
+      language: generic
+    - dist: focal
+      language: python
