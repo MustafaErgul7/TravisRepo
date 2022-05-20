@@ -1,9 +1,11 @@
 ---
+language: erlang
+otp_release:
+  - "25.0"
 install: true
+script: true
 
 jobs:
   include:
     - dist: xenial
-      language: generic
     - dist: focal
-      language: python
