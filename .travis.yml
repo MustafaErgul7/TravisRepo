@@ -3,7 +3,8 @@ language: erlang
 otp_release:
   - "25.0"
 install: true
-script: true
+script:
+  - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
 
 jobs:
   include:
