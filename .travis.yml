@@ -1,5 +1,5 @@
 ---
-language: erlang
+language: elixir
 otp_release:
   - "25.0"
 install: true
@@ -8,3 +8,4 @@ script:
 dist: focal
 arch: arm64-graviton2
 group: edge
+virt: vm
