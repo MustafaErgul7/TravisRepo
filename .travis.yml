@@ -5,3 +5,4 @@ os:
 dist: xenial
 if: type NOT IN (pull_request)
 script: true
+install: true
