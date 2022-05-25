@@ -3,24 +3,5 @@ language: generic
 os:
   - linux
 dist: xenial
-conditions: v1
-services:
-  - docker
-jobs:
-  fast_finish: true
-  include:
-    - os: linux
-      name: PPC64
-      arch: ppc64le
-      dist: focal
-    - os: linux
-      name: S390X
-      arch: s390x
-      dist: focal
-    - os: linux
-      name: ARM64
-      arch: arm64
-      dist: focal
-cache:
-  ccache: true
+if: type IS NOT pull_request
 script: true
