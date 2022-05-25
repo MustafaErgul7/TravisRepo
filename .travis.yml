@@ -1,13 +1,26 @@
 ---
-language: elixir
-elixir:
-  - "1.13.4"
-otp_release:
-  - "25.0"
-install: true
-script:
-  - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
-dist: focal
-arch: arm64-graviton2
-group: edge
-virt: vm
+language: generic
+os:
+  - linux
+dist: xenial
+conditions: v1
+services:
+  - docker
+jobs:
+  fast_finish: true
+  include:
+    - os: linux
+      name: PPC64
+      arch: ppc64le
+      dist: focal
+    - os: linux
+      name: S390X
+      arch: s390x
+      dist: focal
+    - os: linux
+      name: ARM64
+      arch: arm64
+      dist: focal
+cache:
+  ccache: true
+script: true
