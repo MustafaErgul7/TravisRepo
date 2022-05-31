@@ -4,4 +4,16 @@ language: generic
 before_install: true
 install: true
 
-script: ./test.sh
+dist: xenial
+script:
+  - df -h
+
+jobs:
+  include:
+    - arch: amd64
+    - arch: arm64-graviton2
+      group: edge
+      virt: lxd
+    - arch: arm64-graviton2
+      group: edge
+      virt: vm
