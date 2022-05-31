@@ -1,7 +1,10 @@
 ---
 language: generic
-os:
-  - linux
 dist: xenial
-if: type NOT IN (pull_request)
-script: true
+script:
+  - df -h
+
+jobs:
+  include:
+    - arch: amd64
+    - arch: arm64-graviton2
