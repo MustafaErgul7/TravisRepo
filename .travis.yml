@@ -1,5 +1,9 @@
 ---
+os: linux
 language: generic
+before_install: true
+install: true
+
 dist: xenial
 script:
   - df -h
