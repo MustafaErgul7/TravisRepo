@@ -10,10 +10,7 @@ script:
 
 jobs:
   include:
-    - arch: amd64
-    - arch: arm64-graviton2
-      group: edge
-      virt: lxd
-    - arch: arm64-graviton2
-      group: edge
-      virt: vm
+    - git:
+        depth: false
+      install: true
+    - install: true
