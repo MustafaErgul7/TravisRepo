@@ -5,12 +5,12 @@ before_install: true
 install: true
 
 dist: xenial
-script:
-  - df -h
+script: git tag
 
 jobs:
   include:
     - git:
         depth: false
       install: true
+
     - install: true
