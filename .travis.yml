@@ -1,9 +1,12 @@
 ---
 os: linux
 language: generic
-before_install: true
 install: true
-arch: ppc64le
-
 dist: focal
 script: true
+git:
+  clone: false
+
+before_install:
+  - git clone https://github.com/$TRAVIS_REPO_SLUG.git --branch clone-test --single-branch $TRAVIS_REPO_SLUG
+  - cd $TRAVIS_REPO_SLUG && ls -all
