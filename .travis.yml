@@ -1,7 +1,9 @@
 ---
-os: linux
-language: android
+language: python
+python: 3.11
 install: true
-dist: bionic
-script: true
-jdk: openjdk8
+script: python -V
+
+jobs:
+  - dist: bionic
+  - dist: focal
