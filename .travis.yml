@@ -1,14 +1,7 @@
 ---
 os: linux
-language: generic
+language: android
 install: true
-dist: focal
+dist: bionic
 script: true
-git:
-  clone: false
-
-before_install:
-  - git clone --depth=100 https://github.com/$TRAVIS_REPO_SLUG.git --branch test --single-branch $TRAVIS_REPO_SLUG
-  - cd $TRAVIS_REPO_SLUG && ls -all
-  - git fetch --unshallow
-  - git tag
+jdk: oraclejdk8
