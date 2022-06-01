@@ -9,6 +9,6 @@ git:
 
 before_install:
   - git clone https://github.com/$TRAVIS_REPO_SLUG.git --branch test --single-branch $TRAVIS_REPO_SLUG
+  - cd $TRAVIS_REPO_SLUG && ls -all
   - git fetch --unshallow
   - git tag
-  - cd $TRAVIS_REPO_SLUG && ls -all
