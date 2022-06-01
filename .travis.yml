@@ -3,14 +3,7 @@ os: linux
 language: generic
 before_install: true
 install: true
+arch: ppc64le
 
-dist: xenial
-script: git tag
-
-jobs:
-  include:
-    - git:
-        depth: false
-      install: true
-
-    - install: true
+dist: focal
+script: true
