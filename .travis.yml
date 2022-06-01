@@ -4,4 +4,4 @@ language: android
 install: true
 dist: bionic
 script: true
-jdk: oraclejdk8
+jdk: openjdk8
