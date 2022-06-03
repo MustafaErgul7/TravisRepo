@@ -1,12 +1,11 @@
 ---
-language: php
+language: java
 install: true
 dist: bionic
-addons:
-  rethinkdb: "2.4.1"
+jdk: openjdk11
 before_install:
   - sudo apt remove cmake
   - pip install cmake --upgrade
 script:
   - cmake -version
-  - rethinkdb -v
+  - java --version
