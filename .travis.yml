@@ -1,9 +1,7 @@
 ---
-language: python
-python: 3.11
+language: php
 install: true
-script: python -V
+dist: bionic
 
-jobs:
-  - dist: bionic
-  - dist: focal
+before_install: sudo apt install cmake
+script: cmake -version
