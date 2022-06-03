@@ -3,8 +3,6 @@ language: php
 install: true
 dist: bionic
 
-addons:
-  apt:
-    packages:
-      - cmake
+before_install:
+  - sudo apt-get install cmake
 script: cmake -version
