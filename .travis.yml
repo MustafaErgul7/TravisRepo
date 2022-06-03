@@ -1,7 +1,11 @@
 ---
-dist: bionic
-
 language: java
 jdk: openjdk7
 install: true
 script: java --version
+
+jobs:
+  include:
+    - dist: bionic
+    - dist: focal
+    - dist: trusty
