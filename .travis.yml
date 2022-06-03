@@ -2,7 +2,11 @@
 language: php
 install: true
 dist: bionic
+addons:
+  rethinkdb: "2.4.1"
 before_install:
   - sudo apt remove cmake
   - pip install cmake --upgrade
-script: cmake -version
+script:
+  - cmake -version
+  - rethinkdb -v
