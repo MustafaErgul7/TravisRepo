@@ -1,12 +1,11 @@
 ---
 language: python
-python: 3.10-dev
+python:
+  - nightly
+  - 3.11-dev
 install: true
 script:
   - python -V
 jobs:
   include:
-    - dist: trusty
-    - dist: focal
     - dist: bionic
-    - dist: xenial
