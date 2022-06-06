@@ -1,9 +1,12 @@
 ---
-dist: bionic
 language: python
 python:
   - nightly
-  - 3.11-dev
 install: true
 script:
   - python -V
+jobs:
+  include:
+    - dist: focal
+    - dist: bionic
+    - dist: xenial
