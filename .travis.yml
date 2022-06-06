@@ -6,6 +6,7 @@ script:
   - java --version
 jobs:
   include:
+    - dist: trusty
     - dist: focal
     - dist: bionic
     - dist: xenial
