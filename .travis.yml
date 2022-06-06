@@ -1,11 +1,11 @@
 ---
 language: python
-python:
-  - nightly
-  - 3.11-dev
 install: true
 script:
   - python -V
 jobs:
   include:
     - dist: bionic
+      python: nightly
+    - dist: bionic
+      python: 3.11-dev
