@@ -1,9 +1,9 @@
 ---
-language: java
-jdk: openjdk7
+language: python
+python: 3.10-dev
 install: true
 script:
-  - java --version
+  - python -V
 jobs:
   include:
     - dist: trusty
