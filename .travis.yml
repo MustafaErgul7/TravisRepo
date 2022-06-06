@@ -14,8 +14,5 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install libboost-dev erlang-dev
   - python -m pip install pip==20.1
-install:
-  - python setup.py install
 script:
-  - python setup.py build
   - pip --version
