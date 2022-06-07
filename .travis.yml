@@ -1,5 +1,6 @@
 ---
 dist: xenial
+language: generic
 addons:
   sonarcloud:
     organization: "mustafa" # the key of the org you chose at step #3
