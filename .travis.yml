@@ -1,6 +1,7 @@
 ---
 language: python
 install: true
+arch: arm64
 script:
   - python -V
 jobs:
