@@ -4,9 +4,9 @@ language: generic
 addons:
   sonarcloud:
     organization: mustafa-travisci
-    token:
-      secure: hDrO2Uf0dbiYu5g1vsmwLfD/+sijxTeb8p1Fvw/y4G1Ld8Dvlzcj8qTaV4EAzn8keQQ4HhD50CnN6hd4pMVmX9pMVykABueYvqd0AxI4zMhC7O0/znDkGB+qofDQi6sv1jvsBdcpFikuMKh7vqAie8KqJMMFtRzib9Rl+XAe8hKx/RFjevNUk1c670ALvelVE9BRVZ9zz8HUcGJFXKgf+R4nagXgiI3P8dlo5/GpHU/7QbjDLxkNqSCTCkP9aEL13PxYayZb52FJTQ0AB5w8enIPY5w68pYJFXIvR1g040MZHJoe39Y6mhewCn/9mFLgXDyjVHawFWDxc/4a1FF8hjKPgBt67wkcoJvAXbul4gZpl8PCnUuK1K2gtRpmgbENgCcjJLQ9aWP1CgbIqgJ56VtVOO2Pkj8XzANS5ciCFTeTbIxb9KHeR22CsEKZougGc07AWZOhZ/LeQEeKBT6mMxzF478PQbYCzuY40xsqG4Ndy+3v1u47/q0mxKSU054rbfITWMlJ679F0i7LeLtL/Ubbj4dOmJ1MCkS0wocpYsc1fUbZ9kiFuOdB7udpsZ4XtdL/iRfHQp9gUnMbzOh9YfdV4Uf3CAPK2L3oP2jPwFOQ8iMU0RkgBKhNwgYSXI1+XnHnXIDsVclPc6sqpDWdm96vSR/2sok0N64lRoNLvF8=
+    token: $SONAR_TOKEN
 before_install: true
 install: true
 script:
+  - sonar-scanner --version
   - sonar-scanner
