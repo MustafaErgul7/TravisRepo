@@ -2,11 +2,13 @@
 dist: xenial
 language: generic
 addons:
+  rethinkdb: "2.3.4"
   sonarcloud:
     organization: mustafa-travisci
     token: $SONAR_TOKEN
 before_install: true
 install: true
 script:
+  - rethinkdb -v
   - sonar-scanner --version
   - sonar-scanner
