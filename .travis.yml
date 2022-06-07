@@ -6,5 +6,7 @@ addons:
     organization: "mustafa" # the key of the org you chose at step #3
     token:
       secure: "MvMTouAl6z9vJkeXzrTHdAbaffvennVgU8XceWqvSzs9DSkuYeXGhk18SAARKxQDceh9D/A7EwRKvgzJHEl77dCvkUplRm6DsyUy4YAWvgALaXR5prAEoTQKlrzIWQdHxZIVtAbv/cEyzTBZ9G8hsN3aojjlOx9v3gPgkcpypX1bJ1U3ZQ6FKm1zh1XOhgC+ztVduloU6nUzMELSSgSThZ7Xph+TdMJ0ZWreYf3mEsmkjCccSnHgKaoyPF9xWj0pcK6FbQFeUc6uUnsozU0W+c66RNcYzwKsO+Aad5FYtOr+3XUGHm0ckMUyPCSLyThRkDWsshWEp0WyFUPUPmo/ZJTBRkdSQPf5qoY18i7dhJW2Rs8iJ2+qqOBn+jM8JhT3R77EYad3mqgn2sUorLzfmIbMPFqQ/clTaR4Pzm71kzpIiUxOgNXHEzB8Dpn2wSd7SNoJOOePzeuIUjb740SHldQKzpJKuCl/GTuyVEzJIlnrBd3A11r+bEQfmmwaNk4AsOJoUaU3rw+InuhiLyprvXesNGqhNPdr0HQXj3HMl9OGd6jjL6ePwHX9LZTRZ50IQAhvkjY5XQlsMVzDJwONUKd9sIXLqP/tGH7R+Uivf/kWNiIXrQ5YvzCbL397zRKPffRDcK57hWYkjUBVfr2K0Eh6ZF4DEUcY1m1pmeXmK08="
+
+install: true
 script:
   - sonar-scanner
