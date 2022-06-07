@@ -1,5 +1,4 @@
 ---
-dist: xenial
 language: generic
 addons:
   rethinkdb: "2.3.4"
@@ -12,3 +11,9 @@ script:
   - rethinkdb -v
   - sonar-scanner --version
   - sonar-scanner
+jobs:
+  include:
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
+    - dist: trusty
