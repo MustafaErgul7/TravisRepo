@@ -1,8 +1,8 @@
 ---
-addons:
-  sauce_connect:
-    username: testSauce44
-    access_key:
-      secure: hjFSIlE/kqv0ZZ37iG7d40qlOq93gvM4vlXrlDVZCDB83DdzGi/ydTtwbVEBzVwp2Zxc3pZbchQlQtCQqAa1M2K7lSr8DHM8hOiUa+2UymZiAKhXlEoeUj1fvoZkzG02Dlx4zAL8SqdnLZhIoMqrJL3IHyy6x0B8Q2EyQwThTD1LP/LSsw/2PuvIqJEqOUGIAZiT6+K3+ngKjTu+I1mcOzOWE8pkEWi3ap3Fou8bGGwunhP4iWonBgDyCRDde3cLaPDiMebTOkLCbQVUmbCIWZq+4BM20jkk7d3CqIv/wH2u2pC07Dg1Pc3l+YlqKv9ok6gLNP0HTKKpYFPaHFYH47GH6jrCmGls3epW4jRXiMb51aQjc2z9dOh0aLlDyIMq01B8DruJTIEzhldRJVnQRTGrmvapSv4u6wSf2UF+206KyCT8Uf6jkJMsYMkDbjU5mdCDwUhSIVOz6DRF+5M+6jidOP5qhhtng32GkExXiBGjmU5PgGNN32+UAi3InaNkanTPS0NQbX5F/yzPCp9Dc/Ltt0M+YhbdmOECOvHJpuKz3HSYBZWoph3811CLdmA7FpLYWkVijO7lKlnwqemkUNEsz4/o+gQ/jFAAcjpjgb09ViS/LJduUFUiA8x+pvK1CE5eyISyxo13kchhdK741scg6GGDCq2z6UNbG3l5yxE=
-language: shell
-script: true
+dist: focal
+language: ruby
+before_install: true
+install: true
+script:
+  - uname -a
+  - lsb_release -a
