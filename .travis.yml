@@ -1,6 +1,6 @@
 ---
 language: ruby
-ruby: 3.0.0
+ruby: "3.0.0"
 jobs:
   include:
     - os: osx
