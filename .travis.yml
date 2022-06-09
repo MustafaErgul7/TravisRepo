@@ -3,7 +3,7 @@ language: swift
 os: osx
 osx_image: xcode13.2
 before_install:
-  - rvm install 2.7.2
+  - rvm install 2.7.6
 install: true
 script:
   - rvm list rubies
