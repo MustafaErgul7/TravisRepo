@@ -1,16 +1,7 @@
 ---
 dist: focal
-language: ruby
-before_install: true
+language: java
+jdk: openjdk11
+arch: ppc64le
 install: true
-script:
-  - uname -a
-  - lsb_release -a
-deploy:
-  - provider: lambda
-    access_key_id: "$AWS_ACCESS_KEY_ID"
-    secret_access_key: "$AWS_SECRET_ACCESS_KEY"
-    region: "$AWS_DEFAULT_REGION"
-    function_name: test
-    runtime: nodejs14.x
-    edge: true
+script: true
