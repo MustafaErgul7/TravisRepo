@@ -1,18 +1,11 @@
 ---
 os: osx
 language: ruby
-ruby: "3.0.0"
 jobs:
   include:
     - os: osx
-      osx_image: xcode13.4
-    - os: osx
       osx_image: xcode13.3
     - os: osx
-      osx_image: xcode13.2
-    - os: osx
-      osx_image: xcode13.1
-    - os: osx
-      osx_image: xcode12.5
 install: true
-script: true
+script:
+  - rvm list rubies
