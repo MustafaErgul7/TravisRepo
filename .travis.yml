@@ -1,11 +1,9 @@
 ---
-os: osx
 language: ruby
-ruby: 2.5.1
-jobs:
-  include:
-    - os: osx
-      osx_image: xcode13.2
+ruby: 2.7.2
+os: osx
+osx_image: xcode13.2
 install: true
 script:
   - rvm list rubies
+  - ruby --version
