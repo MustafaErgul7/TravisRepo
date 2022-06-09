@@ -1,7 +1,5 @@
 ---
-dist: focal
-language: java
-jdk: openjdk11
-arch: ppc64le
+os: osx
+osx_image: xcode13.4
 install: true
 script: true
