@@ -6,7 +6,7 @@ jobs:
   include:
     - stage: warm_cache
       script:
-        - echo $TRAVIS_TEST_RESULT >> test.sh
+        - printf $TRAVIS_TEST_RESULT >> test.sh
         - echo $TRAVIS_TEST_RESULT
         - export status=$( cat test.sh )
         - echo $status
