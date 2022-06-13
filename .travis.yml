@@ -12,15 +12,13 @@ script: nproc
 before_install:
   - curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
   - echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+  - sudo apt update
+  - sudo apt install elasticsearch
   - sudo chown -R elasticsearch:elasticsearch /etc/default/elasticsearch
   - sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-stempel
   - sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-ukrainian
   - sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch analysis-kuromoji
   - sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch analysis-icu
-  - sudo apt update
-  - sudo apt install elasticsearch
-  - sudo journalctl -u elasticsearch
   - sudo systemctl enable --now elasticsearch.service
   - sudo systemctl start elasticsearch.service
-  - sleep 30
-  - sudo service elasticsearch status
+  - curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
