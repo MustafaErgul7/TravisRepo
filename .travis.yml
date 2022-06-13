@@ -1,16 +1,10 @@
 ---
-os: osx
+os: linux
+language: shell
 
-language: ruby
-ruby:
-  - "3.0.0"
-
+vm:
+  size:
+    - large
 install: true
 
-script: xcrun simctl list
-
-jobs:
-  include:
-    - osx_image: xcode13.1
-    - osx_image: xcode13.2
-    - osx_image: xcode10.2
+script: nproc
