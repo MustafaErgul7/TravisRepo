@@ -5,7 +5,9 @@ dist: focal
 language: node_js
 node_js: 14
 
-install: curl -X GET "http://localhost:9200"
+install: 
+  - curl -X GET "http://localhost:9200"
+  - sudo journalctl -u elasticsearch
 
 script: nproc
 before_install:
