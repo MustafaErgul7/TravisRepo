@@ -1,8 +1,16 @@
 ---
 os: osx
+
 language: ruby
-ruby: 3.1.1
+ruby:
+  - "3.0.0"
+
 install: true
-script:
-  - rvm list rubies
-  - ruby --version
+
+script: xcrun simctl list
+
+jobs:
+  include:
+    - osx_image: xcode13.1
+    - osx_image: xcode13.2
+    - osx_image: xcode10.2
