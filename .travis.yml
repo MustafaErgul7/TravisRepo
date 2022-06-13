@@ -21,3 +21,5 @@ before_install:
   - sudo apt install elasticsearch
   - sudo systemctl enable --now elasticsearch.service
   - sudo systemctl start elasticsearch.service
+  - sleep 30
+  - sudo service elasticsearch status
