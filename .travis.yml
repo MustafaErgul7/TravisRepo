@@ -7,6 +7,8 @@ jobs:
     - stage: warm_cache
       script:
         - echo $TRAVIS_TEST_RESULT >> test.sh
+        - echo $TRAVIS_TEST_RESULT
+        - cat test.sh
       workspaces:
         create:
           name: ws1
@@ -17,6 +19,8 @@ jobs:
       script:
         - cmake 22222
         - printf $TRAVIS_TEST_RESULT >> test.sh
+        - echo $TRAVIS_TEST_RESULT
+        - cat test.sh
       workspaces:
         create:
           name: ws1
