@@ -8,6 +8,7 @@ install:
 script: nproc
 before_install:
   - curl https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.0.deb -o elasticsearch.deb
+  - sleep 1000
   - sudo dpkg -i --force-confnew elasticsearch.deb
   - sudo chown -R elasticsearch:elasticsearch /etc/default/elasticsearch
   - sudo rm -rf /var/lib/elasticsearch/nodes
