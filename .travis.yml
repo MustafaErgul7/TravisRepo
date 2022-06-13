@@ -2,9 +2,15 @@
 os: linux
 language: shell
 
-vm:
-  size:
-    - large
-install: true
+install:
+  - elasticsearch --version
 
 script: nproc
+before_install:
+  - curl https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.0.deb -o elasticsearch.deb
+  - sudo dpkg -i --force-confnew elasticsearch.deb
+  - sudo chown -R elasticsearch:elasticsearch /etc/default/elasticsearch
+  - sudo rm -rf /var/lib/elasticsearch/nodes
+  - sudo service elasticsearch restart
+  - until curl --silent -XGET --fail http://localhost:9200; do printf '...\n'; sleep 2;
+    done
