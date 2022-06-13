@@ -1,8 +1,8 @@
 ---
 dist: xenial
-allow_failure:
-  - rvm: 2.5.3
 jobs:
+  allow_failures:
+    - rvm: 2.5.3
   include:
     - stage: warm_cache
 
