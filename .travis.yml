@@ -4,15 +4,13 @@ dist: focal
 
 language: shell
 
-install:
-  - elasticsearch --version
+install: curl -X GET "http://localhost:9200"
 
 script: nproc
 before_install:
-  - curl https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.0.deb -o elasticsearch.deb
-  - sudo dpkg -i --force-confnew elasticsearch.deb
-  - sudo chown -R elasticsearch:elasticsearch /etc/default/elasticsearch
-  - sudo rm -rf /var/lib/elasticsearch/nodes
-  - sudo service elasticsearch restart
-  - until curl --silent -XGET --fail http://localhost:9200; do printf '...\n'; sleep 2;
-    done
+  - echo "deb https://artifacts.elastic.co/packages/7.9.0/apt stable main" > /etc/apt/sources.list.d/elastic-7.9.0.list
+  - sudo wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add -
+  - sudo apt-get update
+  - sudo apt-get install elasticsearch
+  - systemctl enable elasticsearch.service
+  - systemctl start elasticsearch.service
