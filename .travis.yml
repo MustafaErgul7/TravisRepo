@@ -1,5 +1,7 @@
 ---
 dist: xenial
+allow_failure:
+  - rvm: 2.5.3
 jobs:
   include:
     - stage: warm_cache
@@ -13,7 +15,7 @@ jobs:
     - stage: warm_cache2_fail
       script:
         - cmake
-        - sed -i.bck '$s/$/$TRAVIS_TEST_RESULT' test.sh
+        - sed '$s/$/"$TRAVIS_TEST_RESULT"' test.sh
       workspaces:
         create:
           name: ws1
