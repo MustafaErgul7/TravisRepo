@@ -30,4 +30,5 @@ jobs:
       workspaces:
         use: ws1
       script:
-        - cat test.sh 
+        - export status=$( cat test.sh )
+        - echo $status
