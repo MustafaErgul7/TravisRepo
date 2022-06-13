@@ -5,7 +5,6 @@ jobs:
     - rvm: 2.5.3
   include:
     - stage: warm_cache
-
       script:
         - echo $TRAVIS_TEST_RESULT >> test.sh
       workspaces:
@@ -17,7 +16,7 @@ jobs:
       rvm: 2.5.3
       script:
         - cmake 22222
-        - sed '$s/$/"$TRAVIS_TEST_RESULT"' test.sh
+        - printf $TRAVIS_TEST_RESULT >> test.sh
       workspaces:
         create:
           name: ws1
