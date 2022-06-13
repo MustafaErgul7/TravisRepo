@@ -11,7 +11,7 @@ jobs:
         create:
           name: ws1
           paths:
-            - test.sh
+            - ./test.sh
     - stage: warm_cache2_fail
       rvm: 2.5.3
       script:
@@ -21,9 +21,9 @@ jobs:
         create:
           name: ws1
           paths:
-            - test.sh
+            - ./test.sh
     - stage: use_cache
       workspaces:
         use: ws1
       script:
-        - cat test.sh || true
+        - cat test.sh 
