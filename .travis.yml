@@ -7,7 +7,7 @@ jobs:
     - stage: warm_cache
       rvm: 2.5.3
       script:
-        - printf $TRAVIS_TEST_RESULT >> test.sh
+        - echo $TRAVIS_TEST_RESULT > test.sh
         - echo $TRAVIS_TEST_RESULT
         - export status=$( cat test.sh )
         - echo $status
