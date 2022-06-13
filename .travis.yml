@@ -5,6 +5,7 @@ allow_failure:
 jobs:
   include:
     - stage: warm_cache
+
       script:
         - echo $TRAVIS_TEST_RESULT >> test.sh
       workspaces:
@@ -13,8 +14,9 @@ jobs:
           paths:
             - test.sh
     - stage: warm_cache2_fail
+      rvm: 2.5.3
       script:
-        - cmake
+        - cmake 22222
         - sed '$s/$/"$TRAVIS_TEST_RESULT"' test.sh
       workspaces:
         create:
