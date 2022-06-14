@@ -2,8 +2,7 @@
 os: linux
 dist: jammy
 group: edge
-language: php
-php: nightly
+language: minimal
 
 install: true
 
