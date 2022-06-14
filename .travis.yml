@@ -1,9 +1,9 @@
 ---
-os: osx
-osx_image: xcode13.4
-language: ruby
-ruby: 3.0.0
+os: linux
+language: php
+php: 8.0
 
 install: true
 
-script: ruby --version
+script:
+  - php -m
