@@ -26,8 +26,7 @@ jobs:
         - export status=$( cat test.sh )
         - echo $status
       workspaces:
-        create:
-          use: ws1
+        use: ws1
     - stage: use_cache
       workspaces:
         use: ws1
