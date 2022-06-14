@@ -1,14 +1,8 @@
 ---
 os: linux
-language: ruby
+language: php
+php: nightly
 
 install: true
 
-script: true
-
-jobs:
-  include:
-    - dist: xenial
-    - dist: trusty
-    - dist: bionic
-    - dist: focal
+script: php --version
