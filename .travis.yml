@@ -6,13 +6,12 @@ jobs:
   include:
     - stage: warm_cache
       rvm: 2.5.3
-      script:
-        - echo $TRAVIS_TEST_RESULT
-        - export status=$( cat test.sh )
-        - echo $status
+      script: true
       after_script:
         - echo $TRAVIS_TEST_RESULT
         - echo $TRAVIS_TEST_RESULT | tee test.sh
+        - export status=$( cat test.sh )
+        - echo $status
       workspaces:
         create:
           name: ws1
@@ -20,8 +19,9 @@ jobs:
             - ./test.sh
     - stage: warm_cache2_fail
       rvm: 2.5.3
-      script:
+      script: 
         - cmake 22222
+      after_script:
         - printf $TRAVIS_TEST_RESULT >> test.sh
         - export status=$( cat test.sh )
         - echo $status
