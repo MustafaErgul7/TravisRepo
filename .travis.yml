@@ -27,9 +27,7 @@ jobs:
         - echo $status
       workspaces:
         create:
-          name: ws1
-          paths:
-            - ./test.sh
+          use: ws1
     - stage: use_cache
       workspaces:
         use: ws1
