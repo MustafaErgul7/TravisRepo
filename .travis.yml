@@ -1,35 +1,25 @@
 ---
-dist: xenial
-jobs:
-  allow_failures:
-    - rvm: 2.5.3
-  include:
-    - stage: warm_cache
-      rvm: 2.5.3
-      script: true
-      after_script:
-        - echo $TRAVIS_TEST_RESULT
-        - echo $TRAVIS_TEST_RESULT | tee test.sh
-        - export status=$( cat test.sh )
-        - echo $status
-      workspaces:
-        create:
-          name: ws1
-          paths:
-            - ./test.sh
-    - stage: warm_cache2_fail
-      rvm: 2.5.3
-      script: 
-        - cmake 22222
-      after_script:
-        - printf $TRAVIS_TEST_RESULT >> test.sh
-        - export status=$( cat test.sh )
-        - echo $status
-      workspaces:
-        use: ws1
-    - stage: use_cache
-      workspaces:
-        use: ws1
-      script:
-        - export status=$( cat test.sh )
-        - echo $status
+os: linux
+dist: focal
+
+language: node_js
+node_js: 14
+
+install:
+  - curl -X GET "http://localhost:9200"
+
+script: nproc
+before_install:
+  - curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+  - echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+  - sudo apt update
+  - sudo apt install elasticsearch
+  - sudo chown -R elasticsearch:elasticsearch /etc/default/elasticsearch
+  - sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-stempel
+  - sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-ukrainian
+  - sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch analysis-kuromoji
+  - sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch analysis-icu
+  - sudo systemctl enable --now elasticsearch.service
+  - sudo systemctl start elasticsearch.service
+  - curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+  - sudo bin/elasticsearch
