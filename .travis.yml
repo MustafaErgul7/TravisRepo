@@ -1,7 +1,9 @@
 ---
 os: linux
+dist: jammy
+group: dev
 language: php
-php: 8.0snapshot
+php: nightly
 
 install: true
 
