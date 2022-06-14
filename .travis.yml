@@ -1,9 +1,14 @@
 ---
 os: linux
-language: php
-php: 8.0
+language: ruby
 
 install: true
 
-script:
-  - php -m
+script: true
+
+jobs:
+  include:
+    - dist: xenial
+    - dist: trusty
+    - dist: bionic
+    - dist: focal
