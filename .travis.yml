@@ -22,4 +22,3 @@ before_install:
   - sudo systemctl enable --now elasticsearch.service
   - sudo systemctl start elasticsearch.service
   - curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-  - sudo /usr/share/elasticsearch/bin/elasticsearch
