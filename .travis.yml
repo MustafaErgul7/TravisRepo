@@ -1,11 +1,11 @@
 ---
 os: linux
-language: java
-jdk: openjdk11
+language: python
+python: nightly
 
 install: true
 
-script: java --version
+script: python -V
 
 jobs:
   include:
