@@ -3,7 +3,11 @@ os: linux
 dist: xenial
 language: php
 php: 8.0snapshot
+arch: arm64-graviton2
+services:
+  - docker
 
-install: true
+install: 
+  - df -h
 
 script: php --version
