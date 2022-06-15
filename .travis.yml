@@ -1,8 +1,8 @@
 ---
 os: linux
-dist: jammy
-group: edge
-language: minimal
+dist: xenial
+language: php
+php: 8.0snapshot
 
 install: true
 
