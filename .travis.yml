@@ -1,13 +1,15 @@
 ---
 os: linux
-dist: xenial
-language: php
-php: 8.0snapshot
-arch: arm64-graviton2
-services:
-  - docker
+language: java
+jdk: openjdk11
 
-install: 
-  - df -h
+install: true
 
-script: php --version
+script: java --version
+
+jobs:
+  include:
+    - dist: trusty
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
