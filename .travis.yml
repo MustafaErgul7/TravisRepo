@@ -1,15 +1,11 @@
 ---
-os: linux
 language: python
-python: nightly
-
-install: true
-
-script: python -V
-
 jobs:
-  include:
-    - dist: trusty
-    - dist: xenial
-    - dist: bionic
-    - dist: focal
+include:
+  - services: docker
+python: 3.6
+os: linux
+arch: arm64
+env:
+  - CIBW_BUILD=�cp36-manylinux_aarch64�
+  - CIBW_ARCHS=�aarch64�
