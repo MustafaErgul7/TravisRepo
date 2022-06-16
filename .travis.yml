@@ -1,11 +1,12 @@
 ---
-language: python
-jobs:
-include:
-  - services: docker
-python: 3.6
+language: java
+jdk: openjdk8
 os: linux
-arch: arm64
-env:
-  - CIBW_BUILD=�cp36-manylinux_aarch64�
-  - CIBW_ARCHS=�aarch64�
+script: java --version
+install: true
+
+jobs:
+  include:
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
