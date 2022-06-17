@@ -1,11 +1,15 @@
 ---
 language: ruby
-os: osx
-osx_image: xcode13.4
-script: ruby --version
+script:
+  - ruby --version
+  - openssl version
 install: true
 
-rvm:
-  - 3.1.0
-  - 3.0.0
-  - 2.7.4
+jobs:
+  include:
+    - dist: trusty
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
+    - dist: jammy
+      group: dev
