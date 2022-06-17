@@ -4,6 +4,8 @@ script:
   - ruby --version
   - openssl version
 install: true
+services:
+  - postgresql
 
 jobs:
   include:
