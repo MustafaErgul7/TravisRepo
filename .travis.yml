@@ -1,6 +1,6 @@
 ---
 language: python
-python: nightly
+python: 3.12-dev
 script: python -V
 install: true
 
