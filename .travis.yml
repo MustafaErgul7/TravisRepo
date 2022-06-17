@@ -1,15 +1,11 @@
 ---
-language: ruby
-script:
-  - ruby --version
-  - openssl version
+language: python
+python: nightly
+script: python -V
 install: true
-services:
-  - postgresql
 
 jobs:
   include:
-    - dist: trusty
     - dist: xenial
     - dist: bionic
     - dist: focal
