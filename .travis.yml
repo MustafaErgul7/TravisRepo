@@ -1,6 +1,7 @@
 ---
 language: ruby
-os: linux
+os: osx
+osx_image: xcode12.4
 script: ruby --version
 install: true
 
