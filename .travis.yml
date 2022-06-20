@@ -1,7 +1,8 @@
 ---
 language: python
-python: 3.12-dev
-script: python -V
+python: nightly
+script:
+  - python -V
 install: true
 
 jobs:
