@@ -1,8 +1,12 @@
 ---
 language: python
-python: nightly
+python: 3.7
 script:
   - python -V
+  - pip --version
+before_install:
+  - pip --version
+  - python -m pip install pip=20.1
 install: true
 
 jobs:
