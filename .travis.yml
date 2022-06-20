@@ -6,7 +6,7 @@ script:
   - pip --version
 before_install:
   - pip --version
-  - python -m pip install pip=20.1
+  - python -m pip install pip==20.1
 install: true
 
 jobs:
