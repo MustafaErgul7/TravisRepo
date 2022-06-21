@@ -1,12 +1,9 @@
 ---
-language: python
-python: 3.7
-script:
-  - python -V
-  - pip --version
-before_install:
-  - pip --version
-  - python -m pip install pip==20.1
+os: linux
+language: php
+php: nightly
+script: php -version
+
 install: true
 
 jobs:
