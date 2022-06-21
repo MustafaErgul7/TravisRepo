@@ -5,6 +5,9 @@ php: nightly
 script: php -version
 
 install: true
+branches:
+  only:
+    - master
 
 jobs:
   include:
