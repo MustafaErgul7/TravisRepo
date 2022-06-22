@@ -1,13 +1,10 @@
 ---
 os: linux
-language: php
-php: nightly
-script: php -version
+language: ruby
+ruby: 3.0.4
+script: ruby -version
 
 install: true
-branches:
-  only:
-    - master
 
 jobs:
   include:
