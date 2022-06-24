@@ -1,8 +1,8 @@
 ---
 os: linux
-language: ruby
-ruby: 3.0.4
-script: ruby --version
+language: python
+python: pypy3
+script: python -V
 
 install: true
 
