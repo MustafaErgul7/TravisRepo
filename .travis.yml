@@ -1,8 +1,8 @@
 ---
 os: linux
-language: java
-jdk: openjdk9
-script: java -version
+language: python
+python: pypy3.9-7.3.9
+script: python -V
 
 install: true
 
