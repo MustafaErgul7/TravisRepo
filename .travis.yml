@@ -1,8 +1,10 @@
 ---
 os: linux
-language: python
-python: pypy3.9-7.3.9
-script: python -V
+language: erlang
+otp_release:
+  - "25.0.2"
+script:
+  - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
 
 install: true
 
