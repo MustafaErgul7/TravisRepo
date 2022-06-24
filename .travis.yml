@@ -1,7 +1,7 @@
 ---
 os: linux
 language: java
-jdk: openjdk13
+jdk: openjdk11
 script: java -version
 
 install: true
