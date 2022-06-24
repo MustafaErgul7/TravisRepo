@@ -1,8 +1,8 @@
 ---
 os: linux
-language: python
-python: pypy3.8
-script: python -V
+language: java
+jdk: openjdk13
+script: java -version
 
 install: true
 
