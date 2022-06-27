@@ -1,16 +1,7 @@
 ---
-os: linux
-language: erlang
-otp_release:
-  - "25.0.2"
-script:
-  - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
-
-install: true
-
-jobs:
-  include:
-    - dist: xenial
-    - dist: bionic
-    - dist: focal
-    - dist: jammy
+language: generic
+os:
+  - linux
+dist: focal
+virt: vm
+group: edge
