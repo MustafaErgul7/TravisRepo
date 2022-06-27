@@ -5,3 +5,4 @@ os:
 dist: focal
 virt: vm
 group: edge
+arch: arm64-graviton2
