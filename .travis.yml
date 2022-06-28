@@ -1,11 +1,63 @@
 ---
-language: python
-python:
-  - "2.7"
-  - "3.8"
-  # PyPy versions
-  - "pypy" # currently Python 2.7.13, PyPy 7.1.1
-  - "pypy3" # currently Python 3.6.1,  PyPy 7.1.1-beta0
-# command to install dependencies
-install: true
-script: python -V
+language: erlang
+
+env:
+  global:
+    - KERL_BUILD_BACKEND=git
+jobs:
+  include:
+    - sudo: required
+      dist: trusty
+      os: linux
+      group: edge
+      name: trusty
+    - sudo: required
+      dist: precise
+      os: linux
+      name: precise
+    - sudo: required
+      language: generic
+      dist: xenial
+      os: linux
+      group: edge
+      name: xenial
+    - sudo: required
+      language: minimal
+      dist: bionic
+      os: linux
+      group: dev
+      name: bionic
+    - dist: focal
+      language: generic
+      os: linux
+      group: dev
+      name: focal amd64
+    - sudo: required
+      arch: ppc64le
+      language: generic
+      dist: xenial
+      os: linux
+      group: edge
+      name: xenial-ppc64le
+    - language: minimal
+      dist: xenial
+      os: linux
+      arch: arm64
+      name: arm64-xenial
+    - language: minimal
+      dist: bionic
+      os: linux
+      arch: arm64
+      name: arm64-bionic
+    - dist: focal
+      language: generic
+      os: linux
+      group: edge
+      arch: arm64-graviton2
+      name: focal arm64
+      virt: lxd
+    - dist: jammy
+      language: minimal
+      os: linux
+      group: dev
+      name: jammy amd64
