@@ -3,6 +3,6 @@ language: python
 os: linux
 arch: x86_64
 dist: jammy
-python: nightly
+python: pypy3
 install: true
 script: python -V
