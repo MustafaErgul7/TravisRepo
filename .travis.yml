@@ -1,8 +1,7 @@
 ---
-language: generic
-os:
-  - linux
-dist: focal
-virt: vm
-group: edge
-arch: arm64-graviton2
+language: python
+os: linux
+dist: jammy
+python: nightly
+install: true
+script: python -V
