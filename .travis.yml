@@ -1,6 +1,7 @@
 ---
 language: python
 os: linux
+arch: x86_64
 dist: jammy
 python: nightly
 install: true
