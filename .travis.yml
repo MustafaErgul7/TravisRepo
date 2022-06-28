@@ -31,7 +31,7 @@ jobs:
       language: generic
       os: linux
       group: dev
-      name: focal amd64
+      name: focal
     - sudo: required
       arch: ppc64le
       language: generic
@@ -39,6 +39,20 @@ jobs:
       os: linux
       group: edge
       name: xenial-ppc64le
+    - sudo: required
+      arch: ppc64le
+      language: generic
+      dist: bionic
+      os: linux
+      group: edge
+      name: bionic-ppc64le
+    - sudo: required
+      arch: ppc64le
+      language: generic
+      dist: focal
+      os: linux
+      group: edge
+      name: focal-ppc64le
     - language: minimal
       dist: xenial
       os: linux
