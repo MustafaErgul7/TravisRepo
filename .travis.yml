@@ -36,7 +36,7 @@ jobs:
       language: minimal
       os: linux
       group: dev
-      name: jammy amd64
+      name: jammy
     - sudo: required
       arch: ppc64le
       language: generic
