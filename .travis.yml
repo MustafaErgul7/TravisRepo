@@ -1,8 +1,14 @@
 ---
-dist: jammy
 language: python
 python: pypy3
 install: true
 
-script: 
+script:
   - python -V
+
+jobs:
+  include:
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
+    - dist: jammy
