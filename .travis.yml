@@ -1,13 +1,14 @@
 ---
-os: linux
 language: python
-script: python -V
-
+python: pypy3
 install: true
+
+script:
+  - python -V
 
 jobs:
   include:
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
     - dist: jammy
-      python: pypy
-    - dist: jammy
-      python: pypy3
