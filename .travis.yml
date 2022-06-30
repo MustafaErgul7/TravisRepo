@@ -1,10 +1,11 @@
 ---
 language: python
-python: pypy3
+python: 3.6
 install: true
 
 script:
   - python -V
+  - pip list
 
 jobs:
   include:
