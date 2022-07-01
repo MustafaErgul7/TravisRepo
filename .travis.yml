@@ -1,6 +1,14 @@
 ---
-os: osx
-osx_image: xcode13.3
-install: true
+os: linux
+services:
+  - mysql
 
-script: true
+script:
+  - mysql -V
+
+jobs:
+  include:
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
+    - dist: jammy
