@@ -8,4 +8,4 @@ jobs:
         mariadb: "10.0"
     - dist: xenial
       addons:
-        mariadb: "10.7"
+        mariadb: "10.6"
