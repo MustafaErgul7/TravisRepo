@@ -2,6 +2,7 @@
 dist: jammy
 language: generic
 before_install:
-  - sudo apt install python2
+  - sudo apt-get update
+  - sudo apt-get -y install python2
 install: python -V
 script: true
