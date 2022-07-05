@@ -1,11 +1,7 @@
 ---
-install: true
-script: mysqld -V
-jobs:
-  include:
-    - dist: xenial
-      addons:
-        mariadb: "10.0"
-    - dist: xenial
-      addons:
-        mariadb: "10.6"
+dist: jammy
+language: generic
+before_install:
+  - sudo apt install python2
+install: python -V
+script: true
