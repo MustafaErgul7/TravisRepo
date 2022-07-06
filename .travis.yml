@@ -1,8 +1,15 @@
 ---
-dist: jammy
-language: generic
+os: linux
+language: php
+php: "7.4.27"
+
 before_install:
-  - sudo apt-get update
-  - sudo apt-get -y install python2
-install: python -V
-script: true
+  - composer self-update
+script:
+  - composer -vvv about
+
+jobs:
+  include:
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
