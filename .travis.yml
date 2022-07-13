@@ -1,10 +1,17 @@
 ---
 os: linux
 dist: jammy
-group: edge
 language: python
 python: "3.6"
 
 install: true
 script:
   - python -V
+  - openssl version
+
+jobs:
+  include:
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
+    - dist: jammy
