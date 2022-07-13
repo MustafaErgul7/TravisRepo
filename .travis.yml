@@ -2,9 +2,9 @@
 os: linux
 dist: jammy
 group: edge
-language: ruby
+language: python
+python: "3.6"
 
-before_install:
-  - ruby --version
+install: true
 script:
   - python -V
