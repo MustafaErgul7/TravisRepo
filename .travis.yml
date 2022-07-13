@@ -1,6 +1,7 @@
 ---
 os: linux
 dist: jammy
+group: edge
 language: ruby
 
 before_install:
