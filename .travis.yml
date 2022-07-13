@@ -1,16 +1,9 @@
 ---
 os: linux
-arch: ppc64le
-language: php
-php: "7.4.27"
+dist: jammy
+language: ruby
 
 before_install:
-  - composer self-update
+  - ruby --version
 script:
-  - composer -vvv about
-
-jobs:
-  include:
-    - dist: xenial
-    - dist: bionic
-    - dist: focal
+  - python -V
