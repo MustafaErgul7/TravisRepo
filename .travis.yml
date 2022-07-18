@@ -1,16 +1,11 @@
 ---
-os: linux
+version: ~> 1.0
 dist: focal
-language: python
-python: nightly
-install: true
-script:
-  - python -V
-  - openssl version
+arch: ppc64le
+language: java
 
-jobs:
-  include:
-    - dist: xenial
-    - dist: bionic
-    - dist: focal
-    - dist: jammy
+addons:
+  apt:
+    packages:
+      - xsltproc
+      - xmlstarlet
