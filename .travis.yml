@@ -1,11 +1,10 @@
 ---
-version: ~> 1.0
-dist: focal
-arch: ppc64le
-language: java
+language: python
+install: true
+script: true
 
-addons:
-  apt:
-    packages:
-      - xsltproc
-      - xmlstarlet
+jobs:
+  include:
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
