@@ -1,8 +1,10 @@
 ---
 language: node_js
 node_js: stable
+services:
+  - mongodb
 install: true
-script: node -v
+script: mongod --version
 
 jobs:
   include:
