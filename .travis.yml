@@ -2,6 +2,7 @@
 language: ruby
 services:
   - mongodb
+  - docker
 install: true
 script: mongod --version
 
