@@ -2,6 +2,7 @@
 os: linux
 dist: focal
 arch: arm64
+group: beta
 virt: vm
 language: rust
 
