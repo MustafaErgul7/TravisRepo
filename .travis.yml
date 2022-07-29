@@ -6,6 +6,5 @@ addons:
   apt:
     packages:
       - python2
-      - python-pip
     update: true
 script: python --version
