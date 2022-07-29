@@ -1,7 +1,10 @@
 ---
-language: java
-jdk: openjdk11
+language: generic
 install: true
-arch: ppc64le
-script: true
-dist: focal
+addons:
+  apt:
+    packages:
+      - python2
+      - python-pip
+    update: true
+script: python --version
