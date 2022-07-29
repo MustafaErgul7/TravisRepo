@@ -9,4 +9,5 @@ addons:
     update: true
 script:
   - python --version
+  - pyenv install 2.7
   - pyenv versions
