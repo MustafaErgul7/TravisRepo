@@ -7,4 +7,6 @@ addons:
     packages:
       - python2
     update: true
-script: python --version
+script:
+  - python --version
+  - pyenv list
