@@ -9,4 +9,4 @@ addons:
     update: true
 script:
   - python --version
-  - pyenv list
+  - pyenv versions
