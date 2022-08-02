@@ -2,12 +2,6 @@
 language: generic
 dist: focal
 install: true
-addons:
-  apt:
-    packages:
-      - python2
-    update: true
 script:
   - python --version
-  - pyenv install 2.7
-  - pyenv versions
+  - echo $TRAVIS_PULL_REQUEST
