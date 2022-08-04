@@ -1,6 +1,6 @@
 ---
 language: android
-jdk: openjdk11 # comment because there is a workaround on before_install
+# jdk: openjdk11 # comment because there is a workaround on before_install
 
 env:
   global:
@@ -19,6 +19,10 @@ licenses:
   - "google-gdk-license-.+"
 
 before_install:
+  - sudo apt-get update
+  - sudo apt install openjdk-11-jdk
+  - export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+  - export PATH=$JAVA_HOME/bin:$PATH
   # workaround openjdk11
   #
   # The command "~/bin/install-jdk.sh --target "/home/travis/oraclejdk11" --workspace "/home/travis/
@@ -38,11 +42,11 @@ before_install:
   - mv ${ANDROID_HOME}/cmdline-tools/cmdline-tools ${ANDROID_HOME}/cmdline-tools/latest
 
 before_script:
-  # - echo y | ${TOOLS}/bin/sdkmanager "platform-tools" >/dev/null
-  # - echo y | ${TOOLS}/bin/sdkmanager "tools" >/dev/null
-  # - echo y | ${TOOLS}/bin/sdkmanager "build-tools;$BUILD_TOOLS" >/dev/null
-  # - echo y | ${TOOLS}/bin/sdkmanager "platforms;android-$BUILD_API" >/dev/null
-  # - echo y | ${TOOLS}/bin/sdkmanager "extras;android;m2repository" >/dev/null
+  - echo y | ${TOOLS}/bin/sdkmanager "platform-tools" >/dev/null
+  - echo y | ${TOOLS}/bin/sdkmanager "tools" >/dev/null
+  - echo y | ${TOOLS}/bin/sdkmanager "build-tools;$BUILD_TOOLS" >/dev/null
+  - echo y | ${TOOLS}/bin/sdkmanager "platforms;android-$BUILD_API" >/dev/null
+  - echo y | ${TOOLS}/bin/sdkmanager "extras;android;m2repository" >/dev/null
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
