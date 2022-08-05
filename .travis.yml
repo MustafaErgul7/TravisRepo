@@ -62,7 +62,6 @@ git:
   quiet: true
   submodules: false
 
-script:
-  - java --version
+script: true
 # inspi :
 # https://github.com/Leanplum/Leanplum-Android-SDK/blob/master/.travis.yml
