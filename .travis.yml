@@ -5,4 +5,5 @@ node_js: 12
 before_install:
   - rvm install 2.7.1
   - rvm use 2.7.1
+  - cat /proc/cpuinfo
 script: ruby --version
