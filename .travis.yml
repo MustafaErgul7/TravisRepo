@@ -1,10 +1,5 @@
 ---
-dist: focal
-language: node_js
-node_js: 12
-before_install:
-  - rvm install 2.7.1
-  - rvm use 2.7.1
-  - cat /proc/cpuinfo
-  - awk '( $1 == "MemTotal:" ) { print $2/1048576 }' /proc/meminfo
-script: ruby --version
+dist: xenial
+language: rust
+rust: stable
+script: true
