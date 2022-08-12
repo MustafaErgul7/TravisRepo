@@ -1,5 +1,14 @@
 ---
-dist: xenial
-language: rust
-rust: stable
-script: true
+os: linux
+language: go
+go:
+  - master
+script:
+  - go version
+
+jobs:
+  include:
+    - dist: xenial
+    - dist: bionic
+    - dist: focal
+    - dist: jammy
