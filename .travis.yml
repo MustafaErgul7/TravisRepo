@@ -1,10 +1,14 @@
 ---
 os: linux
 language: go
+env:
+  global:
+    - GIMME_DEBUG=1
 go:
-  - stable
+  - master
 script:
   - go version
+install: skip
 
 jobs:
   include:
