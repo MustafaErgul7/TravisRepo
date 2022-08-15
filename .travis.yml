@@ -1,13 +1,8 @@
 ---
 os: linux
-language: go
-env:
-  global:
-    - GIMME_DEBUG=1
-go:
-  - master
-script:
-  - go version
+language: rust
+rust: stable
+script: true
 install: skip
 
 jobs:
