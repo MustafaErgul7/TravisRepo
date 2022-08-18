@@ -1,9 +1,10 @@
 ---
 os: linux
+virt: lxd
 arch: arm64-graviton2
 group: edge
-language: rust
-rust: stable
+language: cpp
+compiler: gcc
 script: true
 install: skip
 
