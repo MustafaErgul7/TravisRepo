@@ -1,12 +1,20 @@
 ---
-os: linux
-virt: lxd
-arch: arm64-graviton2
-group: edge
-language: cpp
-compiler: gcc
+language: node_js
+node_js:
+  - "8"
+before_install:
+  - mysql -e 'CREATE DATABASE fonestorm CHARACTER SET utf8 COLLATE utf8_general_ci;'
+install: true
 script: true
-install: skip
+env:
+  - CXX=g++-4.8
+addons:
+  mariadb: "10.2"
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
 
 jobs:
   include:
