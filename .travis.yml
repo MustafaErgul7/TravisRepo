@@ -3,13 +3,13 @@ language: node_js
 node_js:
   - "8"
 before_install:
-  - mysql -e 'CREATE DATABASE asdfasd CHARACTER SET utf8 COLLATE utf8_general_ci;'
+  - sudo mysql -e 'CREATE DATABASE asdfasd CHARACTER SET utf8 COLLATE utf8_general_ci;'
 install: true
 script: true
 env:
   - CXX=g++-4.8
 addons:
-  mariadb: "10.10"
+  mariadb: "10.3"
   apt:
     sources:
       - ubuntu-toolchain-r-test
