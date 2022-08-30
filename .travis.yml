@@ -3,6 +3,9 @@ language: ruby
 install: true
 script: true
 
+services:
+  - redis-server
+
 jobs:
   include:
     - dist: xenial
