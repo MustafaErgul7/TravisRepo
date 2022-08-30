@@ -1,11 +1,10 @@
 ---
-language: ruby
+language: php
+php:
+  - master
+  - nightly
 install: true
-script: true
-arch: arm64
-
-services:
-  - redis-server
+script: php --version
 
 jobs:
   include:
