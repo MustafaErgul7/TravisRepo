@@ -1,19 +1,14 @@
 ---
 os: linux
 language: node_js
-before_install:
-  - rvm install 2.7.6
-  - rvm use 2.7.6
 install: true
 script: true
-before_deploy: 
-  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
 deploy:
-  - provider: heroku
-    strategy: api
-    edge: true
-    api_key: "$HEROKU_API_KEY"
+  - provider: script
+    image: ruby:latest
+    script:
+      - gem install dpl && gem install faraday -v 1.8.0
+      - dpl --provider=heroku --app=xxx --api-key=$HEROKU_API_KEY
 jobs:
   include:
-    - dist: focal
     - dist: jammy
