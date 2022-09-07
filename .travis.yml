@@ -1,6 +1,7 @@
 ---
 os: linux
-language: node_js
+dist: focal
+language: shell
 install: true
 script: true
 deploy:
@@ -8,7 +9,4 @@ deploy:
     image: ruby:latest
     script:
       - gem install dpl && gem install faraday -v 1.8.0
-      - dpl --provider=heroku --app=xxx --api-key=$HEROKU_API_KEY
-jobs:
-  include:
-    - dist: jammy
+      - dpl --provider=releases --api-key=$GH_AUTH_TOKEN --file=FILE.a
