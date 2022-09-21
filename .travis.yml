@@ -1,7 +1,6 @@
 ---
 os: linux
 language: shell
-install: true
 script: true
 deploy:
   - provider: script
